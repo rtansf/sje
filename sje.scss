@@ -1,0 +1,224 @@
+$crimson : rgb(174,31,37);
+$leftOffset: 50px;
+
+body {
+    position: relative;
+}
+#wrapper {
+    width: 984px;
+    margin: 0px auto;
+    background-image: url('images/bkdrop.png');
+}
+.top {
+    margin-top: -10px;
+    height: 130px;
+}
+.logo {
+    padding-top:  37px;
+    padding-left: $leftOffset;
+    float: left;
+    cursor: pointer;
+}
+.navcontainer {
+    float:left;
+    margin-top: 108px;
+}
+#navlist li {
+    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-weight: 400;
+    display: inline;
+    list-style-type: none;
+    padding-right: 50px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+#navlist li:hover {
+    color: $crimson;
+}
+.bigCap {
+    font-size: 16px;
+}
+.tinyfont {
+    font-size: 13px;
+}
+.smallfont {
+    font-size: 16px;
+}
+.mediumfont {
+    font-size: 20px;
+}
+.bigfont {
+    font-size: 22px;
+}
+
+.middle {
+    width: 100%;
+    height: 525px;
+}
+.light {
+   font-weight: 400;
+}
+.extralight {
+  font-weight: 300;
+}
+.icon {
+    padding-top:  12px;
+    padding-left: $leftOffset;
+    float: left;
+}
+.carousel {
+    padding-right: 5px;
+    float: left;
+    position: relative;
+    top: -4px;
+    left: 0px;
+}
+.middlecaption {
+    position: relative;
+    top: -21px;
+    padding-left: $leftOffset;
+}
+.middleleftcontent {
+    width: 300px;
+    position: relative;
+    left: 50px;
+    top: -200px;
+    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-weight: 500;
+}
+.middlerightcontent {
+    width: 600px;
+    position: relative;
+    left: 300px;
+    top: -345px;
+    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    color: white;
+}
+.middlerightcontentcaption {
+    margin-top: 8px;
+}
+.stjohnbold {
+  font-size: 26px;
+  letter-spacing: 1px;
+  font-weight: 500; 
+}
+.servicetime {
+
+}
+.parishofficehours {
+    margin-top: 10px;
+}
+.donateto {
+    margin-top: 22px;
+    cursor: pointer;
+}
+.donateto:hover {
+    color: $crimson;
+}
+.getinvolved {
+    margin-top: 6px;
+    cursor: pointer;
+}
+.getinvolved:hover {
+    color: $crimson;
+}
+.bottom {
+    margin-top: -7px;
+    height: 130px;
+}
+.bottomleftcontent {
+    padding-top: 23px;
+    padding-left: $leftOffset;
+    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-weight: 500;
+}
+.bottomleftcontent div {
+    margin-top: 6px;
+}
+.rota {
+    color: $crimson;
+    font-weight: 500;
+    cursor: pointer;
+}
+.bottomrightcontent {
+    position: relative;
+    left: 300px;
+    top: -64px;
+    font-family: "futura-pt-n4","futura-pt",sans-serif;
+}
+.bottomrightcontentcaption1 {
+    width: 170px;
+    font-weight: 500;
+    float: left;
+}
+.bottomrightcontentcaption2 {
+    letter-spacing: 1px;
+    width: 240px;
+    float: left;
+}
+.noshow {
+    display: none;
+}
+.carousel img {
+    width: 686px;
+    height: 275px;
+    margin-top: 16px;
+}
+
+#aboutstjohns {
+   top: -38px;
+   left: 650px;
+   z-index: 100;
+   width: 300px;
+}
+#thewayweworship, #dummy {
+   top: -38px;
+   left: 650px;
+   z-index: 100;
+   width: 300px;
+}
+#elporvenir {
+   top: -38px;
+   left: 650px;
+   z-index: 100;
+   width: 300px;
+}
+#julianpantry {
+   top: -38px;
+   left: 650px;
+   z-index: 100;
+   width: 300px;
+}
+#immigration {
+   top: -38px;
+   left: 550px;
+   z-index: 100;
+   width: 400px;
+}
+#missiongrads {
+   top: -38px;
+   left: 650px;
+   z-index: 100;
+   width: 300px;
+}
+.imagetext {
+   color: white;
+   position: relative;
+   font-family: "futura-pt-n4","futura-pt",sans-serif;
+   font-style: italic;
+   opacity: 0.9;
+   height: 21px;
+}
+.clickable, .imagelink {
+   cursor: pointer;
+}
+.imagetextmain {
+   font-size: 18px; 
+}
+.learnmore {
+   font-size: 14px; 
+   margin-left: 40px;
+   position: relative;
+   top: -1px;
+}
