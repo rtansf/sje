@@ -1,0 +1,134 @@
+<html>
+<head>
+<link href="sje.css" rel="stylesheet" type="text/css">
+<script src="jquery-1.7.1.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="jquery.cycle.all.js"></script>
+<script type="text/javascript" src="http://use.typekit.com/pdx5vmz.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<script>
+$(document).ready(function() {
+    var ua = new String(navigator.userAgent);
+
+    var idx = ua.indexOf('iPad');
+    if (idx > 0) {
+        $('body').css('margin-left', 110);
+    }
+
+    $('.clickable').click(function() {
+        //alert ($(this).attr('id'));
+        alert ('To be implemented');
+    });
+
+    $('.carousel').cycle({      
+        fx: 'fade',
+        speed: 2000,
+        timeout: 3000,
+        before: onBefore
+    });
+});
+
+function onBefore(curr, next, opts) {
+   var currSlide = opts.currSlide;
+   //console.log("before showing slide: " + currSlide);
+
+   $('.imagetext').hide();
+   if (currSlide == 1) {
+       $('#aboutstjohns').show();
+   } else if (currSlide == 3) {
+       $('#thewayweworship').show();
+   } else if (currSlide == 4) {
+       $('#elporvenir').show();
+   } else if (currSlide == 5) {
+       $('#julianpantry').show();
+   } else if (currSlide == 6) {
+       $('#immigration').show();
+   } else if (currSlide == 7) {
+       $('#missiongrads').show();
+   } else {
+       $('#dummy').show();
+   } 
+}
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+<div class="top">
+  <div class="logo"><img src="images/stjohn_logo.png"/></div>
+  <div class="navcontainer">
+     <ul id="navlist">
+        <li><span class="bigcap">A</span>BOUT</li>
+        <li><span class="bigcap">W</span>ORSHIP</li>
+        <li><span class="bigcap">M</span>INISTRIES</li>
+        <li><span class="bigcap">C</span>ONTACT <span class="bigcap">U</span>S</li>
+     </ul>
+  </div>
+</div> <!-- top -->
+
+<div class="middle">
+  <div class="icon"><img src="images/left_stjohn.jpg"/></div>
+
+  <div class="carousel">
+
+      <img src="images/carousel_01.jpg"/>
+      <img class="noshow          " src="images/carousel_02.jpg"/>
+      <img class="noshow clickable" src="images/carousel_03.jpg" id="aboutimage"/>
+      <img class="noshow          " src="images/carousel_04.jpg" />
+      <img class="noshow clickable" src="images/carousel_05.jpg" id="worshipimage"/>
+      <img class="noshow clickable" src="images/carousel_07.jpg" id="elporvenirimage"/>
+      <img class="noshow clickable" src="images/carousel_08.jpg" id="julianpantryimage"/>
+      <img class="noshow clickable" src="images/carousel_09.jpg" id="immigrationimage"/>
+      <img class="noshow clickable" src="images/carousel_10.jpg" id="missiongradsimage"/>
+  </div>
+
+  <div style="clear:both;"></div>
+  <div id="aboutstjohns" class="imagelink imagetext noshow"><span class="imagetextmain">About St. John's</span><span class="learnmore">learn more</span></div>
+  <div id="thewayweworship" class="imagelink imagetext noshow"><span class="imagetextmain">The way we worship</span><span class="learnmore">learn more</span></div>
+  <div id="elporvenir" class="imagelink imagetext noshow"><span class="imagetextmain">El Porvenir</span><span class="learnmore">learn more</span></div>
+  <div id="julianpantry" class="imagelink imagetext noshow"><span class="imagetextmain">Julian Pantry</span><span class="learnmore">learn more</span></div>
+  <div id="immigration" class="imagelink imagetext noshow"><span class="imagetextmain">Towards a more just city</span><span class="learnmore">learn more</span></div>
+  <div id="missiongrads" class="imagelink imagetext noshow"><span class="imagetextmain">Mission Graduates</span><span class="learnmore">learn more</span></div>
+  <div id="dummy" class="imagetext">&nbsp;</div>
+
+  <div class="middlecaption"><img src="images/color_band.jpg"/></div>
+  <div class="middleleftcontent">
+     <div class="tinyfont">SUNDAY SERVICES</div>
+     <div class="tinyfont light">10:15 a.m. Choral Eucharist</div>
+     <div class="tinyfont parishofficehours">PARISH OFFICE HOURS</div>
+     <div class="tinyfont light">Monday-Thursday 1 - 4 p.m.</div>
+     <div class="tinyfont donateto">DONATE TO ST. JOHN'S</div>
+     <div class="tinyfont getinvolved">GET INVOLVED</div>
+  </div>
+  <div class="middlerightcontent mediumfont">
+     <div class="stjohnbold">WELCOME TO ST. JOHN'S!</div>
+     <div class="middlerightcontentcaption light">
+St. John's is a place where people's lives are transformed by encountering <br/> the love of God in community. Christian faith isn't an idea; it's an experience. <br/> We invite you to explore that experience with us through worship, fellowship and service.
+     </div>
+  </div>
+</div> <!-- middle -->
+
+<div class="bottom">
+  <div class="bottomleftcontent">
+     <div class="tinyfont rota">ROTA <img src="images/rota_symbol.png"/></div>
+     <div class="tinyfont rota">SERMONS <img src="images/rota_symbol.png"/></div>
+     <div class="tinyfont rota">PARISH NEWSLETTER <img src="images/rota_symbol.png"/></div>
+  </div>
+  <div class="bottomrightcontent">
+     <div class="tinyfont bottomrightcontentcaption1">
+         The Episcopal Church of <br/> St. John the Evangelist
+     </div>
+     <div class="tinyfont light bottomrightcontentcaption2">
+         1661 Fifteenth Street at Julian Avenue <br/>
+         (main entrance on Julian) <br/>
+         San Francisco, CA 94103 <br/>
+         (415) 861-1436
+     </div>
+  </div>
+</div> <!-- bottom -->
+
+</div> <!-- wrapper ->
+</body>
+
+</html>
