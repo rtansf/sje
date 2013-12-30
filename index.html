@@ -34,20 +34,74 @@ $(document).ready(function() {
         location.href = '/sje';
     });
 
+    // ABOUT 
     $('#about').click(function() {
-        $('.stjohnimage').hide();
+        hideHome();
         $('.middlerightcontent').hide();
+        $('.middlerightcontentcaption').hide();
         $('.middlecaption').hide();
-        $('#maincarousel').remove();
+        $('.noncarousel').hide();
+        $('.pagebutton').hide();
 
         $('#stjohn2').show();        
         $('#aboutcarousel').show();        
         $('#aboutcontent').show();        
-        $('.bottomrightcontent').css('left', '-130px');
-        $('.bottomrightcontent').css('top',  '-270px');
+        $('#abouthome').show();
+        $('.bottomrightcontent').css('left', '-290px');
+        $('.bottomrightcontent').css('top',  '-246px');
+    });
+
+    // ABOUT MISSION
+    $('#navaboutmission').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.pagebutton').hide();
+        $('#aboutmissioncarousel').show();        
+        $('#aboutmission1').show();
+        
+        $('.pagebutton').removeClass('buttonon');
+        $('.pagebutton').addClass('buttonoff');
+        $('#aboutmissionbutton1').show();
+        $('#aboutmissionbutton1').addClass('buttonon');
+        $('#aboutmissionbutton2').show();
+        $('#aboutmissionbutton2').addClass('buttonoff');
+    });
+
+    $('.pagebutton').click(function() {
+        if ($(this).hasClass('buttonoff')) {
+            $('.pagebutton').removeClass('buttonon');
+            $('.pagebutton').addClass('buttonoff');
+            $(this).removeClass('buttonoff');
+            $(this).addClass('buttonon');
+        }
+    });
+
+    $('#aboutmissionbutton1').click(function() {
+        if ($(this).hasClass('buttonon')) {
+           $('#aboutmission2').hide();
+           $('#aboutmission1').show();
+        }
+    });
+    $('#aboutmissionbutton2').click(function() {
+        if ($(this).hasClass('buttonon')) {
+           $('#aboutmission1').hide();
+           $('#aboutmission2').show();
+        }
+    });
+
+    $('#navabouthistory').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.pagebutton').hide();
+        $('#abouthistorycarousel').show();        
+        $('#abouthistory').show();
     });
 });
 
+function hideHome() {
+    $('.stjohnimage').hide();
+    $('#maincarousel').remove();
+}
 function onBefore(curr, next, opts) {
 
    // If main carousel is hidden, just return
@@ -113,6 +167,9 @@ function onBefore(curr, next, opts) {
   <div id="aboutcarousel" class="noncarousel noshow">
       <img src="images/about_img_0.jpg"/>
   </div>
+  <div id="aboutmissioncarousel" class="noncarousel noshow">
+      <img src="images/about_img_bkdrop.jpg"/>
+  </div>
 
   <div style="clear:both;"></div>
   <div id="aboutstjohns" class="imagelink imagetext noshow"><span class="imagetextmain">About St. John's</span><span class="learnmore">learn more</span></div>
@@ -133,27 +190,67 @@ function onBefore(curr, next, opts) {
      <div class="tinyfont getinvolved">GET INVOLVED</div>
   </div>
 
+  <!-- HOME -->
   <div class="middlerightcontent mediumfont" id="homecontent">
      <div class="stjohnbold">WELCOME TO ST. JOHN'S!</div>
      <div class="middlerightcontentcaption light">
 St. John's is a place where people's lives are transformed by encountering <br/> the love of God in community. Christian faith isn't an idea; it's an experience. <br/> We invite you to explore that experience with us through worship, fellowship and service.
      </div>
-  </div>
+  </div> <!-- END HOME SECTION -->
 
+  <!-- ABOUT -->
   <div class="middlerightcontent smallfont noshow" id="aboutcontent">
-     <div class="middlerightcontentcaption light">
-Located around the corner from the busy Mission-16th Street-Valencia corridors in San Francisco's north Mission District, St. John's has been described by many as an “oasis” — not only for the tranquility of our garden amidst the surrounding bustling streets, or the warm golden light that fills our soaring nave on a sunny day, but because so many have found St. John's to be a place of loving peace, healing, and renewal in an often all-too-broken world.     
+
+      <!-- ABOUT HOME -->
+     <div class="middlerightcontentcaption light" id="abouthome">
+Located around the corner from the busy Mission-16th Street-Valencia corridors in San Francisco's north Mission District, St. John's has been described by many as an oasis not only for the tranquility of our garden amidst the surrounding bustling streets, or the warm golden light that fills our soaring nave on a sunny day, but because so many have found St. John's to be a place of loving peace, healing, and renewal in an often all-too-broken world.     
      </div>
+
+     <!-- ABOUT MISSION -->
+     <div class="middlerightcontentcaption light noshow middlerightabout" id="aboutmission1">
+<b>Our mission is to live, love, and serve in the hope and joy of the risen Christ.</b>
+<br/>
+<br/>
+<b>Our vision:</b> We seek to be a Christian community in which people of all sexual orientations, gender identities, cultures, and colors are welcomed and their gifts are celebrated.
+<br/>
+<br/>
+<b>Our Core Values: </b>We are a Eucharistic worshipping community in the Anglican tradition. Our celebration of the Holy Eucharist, marked by beautiful music, is the heart of our common life.
+<br/>
+<br/>
+We are a Christ-centered community. For people of all ages, we value faith formation that engages the mind as well as the heart, and provides the foundation for vibrant lay ministry.
+<br/>
+<br/>
+We have a special vocation to respect and advocate for the dignity of gay, lesbian, bisexual, and transgender people. This by no means defines the full extent of our baptismal promise to respect the dignity of every human being, but it is a crucial element of that promise in our ministry context.
+<br/>
+<br/>
+We value diversity and welcome anyone who wishes to explore Christian faith and practice.
+</div>
+
+<div class="middlerightcontentcaption light noshow middlerightabout" id="aboutmission2">
+We value connection, and strive to promote a sense of belonging among the members of the parish that readily includes newcomers. This is often talked about in terms of communication or pastoral care or hospitality, but it is fundamentally about feeling connected to God and to one another.
+<br/>
+<br/>
+We value the North Mission neighborhood. Our location in this particular place spiritually anchors us and gives substance to our mission and ministry. This neighborhood keeps us grounded in reality.     
+</div>
+
      <div class="subsectionnav" id="navabout">
-        <div id="navmission">MISSION</div>
+        <div id="navaboutmission">MISSION</div>
         <div class="verticalsep"></div>
-        <div id="navhistory">HISTORY</div>
+        <div id="navabouthistory">HISTORY</div>
         <div class="verticalsep"></div>
-        <div id="navclergy">CLERGY &amp; STAFF</div>
+        <div id="navaboutclergy">CLERGY &amp; STAFF</div>
         <div class="verticalsep"></div>
-        <div id="navlayleadership">LAY  LEADERSHIP</div>
+        <div id="navaboutlayleadership">LAY  LEADERSHIP</div>
      </div>
-  </div>
+
+     <div id="aboutmissionpagebuttons" class="pagebuttons">
+        <div id="aboutmissionbutton1" class="pagebutton noshow"></div>
+        <div id="aboutmissionbutton2" class="pagebutton noshow"></div>
+        <div id="aboutmissionbutton3" class="pagebutton noshow"></div>
+     </div>
+  </div><!-- END ABOUT SECTION -->
+
+  <div style="clear:both;"></div>
 </div> <!-- middle -->
 
 <div class="bottom">

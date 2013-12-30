@@ -94,7 +94,7 @@ body {
     width: 600px;
     position: relative;
     left: 300px;
-    top: -345px;
+    top: -346px;
     font-family: "futura-pt-n4","futura-pt",sans-serif;
     color: white;
 }
@@ -151,13 +151,13 @@ body {
     font-family: "futura-pt-n4","futura-pt",sans-serif;
 }
 .bottomrightcontentcaption1 {
-    width: 170px;
+    width: 160px;
     font-weight: 500;
     float: left;
 }
 .bottomrightcontentcaption2 {
     letter-spacing: 1px;
-    width: 240px;
+    width: 230px;
     float: left;
 }
 .noshow {
@@ -228,7 +228,9 @@ body {
    top: -1px;
 }
 
-
+.subsectionnav {
+   float: left;
+}
 .subsectionnav div {
    float: left;
 }
@@ -253,4 +255,34 @@ body {
 }
 #navabout div:hover {
    color: $abouthoverpink;
+}
+#aboutmission1, #aboutmission2 {
+   margin-top: -230px;
+}
+.middlerightabout {
+   height: 340px;
+}
+.pagebutton {
+   width: 20px;
+   height: 20px;
+}
+.buttonoff {
+   background-image: url('images/about_page_button_off.png');
+   background-repeat: no-repeat;
+   cursor: pointer;
+}
+.buttonon {
+   background-image: url('images/about_page_button_on.png');
+   background-repeat: no-repeat;
+}
+#aboutmissionpagebuttons {
+   margin-top: 28px;
+   margin-left: 120px;
+}
+.pagebuttons {
+   float:left;
+   width: 40px;
+}
+.pagebutton {
+   float: left;
 }
