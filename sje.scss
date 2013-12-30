@@ -1,5 +1,8 @@
 $crimson : rgb(174,31,37);
+$aboutpink : rgb(218,158,137);
+$abouthoverpink : rgb(174,31,37);
 $leftOffset: 50px;
+
 
 body {
     position: relative;
@@ -165,7 +168,9 @@ body {
     height: 275px;
     margin-top: 16px;
 }
-
+.noncarousel img {
+    padding-top: 12px;
+}
 #aboutstjohns {
    top: -38px;
    left: 650px;
@@ -221,4 +226,31 @@ body {
    margin-left: 40px;
    position: relative;
    top: -1px;
+}
+
+
+.subsectionnav div {
+   float: left;
+}
+.verticalsep {
+   height: 16px;
+   border-left: solid $aboutpink;
+}
+/* ABOUT */
+#aboutcontent {
+   margin-top: -8px;
+   color: #000;
+   font-weight: 600;
+}
+#navabout {
+   margin-top: 25px;
+   color: $aboutpink;
+}
+#navabout div {
+   margin-right: 20px;
+   font-weight: 500;
+   font-size: 13px;
+}
+#navabout div:hover {
+   color: $abouthoverpink;
 }
