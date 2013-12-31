@@ -148,6 +148,18 @@ $(document).ready(function() {
         $('#aboutclergy').show();
         $('.aboutclergytitle').show();
     });
+
+    // ABOUT LAY LEADERSHIP
+    $('#navaboutlayleadership').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.pagebuttons').hide();
+        $('.pagebutton').hide();
+        $('.subsectiontitle').hide();
+        $('#aboutlaycarousel').show();        
+        $('#aboutlay').show();
+        $('.aboutlaytitle').show();
+    });
 });
 
 function hideHome() {
@@ -227,6 +239,9 @@ function onBefore(curr, next, opts) {
   </div>
   <div id="aboutclergycarousel" class="noncarousel noshow">
       <img src="images/about_img_3.jpg"/>
+  </div>
+  <div id="aboutlaycarousel" class="noncarousel noshow">
+      <img src="images/about_img_bkdrop.jpg"/>
   </div>
 
   <div style="clear:both;"></div>
@@ -376,6 +391,71 @@ Keeping the red doors on Julian Street open during the Depression and war years 
                 <div class="membername">The Reverend David Stickley,</div>
                 <div class="membername">Parish Administrator</div>
                 <div class="memberemail">parishadmin@stjohnsf.org</div>
+            </div>
+         </div>
+     </div>
+</div> <!-- END ABOUT CLERGY -->
+
+     <!-- ABOUT LAY LEADERSHIP -->
+<div class="middlerightcontentcaption light noshow middlerightabout" id="aboutlay">
+     <div class="noshow subsectiontitle aboutlaytitle">LAY LEADERSHIP</div>
+     <div class="lay" id="leftlay">
+         <div class="clergytitle">BISHOP'S COMMITTEE</div>
+         <div class="clergymembers">
+            <div class="clergymember">
+                <div class="membername">Timm Dobbins, Senior Warden</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Robert Craig, Junior Warden</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Jay Christian</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Bryce Fisher-Fleig</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Stoner Lichty</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Delores Mays</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Bonita Ann Palmer</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Forrest Sedgwick</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Claudia Viek</div>
+            </div>
+         </div>
+     </div>
+     <div class="lay" id="rightlay">
+         <div class="clergytitle">CLERKS</div>
+         <div class="clergymembers">
+            <div class="clergymember">
+                <div class="membername">Diana McDonnell</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Birgit Eschmann</div>
+            </div>
+         </div>
+         <br/>
+         <br/>
+         <div class="clergytitle">DEANARY DELEGATES</div>
+         <div class="clergymembers">
+            <div class="clergymember">
+                <div class="membername">Michael Clark</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Birgit Eschmann</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Liz Specht (Alternate)</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">Bill Sullivan (Alternate)</div>
             </div>
          </div>
      </div>

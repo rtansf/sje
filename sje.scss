@@ -316,10 +316,17 @@ body {
    position: relative;
    top: -46px;
 }
+.aboutlaytitle {
+   position: relative;
+   top: -46px;
+}
 .clergy {
    float: left;
    position: relative;
    top: 146px;
+}
+.lay {
+   float: left;
 }
 .clergytitle {
    font-weight: 500;
@@ -341,5 +348,11 @@ body {
 .memberemail {
    font-style: italic;
    opacity: 0.5;
+}
+#leftlay {
+   width: 300px;
+}
+#rightlay {
+   width: 300px;
 }
 
