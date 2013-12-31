@@ -238,6 +238,7 @@ body {
    height: 16px;
    border-left: solid $aboutpink;
 }
+
 /* ABOUT */
 #aboutcontent {
    margin-top: -8px;
@@ -256,10 +257,8 @@ body {
 #navabout div:hover {
    color: $abouthoverpink;
 }
-#aboutmission1, #aboutmission2 {
-   margin-top: -230px;
-}
 .middlerightabout {
+   margin-top: -230px;
    height: 340px;
 }
 .pagebutton {
@@ -276,13 +275,26 @@ body {
    background-repeat: no-repeat;
 }
 #aboutmissionpagebuttons {
-   margin-top: 28px;
-   margin-left: 120px;
+   margin-top: -14px;
+   margin-left: 500px;
+}
+#abouthistorypagebuttons {
+   margin-top: -14px;
+   margin-left: 500px;
 }
 .pagebuttons {
    float:left;
-   width: 40px;
+   width: 64px;
 }
 .pagebutton {
+   float: left;
+}
+#historyimages {
+   position: relative;
+   top: -26px;
+   left: -40px;
+   width: 700px;
+}
+.historyimage {
    float: left;
 }
