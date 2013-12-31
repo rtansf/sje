@@ -238,18 +238,36 @@ body {
    height: 16px;
    border-left: solid $aboutpink;
 }
+.subsectiontitle {
+   color: #fff;
+   letter-spacing: 1px;
+   font-weight: 300;
+}
 
 /* ABOUT */
+#abouthome {
+   position: relative;
+   top: 188px;
+}
+.abouttitle {
+   margin-bottom: 36px;
+}
+.aboutmissiontitle {
+   position: relative;
+   top: -46px;
+}
 #aboutcontent {
    margin-top: -8px;
    color: #000;
    font-weight: 600;
 }
 #navabout {
-   margin-top: 25px;
+   /* margin-top: 25px; */
+   position: relative;
+   top: 40px;
    color: $aboutpink;
 }
-#navabout div {
+#navabout>div {
    margin-right: 20px;
    font-weight: 500;
    font-size: 13px;
@@ -258,8 +276,12 @@ body {
    color: $abouthoverpink;
 }
 .middlerightabout {
-   margin-top: -230px;
+   margin-top: -240px;
    height: 340px;
+}
+.pagebuttons {
+   padding-top: 3px;
+   margin-left: 30px;
 }
 .pagebutton {
    width: 20px;
@@ -274,18 +296,6 @@ body {
    background-image: url('images/about_page_button_on.png');
    background-repeat: no-repeat;
 }
-#aboutmissionpagebuttons {
-   margin-top: -14px;
-   margin-left: 500px;
-}
-#abouthistorypagebuttons {
-   margin-top: -14px;
-   margin-left: 500px;
-}
-.pagebuttons {
-   float:left;
-   width: 64px;
-}
 .pagebutton {
    float: left;
 }
@@ -298,3 +308,38 @@ body {
 .historyimage {
    float: left;
 }
+.abouthistorytitle {
+   position: relative;
+   top: -46px;
+}
+.aboutclergytitle {
+   position: relative;
+   top: -46px;
+}
+.clergy {
+   float: left;
+   position: relative;
+   top: 146px;
+}
+.clergytitle {
+   font-weight: 500;
+}
+#leftclergy {
+   width: 350px;
+}
+#rightclergy {
+   width: 240px;
+}
+.clergymembers {
+   margin-top: 8px;
+   font-size: 14px;
+}
+.clergymember {
+   font-weight: 500;
+   margin-bottom: 9px; 
+}
+.memberemail {
+   font-style: italic;
+   opacity: 0.5;
+}
+
