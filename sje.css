@@ -50,7 +50,8 @@ body {
 
 .middle {
   width: 100%;
-  height: 525px; }
+  height: 492px;
+  overflow: hidden; }
 
 .light {
   font-weight: 400; }
@@ -227,17 +228,35 @@ body {
   height: 16px;
   border-left: solid #da9e89; }
 
+.subsectiontitle {
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 300; }
+
 /* ABOUT */
+#abouthome {
+  position: relative;
+  top: 188px; }
+
+.abouttitle {
+  margin-bottom: 36px; }
+
+.aboutmissiontitle {
+  position: relative;
+  top: -46px; }
+
 #aboutcontent {
   margin-top: -8px;
   color: #000;
   font-weight: 600; }
 
 #navabout {
-  margin-top: 25px;
+  /* margin-top: 25px; */
+  position: relative;
+  top: 40px;
   color: #da9e89; }
 
-#navabout div {
+#navabout > div {
   margin-right: 20px;
   font-weight: 500;
   font-size: 13px; }
@@ -246,8 +265,12 @@ body {
   color: #ae1f25; }
 
 .middlerightabout {
-  margin-top: -230px;
+  margin-top: -240px;
   height: 340px; }
+
+.pagebuttons {
+  padding-top: 3px;
+  margin-left: 30px; }
 
 .pagebutton {
   width: 20px;
@@ -262,18 +285,6 @@ body {
   background-image: url("images/about_page_button_on.png");
   background-repeat: no-repeat; }
 
-#aboutmissionpagebuttons {
-  margin-top: -14px;
-  margin-left: 500px; }
-
-#abouthistorypagebuttons {
-  margin-top: -14px;
-  margin-left: 500px; }
-
-.pagebuttons {
-  float: left;
-  width: 64px; }
-
 .pagebutton {
   float: left; }
 
@@ -285,3 +296,99 @@ body {
 
 .historyimage {
   float: left; }
+
+.abouthistorytitle {
+  position: relative;
+  top: -46px; }
+
+.aboutclergytitle {
+  position: relative;
+  top: -46px; }
+
+.aboutlaytitle {
+  position: relative;
+  top: -46px; }
+
+.clergy {
+  float: left;
+  position: relative;
+  top: 146px; }
+
+#clergylink {
+  margin-top: 20px;
+  color: #ae1f25; }
+
+.lay {
+  float: left; }
+
+.clergytitle {
+  font-weight: 500; }
+
+#leftclergy {
+  width: 350px; }
+
+#rightclergy {
+  width: 240px; }
+
+.clergymembers {
+  margin-top: 8px;
+  font-size: 14px; }
+
+.clergymember {
+  font-weight: 500;
+  margin-bottom: 9px; }
+
+.memberemail {
+  font-style: italic;
+  opacity: 0.5; }
+
+#leftlay {
+  width: 300px; }
+
+#rightlay {
+  width: 300px; }
+
+/* VISIT */
+#visitcontent {
+  margin-top: -260px;
+  color: #000;
+  font-weight: 600; }
+
+#visithome {
+  position: relative;
+  top: 198px; }
+
+.visittitle {
+  margin-bottom: 36px; }
+
+#visitdirections {
+  position: relative;
+  top: -36px; }
+
+.visitdirectionstitle {
+  margin-bottom: 30px; }
+
+#visitrentals {
+  position: relative;
+  top: -36px; }
+
+.visitrentalstitle {
+  margin-bottom: 196px; }
+
+.middlerightvisit {
+  height: 440px;
+  overflow: hidden; }
+
+#navvisit {
+  position: relative;
+  top: -50px;
+  color: #da9e89; }
+
+#navvisit > div {
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 13px; }
+
+.mapimage {
+  float: left;
+  margin-right: 25px; }

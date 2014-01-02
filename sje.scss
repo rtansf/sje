@@ -3,7 +3,6 @@ $aboutpink : rgb(218,158,137);
 $abouthoverpink : rgb(174,31,37);
 $leftOffset: 50px;
 
-
 body {
     position: relative;
 }
@@ -57,7 +56,8 @@ body {
 
 .middle {
     width: 100%;
-    height: 525px;
+    height: 492px;
+    overflow: hidden;
 }
 .light {
    font-weight: 400;
@@ -325,6 +325,10 @@ body {
    position: relative;
    top: 146px;
 }
+#clergylink {
+   margin-top: 20px;
+   color: $crimson;
+}
 .lay {
    float: left;
 }
@@ -356,3 +360,48 @@ body {
    width: 300px;
 }
 
+/* VISIT */
+#visitcontent {
+   margin-top: -260px;
+   color: #000;
+   font-weight: 600;
+}
+#visithome {
+   position: relative;
+   top: 198px;
+}
+.visittitle {
+   margin-bottom: 36px;
+}
+#visitdirections {
+   position: relative;
+   top: -36px;
+}
+.visitdirectionstitle {
+   margin-bottom: 30px;
+}
+#visitrentals {
+   position: relative;
+   top: -36px;
+}
+.visitrentalstitle {
+   margin-bottom: 196px;
+}
+.middlerightvisit {
+    height: 440px;
+    overflow: hidden;
+}
+#navvisit {
+   position: relative;
+   top: -50px;
+   color: $aboutpink;
+}
+#navvisit>div {
+   margin-right: 20px;
+   font-weight: 500;
+   font-size: 13px;
+}
+.mapimage {
+   float: left;
+   margin-right: 25px;
+}

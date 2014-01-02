@@ -34,6 +34,11 @@ $(document).ready(function() {
         location.href = '/sje';
     });
 
+    // HOME 
+    $('#home').click(function() {
+        location.href = '/sje';
+    });
+
     // ABOUT 
     $('#about').click(function() {
         hideHome();
@@ -50,8 +55,6 @@ $(document).ready(function() {
         $('#aboutcontent').show();        
         $('#abouthome').show();
         $('.abouttitle').show();
-        $('.bottomrightcontent').css('left', '-290px');
-        $('.bottomrightcontent').css('top',  '-246px');
     });
 
     $('.pagebutton').click(function() {
@@ -160,6 +163,48 @@ $(document).ready(function() {
         $('#aboutlay').show();
         $('.aboutlaytitle').show();
     });
+
+    // VISIT 
+    $('#visitus').click(function() {
+        hideHome();
+        $('.middlerightcontent').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.middlecaption').hide();
+        $('.noncarousel').hide();
+        $('.pagebuttons').hide();
+        $('.pagebutton').hide();
+        $('.subsectiontitle').hide();
+
+        $('#stjohn1').show();        
+        $('#visitcarousel').show();        
+        $('#visitcontent').show();        
+        $('#visithome').show();
+        $('.visittitle').show();
+    });
+
+    // VISIT DIRECTIONS
+    $('#navvisitdirections').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.pagebuttons').hide();
+        $('.pagebutton').hide();
+        $('.subsectiontitle').hide();
+        $('#visitdirectionscarousel').show();        
+        $('#visitdirections').show();
+        $('.visitdirectionstitle').show();
+    });
+    // VISIT RENTALS
+    $('#navvisitrentals').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.pagebuttons').hide();
+        $('.pagebutton').hide();
+        $('.subsectiontitle').hide();
+        $('#visitrentalscarousel').show();        
+        $('#visitrentals').show();
+        $('.visitrentalstitle').show();
+    });
+
 });
 
 function hideHome() {
@@ -202,6 +247,7 @@ function onBefore(curr, next, opts) {
   <div class="logo"><img src="images/stjohn_logo.png"/></div>
   <div class="navcontainer">
      <ul id="navlist">
+        <li id="home"><span class="bigcap">H</span>OME</li>
         <li id="about"><span class="bigcap">A</span>BOUT</li>
         <li id="worship"><span class="bigcap">W</span>ORSHIP</li>
         <li id="ministries"><span class="bigcap">M</span>INISTRIES</li>
@@ -242,6 +288,16 @@ function onBefore(curr, next, opts) {
   </div>
   <div id="aboutlaycarousel" class="noncarousel noshow">
       <img src="images/about_img_bkdrop.jpg"/>
+  </div>
+
+  <div id="visitcarousel" class="noncarousel noshow">
+      <img src="images/visit_img_0.jpg"/>
+  </div>
+  <div id="visitdirectionscarousel" class="noncarousel noshow">
+      <img src="images/about_img_bkdrop.jpg"/>
+  </div>
+  <div id="visitrentalscarousel" class="noncarousel noshow">
+      <img src="images/visit_img_2.jpg"/>
   </div>
 
   <div style="clear:both;"></div>
@@ -393,6 +449,7 @@ Keeping the red doors on Julian Street open during the Depression and war years 
                 <div class="memberemail">parishadmin@stjohnsf.org</div>
             </div>
          </div>
+         <div class="clickable tinyfont" id="clergylink">CLERGY BIOGRAPHIES <img src="images/rota_symbol.png"/></div>
      </div>
 </div> <!-- END ABOUT CLERGY -->
 
@@ -485,7 +542,43 @@ Keeping the red doors on Julian Street open during the Depression and war years 
 
   </div><!-- END ABOUT SECTION -->
 
-  <div style="clear:both;"></div>
+  <!-- VISIT -->
+  <div class="middlerightcontent smallfont noshow" id="visitcontent">
+
+      <!-- VISIT HOME -->
+<div class="middlerightcontentcaption light middlerightvisit" id="visithome">
+<div class="subsectiontitle visittitle">VISIT US</div>     
+   St. John's is located at the corner of 15th Street and Julian Avenue in San Francisco's north Mission District. Our main entrance is on Julian. Wheelchair access is available on Caledonia Street. Please call the parish ahead of time if you need wheelchair access so that we can ensure that the pedestrian gate is open when you arrive.
+</div> <!-- END VISIT HOME -->
+
+       <!-- VISIT DIRECTIONS -->
+<div class="middlerightcontentcaption light noshow middlerightvisit" id="visitdirections">
+   <div class="noshow subsectiontitle visitdirectionstitle">DIRECTIONS</div>
+   <div class="mapimage"><img src="images/visit_img_1_map.jpg"/></div>
+The church is located one short block west and one block north of the 16th Street/Mission BART station. Several Muni bus lines pass nearby: 14-Mission, 22-Fillmore, 26-Valencia, 33-Stanyan, and 49-Van Ness/Mission.
+<br/>
+<br/>
+Parking may be found for free on Julian, there is metered parking on other surrounding streets, and public garage on Hoff Street, one block south (parallel and between Valencia and Mission, and 16th and 17th). In addition, there is evening and weekend paid parking in the lots of the bank on the corner of Julian and 16th and on 14th Street between Valencia and Mission. The white zone on 15th Street may be used for brief periods for passenger unloading. 
+</div> <!-- END VISIT DIRECTIONS -->
+
+       <!-- VISIT RENTALS -->
+<div class="middlerightcontentcaption light noshow middlerightvisit" id="visitrentals">
+   <div class="noshow subsectiontitle visitrentalstitle">RENTALS</div>
+St. John's beautiful building and grounds are available for rent! Our reasonable rates make St. John's the perfect location for your next concert, performance, private party, or other event!
+St. John's historic nave affords a capacity of 300, has excellent acoustics, and is drenched with natural light. Our chairs can be arranged in any configuration, and the raised alter area serves as an excellent stage. Our library is available for meetings and small gatherings, the garden affords peace and quite perfect for appreciating the Mission weather, and our full kitchen supports your provision of hot foods.
+<br/>
+<br/>
+Please contact the parish office for rates, schedule, and details.
+</div> <!-- END VISIT RENTALS -->
+
+     <div class="subsectionnav" id="navvisit">
+        <div id="navvisitdirections">DIRECTIONS</div>
+        <div class="verticalsep"></div>
+        <div id="navvisitrentals">RENTALS</div>
+     </div>
+
+   </div> <!-- END VISIT -->
+
 </div> <!-- middle -->
 
 <div class="bottom">
