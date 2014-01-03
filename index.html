@@ -34,6 +34,15 @@ $(document).ready(function() {
         location.href = '/sje';
     });
 
+    $('.pagebutton').click(function() {
+        if ($(this).hasClass('buttonoff')) {
+            $('.pagebutton').removeClass('buttonon');
+            $('.pagebutton').addClass('buttonoff');
+            $(this).removeClass('buttonoff');
+            $(this).addClass('buttonon');
+        }
+    });
+
     // HOME 
     $('#home').click(function() {
         location.href = '/sje';
@@ -55,15 +64,6 @@ $(document).ready(function() {
         $('#aboutcontent').show();        
         $('#abouthome').show();
         $('.abouttitle').show();
-    });
-
-    $('.pagebutton').click(function() {
-        if ($(this).hasClass('buttonoff')) {
-            $('.pagebutton').removeClass('buttonon');
-            $('.pagebutton').addClass('buttonoff');
-            $(this).removeClass('buttonoff');
-            $(this).addClass('buttonon');
-        }
     });
 
     // ABOUT MISSION
@@ -164,6 +164,127 @@ $(document).ready(function() {
         $('.aboutlaytitle').show();
     });
 
+    // WORSHIP 
+    $('#worship').click(function() {
+        hideHome();
+        $('.middlerightcontent').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.middlecaption').hide();
+        $('.noncarousel').hide();
+        $('.pagebuttons').hide();
+        $('.pagebutton').hide();
+        $('.subsectiontitle').hide();
+
+        $('#stjohn3').show();        
+        $('#worshipcarousel').show();        
+        $('#worshipcontent').show();        
+        $('#worshiphome').show();
+        $('.worshiptitle').show();
+    });
+    // WORSHIP WORSHIP
+    $('#navworshipworship').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.pagebuttons').hide();
+        $('.pagebutton').hide();
+        $('.subsectiontitle').hide();
+        $('#worshipworshipcarousel').show();        
+        $('#worshipworship1').show();
+        $('.worshipworshiptitle').show();
+        $('#worshipworshippagebuttons').show();
+        
+        $('.pagebutton').removeClass('buttonon');
+        $('.pagebutton').addClass('buttonoff');
+        $('#worshipworshipbutton1').show();
+        $('#worshipworshipbutton1').addClass('buttonon');
+        $('#worshipworshipbutton2').show();
+        $('#worshipworshipbutton2').addClass('buttonoff');
+        $('#worshipworshipbutton3').show();
+        $('#worshipworshipbutton3').addClass('buttonoff');
+    });
+    $('#worshipworshipbutton1').click(function() {
+        if ($(this).hasClass('buttonon')) {
+           $('#worshipworship2').hide();
+           $('#worshipworship3').hide();
+           $('#worshipworship1').show();
+        }
+    });
+    $('#worshipworshipbutton2').click(function() {
+        if ($(this).hasClass('buttonon')) {
+           $('#worshipworship1').hide();
+           $('#worshipworship3').hide();
+           $('#worshipworship2').show();
+        }
+    });
+    $('#worshipworshipbutton3').click(function() {
+        if ($(this).hasClass('buttonon')) {
+           $('#worshipworship1').hide();
+           $('#worshipworship2').hide();
+           $('#worshipworship3').show();
+        }
+    });
+
+    // WORSHIP MUSIC
+    $('#navworshipmusic').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.pagebuttons').hide();
+        $('.pagebutton').hide();
+        $('.subsectiontitle').hide();
+        $('#worshipmusiccarousel').show();        
+        $('#worshipmusic1').show();
+        $('.worshipmusictitle').show();
+        $('#worshipmusicpagebuttons').show();
+        
+        $('.pagebutton').removeClass('buttonon');
+        $('.pagebutton').addClass('buttonoff');
+        $('#worshipmusicbutton1').show();
+        $('#worshipmusicbutton1').addClass('buttonon');
+        $('#worshipmusicbutton2').show();
+        $('#worshipmusicbutton2').addClass('buttonoff');
+        $('#worshipmusicbutton3').show();
+        $('#worshipmusicbutton3').addClass('buttonoff');
+    });
+    $('#worshipmusicbutton1').click(function() {
+        if ($(this).hasClass('buttonon')) {
+           $('#worshipmusic2').hide();
+           $('#worshipmusic3').hide();
+           $('#worshipmusic1').show();
+        }
+    });
+    $('#worshipmusicbutton2').click(function() {
+        if ($(this).hasClass('buttonon')) {
+           $('#worshipmusic1').hide();
+           $('#worshipmusic3').hide();
+           $('#worshipmusic2').show();
+        }
+    });
+    $('#worshipmusicbutton3').click(function() {
+        if ($(this).hasClass('buttonon')) {
+           $('#worshipmusic1').hide();
+           $('#worshipmusic2').hide();
+           $('#worshipmusic3').show();
+        }
+    });
+
+    // MINISTRIES
+    $('#ministries').click(function() {
+        hideHome();
+        $('.middlerightcontent').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.middlecaption').hide();
+        $('.noncarousel').hide();
+        $('.pagebuttons').hide();
+        $('.pagebutton').hide();
+        $('.subsectiontitle').hide();
+
+        $('#stjohn3').show();        
+        $('#ministriescarousel').show();        
+        $('#ministriescontent').show();        
+        $('#ministrieshome').show();
+        $('.ministriestitle').show();
+    });
+
     // VISIT 
     $('#visitus').click(function() {
         hideHome();
@@ -260,6 +381,7 @@ function onBefore(curr, next, opts) {
   <div class="icon">
       <img class="stjohnimage" id="stjohn1" src="images/left_stjohn.jpg"/>
       <img class="stjohnimage noshow" id="stjohn2" src="images/stjohn_2.jpg"/>
+      <img class="stjohnimage noshow" id="stjohn3" src="images/stjohn_3.jpg"/>
   </div>
 
   <div id="maincarousel" class="carousel">
@@ -289,6 +411,21 @@ function onBefore(curr, next, opts) {
   <div id="aboutlaycarousel" class="noncarousel noshow">
       <img src="images/about_img_bkdrop.jpg"/>
   </div>
+
+  <div id="worshipcarousel" class="noncarousel noshow">
+      <img src="images/worship_img_0.jpg"/>
+  </div>
+  <div id="worshipworshipcarousel" class="noncarousel noshow">
+      <img src="images/worship_img_1.jpg"/>
+  </div>
+  <div id="worshipmusiccarousel" class="noncarousel noshow">
+      <img src="images/worship_img_2.jpg"/>
+  </div>
+
+  <div id="ministriescarousel" class="noncarousel noshow">
+      <img src="images/ministries_0.jpg"/>
+  </div>
+
 
   <div id="visitcarousel" class="noncarousel noshow">
       <img src="images/visit_img_0.jpg"/>
@@ -548,7 +685,10 @@ Keeping the red doors on Julian Street open during the Depression and war years 
       <!-- VISIT HOME -->
 <div class="middlerightcontentcaption light middlerightvisit" id="visithome">
 <div class="subsectiontitle visittitle">VISIT US</div>     
-   St. John's is located at the corner of 15th Street and Julian Avenue in San Francisco's north Mission District. Our main entrance is on Julian. Wheelchair access is available on Caledonia Street. Please call the parish ahead of time if you need wheelchair access so that we can ensure that the pedestrian gate is open when you arrive.
+   St. John's is located at the corner of 15th Street and Julian Avenue in San Francisco's north Mission District. Our main entrance is on Julian. 
+<br/>
+<br/>
+St. John's beautiful building and grounds are ideal for hosting your next event. We are located in the Valencia corridor and are just 1-1/2 blocks from the 16th and Mission transit hub. 
 </div> <!-- END VISIT HOME -->
 
        <!-- VISIT DIRECTIONS -->
@@ -559,16 +699,17 @@ The church is located one short block west and one block north of the 16th Stree
 <br/>
 <br/>
 Parking may be found for free on Julian, there is metered parking on other surrounding streets, and public garage on Hoff Street, one block south (parallel and between Valencia and Mission, and 16th and 17th). In addition, there is evening and weekend paid parking in the lots of the bank on the corner of Julian and 16th and on 14th Street between Valencia and Mission. The white zone on 15th Street may be used for brief periods for passenger unloading. 
-</div> <!-- END VISIT DIRECTIONS -->
+<br/>
+<br/>
+Wheelchair access is available on Caledonia Street. Please call the parish ahead of time if you need wheelchair access so that we can ensure that the pedestrian gate is open when you arrive.</div> <!-- END VISIT DIRECTIONS -->
 
        <!-- VISIT RENTALS -->
 <div class="middlerightcontentcaption light noshow middlerightvisit" id="visitrentals">
    <div class="noshow subsectiontitle visitrentalstitle">RENTALS</div>
-St. John's beautiful building and grounds are available for rent! Our reasonable rates make St. John's the perfect location for your next concert, performance, private party, or other event!
-St. John's historic nave affords a capacity of 300, has excellent acoustics, and is drenched with natural light. Our chairs can be arranged in any configuration, and the raised alter area serves as an excellent stage. Our library is available for meetings and small gatherings, the garden affords peace and quite perfect for appreciating the Mission weather, and our full kitchen supports your provision of hot foods.
+Host your next performance or celebration at St. John's and become a part of the community that appreciates and cares for this Mission oasis. Our reasonable rates make St. John's the perfect location for your next concert, performance, private party, or other event!
 <br/>
 <br/>
-Please contact the parish office for rates, schedule, and details.
+St. John's historic nave affords a capacity of 300, has excellent acoustics, and is drenched with natural light. Our chairs can be arranged in any configuration, and the raised alter area serves as an excellent stage. Our library is available for meetings and small gatherings, the garden affords peace and quite perfect for appreciating the Mission weather, and our full kitchen supports your provision of hot foods. Please contact the parish office for rates, schedule, and details.
 </div> <!-- END VISIT RENTALS -->
 
      <div class="subsectionnav" id="navvisit">
@@ -578,6 +719,79 @@ Please contact the parish office for rates, schedule, and details.
      </div>
 
    </div> <!-- END VISIT -->
+
+  <!-- WORSHIP -->
+  <div class="middlerightcontent smallfont noshow" id="worshipcontent">
+
+     <!-- WORSHIP HOME -->
+<div class="middlerightcontentcaption light middlerightworship" id="worshiphome">
+<div class="subsectiontitle worshiptitle">WORSHIP & MUSIC</div>     
+If you ask people what keeps them coming to St. John's, nine times out of ten the response is: "The worship, the music, the sincerity of the worship". "It's real. It's authentic. The people really pray and sing together!".
+<br/>
+When we gather here to worship God, people really show up, bringing their entire selves, souls and bodies, to be enveloped by God’s presence. We invite you to join us in receiving the love that God is sharing with us and through us.
+</div> <!-- END WORSHIP HOME -->
+
+     <!-- WORSHIP WORSHIP 1 -->
+<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipworship1">
+<div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
+    PAGE 1
+</div> <!-- END WORSHIP WORSHIP 1 -->
+     <!-- WORSHIP WORSHIP 2 -->
+<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipworship2">
+<div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
+    PAGE 2
+</div> <!-- END WORSHIP WORSHIP 2 -->
+     <!-- WORSHIP WORSHIP 3 -->
+<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipworship3">
+<div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
+    PAGE 3
+</div> <!-- END WORSHIP WORSHIP 3 -->
+
+     <!-- WORSHIP MUSIC 1 -->
+<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipmusic1">
+<div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>
+    PAGE 1
+</div> <!-- END WORSHIP MUSIC 1 -->
+     <!-- WORSHIP MUSIC 2 -->
+<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipmusic2">
+<div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>     
+    PAGE 2
+</div> <!-- END WORSHIP MUSIC 2 -->
+     <!-- WORSHIP MUSIC 3 -->
+<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipmusic3">
+<div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>     
+    PAGE 3
+</div> <!-- END WORSHIP MUSIC 3 -->
+
+     <div class="subsectionnav" id="navworship">
+        <div id="navworshipworship">WORSHIP</div>
+        <div class="verticalsep"></div>
+        <div id="navworshipmusic">MUSIC</div>
+
+        <div id="worshipworshippagebuttons" class="noshow pagebuttons">
+           <div id="worshipworshipbutton1" class="noshow pagebutton"></div>
+           <div id="worshipworshipbutton2" class="noshow pagebutton"></div>
+           <div id="worshipworshipbutton3" class="noshow pagebutton"></div>
+        </div>
+
+        <div id="worshipmusicpagebuttons" class="noshow pagebuttons">
+           <div id="worshipmusicbutton1" class="noshow pagebutton"></div>
+           <div id="worshipmusicbutton2" class="noshow pagebutton"></div>
+           <div id="worshipmusicbutton3" class="noshow pagebutton"></div>
+        </div>
+     </div>
+
+  </div> <!-- END WORSHIP -->
+
+  <!-- MINISTRIES -->
+  <div class="middlerightcontent smallfont noshow" id="ministriescontent">
+
+     <!-- MINISTRIES HOME -->
+<div class="middlerightcontentcaption light middlerightministries" id="ministrieshome">
+<div class="subsectiontitle ministriestitle">MINISTRIES</div>     
+</div> <!-- END MINISTRIES HOME -->
+
+  </div> <!-- END MINISTRIES -->
 
 </div> <!-- middle -->
 

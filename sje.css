@@ -348,6 +348,64 @@ body {
 #rightlay {
   width: 300px; }
 
+/* WORSHIP */
+#worshipcontent {
+  margin-top: -260px;
+  color: #000;
+  font-weight: 600; }
+
+#worshiphome {
+  position: relative;
+  top: 198px; }
+
+.worshiptitle {
+  margin-bottom: 36px; }
+
+#worshipworship1, #worshipworship2, #worshipworship3 {
+  position: relative;
+  top: -80px; }
+
+.worshipworshiptitle {
+  position: relative;
+  top: 46px;
+  margin-bottom: 232px; }
+
+#worshipmusic1, #worshipmusic2, #worshipmusic3 {
+  position: relative;
+  top: -80px; }
+
+.worshipmusictitle {
+  position: relative;
+  top: 46px;
+  margin-bottom: 232px; }
+
+.middlerightworship {
+  height: 440px;
+  overflow: hidden; }
+
+#navworship {
+  position: relative;
+  top: -50px;
+  color: #da9e89; }
+
+#navworship > div {
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 13px; }
+
+/* MINISTRIES */
+#ministriescontent {
+  margin-top: -260px;
+  color: #000;
+  font-weight: 600; }
+
+#ministrieshome {
+  position: relative;
+  top: 198px; }
+
+.ministriestitle {
+  margin-bottom: 36px; }
+
 /* VISIT */
 #visitcontent {
   margin-top: -260px;
