@@ -17,8 +17,9 @@ $(document).ready(function() {
     }
 
     $('.clickable').click(function() {
-        //alert ($(this).attr('id'));
-        alert ('To be implemented');
+       var $parent = $(this).parent();
+       $parent.find('.clickable').removeClass('selected');
+       $(this).addClass('selected');
     });
 
     $('#maincarousel').cycle({      
@@ -42,8 +43,12 @@ $(document).ready(function() {
         var bnum = $(this).attr('bnum');
         var section = $(this).parent().attr('section');
         var num = bnum - 1;
+        var sectionClassName = '.' + section + 'section'
+        $(sectionClassName).hide();
+
+        $('.noncarousel').hide();
+        $('#' + section + 'carousel' + bnum).show();         
         var sel = '.' + section + 'section:eq(' + num + ')';
-        $('.' + section + 'section').hide();
         $(sel).show();
     });
 
@@ -74,7 +79,7 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
-        $('#aboutmissioncarousel').show();        
+        $('#aboutmissioncarousel1').show();        
         $('.aboutmissionsection:eq(0)').show();
         $('.aboutmissiontitle').show();
 
@@ -88,7 +93,7 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
-        $('#abouthistorycarousel').show();        
+        $('#abouthistorycarousel1').show();        
         $('.abouthistorysection:eq(0)').show();
         $('.abouthistorytitle').show();        
 
@@ -140,7 +145,7 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
-        $('#worshipworshipcarousel').show();        
+        $('#worshipworshipcarousel1').show();        
         $('.worshipworshipsection:eq(0)').show();
         $('.worshipworshiptitle').show();
 
@@ -154,7 +159,7 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
-        $('#worshipmusiccarousel').show();        
+        $('#worshipmusiccarousel1').show();        
         $('.worshipmusicsection:eq(0)').show();
         $('.worshipmusictitle').show();
 
@@ -178,6 +183,56 @@ $(document).ready(function() {
         $('#ministriescontent').show();        
         $('#ministrieshome').show();
         $('.ministriestitle').show();
+    });
+    // MINISTRIES JULIAN PANTY
+    $('#navministriesjulianpantry').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.subsectiontitle').hide();
+        $('#ministriesjulianpantrycarousel').show();        
+        $('.ministriesjulianpantrysection:eq(0)').show();
+        $('.ministriesjulianpantrytitle').show();
+        $('.pagebuttons').hide();
+    });
+    // MINISTRIES PEACE
+    $('#navministriespeace').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.subsectiontitle').hide();
+        $('#ministriespeacecarousel').show();        
+        $('.ministriespeacesection:eq(0)').show();
+        $('.ministriespeacetitle').show();
+        $('.pagebuttons').hide();
+    });
+    // MINISTRIES SOCIAL JUSTICE
+    $('#navministriesjustice').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.subsectiontitle').hide();
+        $('#ministriesjusticecarousel').show();        
+        $('.ministriesjusticesection:eq(0)').show();
+        $('.ministriesjusticetitle').show();
+        $('.pagebuttons').hide();
+    });
+    // MINISTRIES EL PORVENIR
+    $('#navministrieselporvenir').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.subsectiontitle').hide();
+        $('#ministrieselporvenircarousel').show();        
+        $('.ministrieselporvenirsection:eq(0)').show();
+        $('.ministrieselporvenirtitle').show();
+        $('.pagebuttons').hide();
+    });
+    // MINISTRIES MISSION GRADS
+    $('#navministriesmissiongrads').click(function() {
+        $('.noncarousel').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.subsectiontitle').hide();
+        $('#ministriesmissiongradscarousel').show();        
+        $('.ministriesmissiongradssection:eq(0)').show();
+        $('.ministriesmissiongradstitle').show();
+        $('.pagebuttons').hide();
     });
 
     // VISIT 
@@ -268,11 +323,11 @@ function onBefore(curr, next, opts) {
   <div class="logo"><img src="images/stjohn_logo.png"/></div>
   <div class="navcontainer">
      <ul id="navlist">
-        <li id="home"><span class="bigcap">H</span>OME</li>
-        <li id="about"><span class="bigcap">A</span>BOUT</li>
-        <li id="worship"><span class="bigcap">W</span>ORSHIP</li>
-        <li id="ministries"><span class="bigcap">M</span>INISTRIES</li>
-        <li id="visitus"><span class="bigcap">V</span>ISIT <span class="bigcap">U</span>S</li>
+        <li id="home" class="clickable selected"><span class="bigcap">H</span>OME</li>
+        <li id="about" class="clickable"><span class="bigcap">A</span>BOUT</li>
+        <li id="worship" class="clickable"><span class="bigcap">W</span>ORSHIP</li>
+        <li id="ministries" class="clickable"><span class="bigcap">M</span>INISTRIES</li>
+        <li id="visitus" class="clickable"><span class="bigcap">V</span>ISIT <span class="bigcap">U</span>S</li>
      </ul>
   </div>
 </div> <!-- top -->
@@ -299,10 +354,19 @@ function onBefore(curr, next, opts) {
   <div id="aboutcarousel" class="noncarousel noshow">
       <img src="images/about_img_0.jpg"/>
   </div>
-  <div id="aboutmissioncarousel" class="noncarousel noshow">
+  <div id="aboutmissioncarousel1" class="noncarousel noshow">
       <img src="images/about_img_bkdrop.jpg"/>
   </div>
-  <div id="abouthistorycarousel" class="noncarousel noshow">
+  <div id="aboutmissioncarousel2" class="noncarousel noshow">
+      <img src="images/about_img_bkdrop.jpg"/>
+  </div>
+  <div id="abouthistorycarousel1" class="noncarousel noshow">
+      <img src="images/about_img_bkdrop.jpg"/>
+  </div>
+  <div id="abouthistorycarousel2" class="noncarousel noshow">
+      <img src="images/about_img_bkdrop.jpg"/>
+  </div>
+  <div id="abouthistorycarousel3" class="noncarousel noshow">
       <img src="images/about_img_bkdrop.jpg"/>
   </div>
   <div id="aboutclergycarousel" class="noncarousel noshow">
@@ -315,17 +379,48 @@ function onBefore(curr, next, opts) {
   <div id="worshipcarousel" class="noncarousel noshow">
       <img src="images/worship_img_0.jpg"/>
   </div>
-  <div id="worshipworshipcarousel" class="noncarousel noshow">
+  <div id="worshipworshipcarousel1" class="noncarousel noshow">
       <img src="images/worship_img_1.jpg"/>
   </div>
-  <div id="worshipmusiccarousel" class="noncarousel noshow">
+  <div id="worshipworshipcarousel2" class="noncarousel noshow">
+      <img src="images/worship_img_bkdrop.jpg"/>
+  </div>
+  <div id="worshipworshipcarousel3" class="noncarousel noshow">
+      <img src="images/worship_img_bkdrop.jpg"/>
+  </div>
+  <div id="worshipworshipcarousel4" class="noncarousel noshow">
+      <img src="images/worship_img_bkdrop.jpg"/>
+  </div>
+  <div id="worshipworshipcarousel5" class="noncarousel noshow">
+      <img src="images/worship_img_bkdrop.jpg"/>
+  </div>
+  <div id="worshipworshipcarousel6" class="noncarousel noshow">
+      <img src="images/worship_img_bkdrop.jpg"/>
+  </div>
+  <div id="worshipmusiccarousel1" class="noncarousel noshow">
       <img src="images/worship_img_2.jpg"/>
   </div>
-
+  <div id="worshipmusiccarousel2" class="noncarousel noshow">
+      <img src="images/worship_img_bkdrop.jpg"/>
+  </div>
   <div id="ministriescarousel" class="noncarousel noshow">
       <img src="images/ministries_0.jpg"/>
   </div>
-
+  <div id="ministriesjulianpantrycarousel" class="noncarousel noshow">
+      <img src="images/ministries_1.jpg"/>
+  </div>
+  <div id="ministriespeacecarousel" class="noncarousel noshow">
+      <img src="images/ministries_2.jpg"/>
+  </div>
+  <div id="ministriesjusticecarousel" class="noncarousel noshow">
+      <img src="images/ministries_3.jpg"/>
+  </div>
+  <div id="ministrieselporvenircarousel" class="noncarousel noshow">
+      <img src="images/ministries_4.jpg"/>
+  </div>
+  <div id="ministriesmissiongradscarousel" class="noncarousel noshow">
+      <img src="images/ministries_5.jpg"/>
+  </div>
 
   <div id="visitcarousel" class="noncarousel noshow">
       <img src="images/visit_img_0.jpg"/>
@@ -460,19 +555,19 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">CLERGY</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername">The Reverend Richard L. Smith, Ph.D., Vicar </div>
+                <div class="membername">The Reverend Richard L. Smith, Ph.D., Vicar <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">rlsmith21050@gmail.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername">The Reverend Deacon Jackie Cherry</div>
+                <div class="membername">The Reverend Deacon Jackie Cherry <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">jaccherry@yahoo.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername">The Reverend Dr. Jack Eastwood, Rector Emeritus </div>
+                <div class="membername">The Reverend Dr. Jack Eastwood, Rector Emeritus <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">jhbernal@gmail.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername">The Reverend Robert Cromey, Priest Associate </div>
+                <div class="membername">The Reverend Robert Cromey, Priest Associate <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">twocromeys@earthlink.net</div>
             </div>
          </div>
@@ -481,12 +576,14 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">STAFF</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername">The Reverend David Stickley,</div>
-                <div class="membername">Parish Administrator</div>
+                <div class="membername">Aaron Nee, Music Director <img src="images/rota_symbol.png"/></div>
+                <div class="memberemail">parishmusician@stjohnsf.org</div>
+            </div>
+            <div class="clergymember">
+                <div class="membername">David Stickley, Parish Administrator <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">parishadmin@stjohnsf.org</div>
             </div>
          </div>
-         <div class="clickable tinyfont" id="clergylink">CLERGY BIOGRAPHIES <img src="images/rota_symbol.png"/></div>
      </div>
 </div> <!-- END ABOUT CLERGY -->
 
@@ -556,13 +653,13 @@ Keeping the red doors on Julian Street open during the Depression and war years 
 </div> <!-- END ABOUT CLERGY -->
 
      <div class="subsectionnav" id="navabout">
-        <div id="navaboutmission">MISSION</div>
+        <div id="navaboutmission" class="clickable">MISSION</div>
         <div class="verticalsep"></div>
-        <div id="navabouthistory">HISTORY</div>
+        <div id="navabouthistory" class="clickable">HISTORY</div>
         <div class="verticalsep"></div>
-        <div id="navaboutclergy">CLERGY &amp; STAFF</div>
+        <div id="navaboutclergy" class="clickable">CLERGY &amp; STAFF</div>
         <div class="verticalsep"></div>
-        <div id="navaboutlayleadership">LAY  LEADERSHIP</div>
+        <div id="navaboutlayleadership" class="clickable">LAY  LEADERSHIP</div>
 
         <div id="aboutmissionpagebuttons" class="pagebuttons" section="aboutmission">
            <div class="pagebutton buttonon"  bnum="1"></div>
@@ -587,7 +684,7 @@ Keeping the red doors on Julian Street open during the Depression and war years 
    St. John's is located at the corner of 15th Street and Julian Avenue in San Francisco's north Mission District. Our main entrance is on Julian. 
 <br/>
 <br/>
-St. John's beautiful building and grounds are ideal for hosting your next event. We are located in the Valencia corridor and are just 1-1/2 blocks from the 16th and Mission transit hub. 
+St. John's beautiful building and grounds are ideal for hosting your next special event. We are located in the Valencia corridor and are just 1-1/2 blocks from the 16th and Mission transit hub. 
 </div> <!-- END VISIT HOME -->
 
        <!-- VISIT DIRECTIONS -->
@@ -612,9 +709,9 @@ St. John's historic nave affords a capacity of 300, has excellent acoustics, and
 </div> <!-- END VISIT RENTALS -->
 
      <div class="subsectionnav" id="navvisit">
-        <div id="navvisitdirections">DIRECTIONS</div>
+        <div id="navvisitdirections" class="clickable">DIRECTIONS</div>
         <div class="verticalsep"></div>
-        <div id="navvisitrentals">RENTALS</div>
+        <div id="navvisitrentals" class="clickable">RENTALS</div>
      </div>
 
    </div> <!-- END VISIT -->
@@ -626,57 +723,98 @@ St. John's historic nave affords a capacity of 300, has excellent acoustics, and
 <div class="middlerightcontentcaption light middlerightworship" id="worshiphome">
 <div class="subsectiontitle worshiptitle">WORSHIP & MUSIC</div>     
 If you ask people what keeps them coming to St. John's, nine times out of ten the response is: "The worship, the music, the sincerity of the worship". "It's real. It's authentic. The people really pray and sing together!".
-<br/>
 When we gather here to worship God, people really show up, bringing their entire selves, souls and bodies, to be enveloped by God’s presence. We invite you to join us in receiving the love that God is sharing with us and through us.
 </div> <!-- END WORSHIP HOME -->
 
      <!-- WORSHIP WORSHIP 1 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection">
-<div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
-    PAGE 1
+<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection worshipworshipmain">
+<div class="subsectiontitle noshow worshipworshiptitle worshipworshiptitlemain">WORSHIP</div>     
+<b>The Choral Eucharist, Sundays at 10:15 am</b>
+<br/>
+<br/>
+This is the main event of St. John's congregation, the gathering of the community on the first day of the week to celebrate the resurrection of Christ and the new life he brings. Sunday morning at St. John's is a hard-to-define mix of formal and informal elements: incense and bells, choral anthems and the chanting of prayers; but also intensely active participation of everyone in prayer and song, people in jeans and t-shirts, the sharing of stories from Scripture and from our own lives. The worship is transcendent and intimate, grand and deeply personal, all at the same time.
 </div> <!-- END WORSHIP WORSHIP 1 -->
      <!-- WORSHIP WORSHIP 2 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection">
-<div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
-    PAGE 2
+<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection worshipworshipsub">
+<div class="subsectiontitle noshow worshipworshiptitle worshipworshiptitlesub">WORSHIP</div>     
+Eucharistic worship is in two-parts. In the first part, the Liturgy of the Word, we gather to hear Scriptures read and applied to our daily lives, to affirm our faith, and pray for the needs of the world. In the second part, the Liturgy of the Table, we share a sacred meal of bread and wine, the Body and Blood of Christ, remembering our unity in Christ and receiving the grace to continue Christ's presence and ministry in the world.
+<br/>
+<br/>
+Our liturgy has a certain twist that is uniquely St. John's: reflecting our welcome of the queer immigrants and refugees who find their way to San Francisco; of the teachers, healers, and activists searching for spiritual roots; and of the poor, the mentally ill, and those in recovery from addiction seeking sanctuary. It's a motley crew: the people of God.
+<br/>
+<br/>
+<b>Special Liturgies</b>
+<br/>
+<br/>
+Throughout the year, we mark feast days, liturgical seasons, and Holy Week with special services, including Advent Lessons and Carols, Christmas Eve and Morning; Ash Wednesday, Palm Sunday, Holy Week, and the Great Vigil of Easter and Easter Morning services; the Feasts of St. Francis 
 </div> <!-- END WORSHIP WORSHIP 2 -->
      <!-- WORSHIP WORSHIP 3 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection">
-<div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
-    PAGE 3
+<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection worshipworshipsub">
+<div class="subsectiontitle noshow worshipworshiptitle worshipworshiptitlesub">WORSHIP</div>     
+and All Souls. We also often hold a special service in memory of Matthew Shepard and all victims of hatred and violence, and a service to mark the anniversary of the assassination of Archbishop Oscar Romero of El Salvador. 
+<br/>
+<br/>
+<b>Baptism: Christian Initiation</b>
+<br/>
+<br/>
+Holy Baptism is full initiation by the Word of God with water and the Holy Spirit into Christ's Body the Church. The bond which God establishes in Baptism is indissoluble. It is a sacrament or sign of God's unconditional love for us, 
+<div class="baptism"><img src="images/baptism.gif"/></div> a love that binds us into community with one another.
+In baptism we receive forgiveness of sins and are made sharers in God's own life by the indwelling of the Holy Spirit, and we respond by promising to follow the way of Jesus. 
+<br/>
+<br/>
+Four dates are usually set apart especially for baptism: The Sunday after All Saints, The Feast of the Baptism of Jesus, The Great Vigil of Easter, The Feast of Pentecost.
 </div> <!-- END WORSHIP WORSHIP 3 -->
 
+     <!-- WORSHIP WORSHIP 4 -->
+<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection worshipworshipsub">
+<div class="subsectiontitle noshow worshipworshiptitle worshipworshiptitlesub">WORSHIP</div>     
+<b>Marriage</b>
+<br/>
+<br/>
+In the Episcopal Church marriage is a sacramental rite, and the commitment that two people make to each other in marriage is a sign of God's love for the whole world. At St. John's, we honor and bless the commitment between same-gender and opposite-gender couples with equal joy and dignity, and rejoice that now all couples may enjoy the benefits and obligations of both sacramental and civil marriage in California.
+<br/>
+<br/>
+<b>Funerals and Memorial Services</b>
+<br/>
+<br/>
+Respect and care for the dead and those who grieve is a sacred obligation. The sacramental rite of Christian burial is provided for all baptized people, regardless of their denominational affiliation or participation at St. John's. Memorial services are celebrated for all people of any or no religious background. There is no requirement other than the need for the support of a loving community during a time of grief and loss. Please contact the parish office for pastoral assistance during times of illness, dying, or death.
+</div>
+
      <!-- WORSHIP MUSIC 1 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection">
-<div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>
-    PAGE 1
+<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection worshipmusicmain">
+<div class="subsectiontitle noshow worshipmusictitle worshipmusictitlemain">MUSIC</div>
+Music is an integral and essential part of worship at St. John's. Our music program is known for its excellent quality and distinctive style. Our volunteer choir leads the congregation in a wide range of music, from traditional Anglican and Episcopal hymns to medieval chants and Renaissance motets to American folk music and spirituals, to music written by our previous music director, Charles Rus. St. John's is also home to a number of concerts throughout the year, for example by the San Francisco Early Music Society.
+<br/>
+<br/>
+St John's beautiful organ was originally built by the M. P. Möller Organ Company of Hagerstown, 
 </div> <!-- END WORSHIP MUSIC 1 -->
      <!-- WORSHIP MUSIC 2 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection">
-<div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>     
-    PAGE 2
+<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection worshipmusicsub">
+<div class="subsectiontitle noshow worshipmusictitle worshipmusictitlesub">MUSIC</div>     
+Maryland, in 1902 for a church in Davenport, Iowa. (It is a little-known fact that Moller built more tracker organs than any other 20th-century American organ builder.)
+<div class="organ"><img src="images/organ.gif"/></div>
+ In the early 1980s, St. John's purchased the organ, and it was moved to the Rosales shop in Los Angeles, where John DeCamp, a parishioner of St. John's, painstakingly renovated it. Much of the old pipework was used, and much was also added to expand the tonal scope of the organ. Many parishioners of the church helped in this project, which was completed in 1984. Though its most comfortable period is romantic, it is now a very eclectic organ which works well for many styles of organ music, from Buxtehude and Bach to Mendelssohn to Messiaen.
+<br/>
+<br/>
+<div class="piano"><img src="images/piano.jpg"/></div>
+St. John's piano is an historic Hamburg Steinway, Model O, built in Germany in 1911. It produces beautiful, warm tones and is often used as accompaniment for our choir, vocal soloists and piano solo performances. 
 </div> <!-- END WORSHIP MUSIC 2 -->
-     <!-- WORSHIP MUSIC 3 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection">
-<div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>     
-    PAGE 3
-</div> <!-- END WORSHIP MUSIC 3 -->
 
      <div class="subsectionnav" id="navworship">
-        <div id="navworshipworship">WORSHIP</div>
+        <div id="navworshipworship" class="clickable">WORSHIP</div>
         <div class="verticalsep"></div>
-        <div id="navworshipmusic">MUSIC</div>
+        <div id="navworshipmusic" class="clickable">MUSIC</div>
 
         <div id="worshipworshippagebuttons" class="pagebuttons"  section="worshipworship">
            <div class="pagebutton buttonon"  bnum="1"></div>
            <div class="pagebutton buttonoff" bnum="2"></div>
            <div class="pagebutton buttonoff" bnum="3"></div>
+           <div class="pagebutton buttonoff" bnum="4"></div>
         </div>
 
         <div id="worshipmusicpagebuttons" class="pagebuttons" section="worshipmusic">
            <div class="pagebutton buttonon"  bnum="1"></div>
            <div class="pagebutton buttonoff" bnum="2"></div>
-           <div class="pagebutton buttonoff" bnum="3"></div>
         </div>
      </div>
 
@@ -690,6 +828,38 @@ When we gather here to worship God, people really show up, bringing their entire
 <div class="subsectiontitle ministriestitle">MINISTRIES</div>     
 </div> <!-- END MINISTRIES HOME -->
 
+<div class="middlerightcontentcaption noshow light middlerightministries ministriesjulianpantrysection ministriesjulianpantrysectionmain">
+<div class="subsectiontitle noshow ministriesjulianpantrytitle ministriesjulianpantrytitlemain">JULIAN PANTRY</div>
+Every Saturday morning, Jean Baker gets up way before the crack of dawn to get to St. John's by 5am to open the church and start setting up for the Julian Pantry. Eventually volunteers arrive from around the neighborhood and other parts of the City. They unload the truck delivering the food, stock the tables, and share a breakfast, a time for check-in, and a brief reflection. Then they open the doors to welcome between 250 and 350 people to receive the free fresh veggies, fruits, breads. And for all the challenges of making something like this work smoothly, and there are many, Jean and her crew keep at it week after week. An unlikely cast of characters, working with Jesus, to bring food in these tough economic times to people in our neighborhood and the City.
+</div> 
+
+<div class="middlerightcontentcaption noshow light middlerightministries ministriespeacesection ministriespeacesectionmain">
+<div class="subsectiontitle noshow ministriespeacetitle ministriespeacetitlemain">PEACE</div>
+</div> 
+
+<div class="middlerightcontentcaption noshow light middlerightministries ministriesjusticesection ministriesjusticesectionmain">
+<div class="subsectiontitle noshow ministriesjusticetitle ministriesjusticetitlemain">SOCIAL JUSTICE</div>
+</div> 
+
+<div class="middlerightcontentcaption noshow light middlerightministries ministrieselporvenirsection ministrieselporvenirsectionmain">
+<div class="subsectiontitle noshow ministrieselporvenirtitle ministrieselporvenirtitlemain">EL PORVENIR</div>
+</div> 
+
+<div class="middlerightcontentcaption noshow light middlerightministries ministriesmissiongradssection ministriesmissiongradssectionmain">
+<div class="subsectiontitle noshow ministriesmissiongradstitle ministriesmissiongradstitlemain">MISSION GRADUATES</div>
+</div> 
+
+     <div class="subsectionnav" id="navministries">
+        <div id="navministriesjulianpantry" class="clickable">JULIAN PANTRY</div>
+        <div class="verticalsep"></div>
+        <div id="navministriespeace" class="clickable">PEACE</div>
+        <div class="verticalsep"></div>
+        <div id="navministriesjustice" class="clickable">SOCIAL JUSTICE</div>
+        <div class="verticalsep"></div>
+        <div id="navministrieselporvenir" class="clickable">EL PORVENIR</div>
+        <div class="verticalsep"></div>
+        <div id="navministriesmissiongrads" class="clickable">MISSION GRADUATES</div>
+     </div>
   </div> <!-- END MINISTRIES -->
 
 </div> <!-- middle -->
