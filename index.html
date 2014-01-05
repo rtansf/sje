@@ -35,12 +35,16 @@ $(document).ready(function() {
     });
 
     $('.pagebutton').click(function() {
-        if ($(this).hasClass('buttonoff')) {
-            $('.pagebutton').removeClass('buttonon');
-            $('.pagebutton').addClass('buttonoff');
-            $(this).removeClass('buttonoff');
-            $(this).addClass('buttonon');
-        }
+        $('.pagebutton').removeClass('buttonon');
+        $('.pagebutton').removeClass('buttonoff');
+        $('.pagebutton').addClass('buttonoff');
+        $(this).addClass('buttonon');
+        var bnum = $(this).attr('bnum');
+        var section = $(this).parent().attr('section');
+        var num = bnum - 1;
+        var sel = '.' + section + 'section:eq(' + num + ')';
+        $('.' + section + 'section').hide();
+        $(sel).show();
     });
 
     // HOME 
@@ -56,7 +60,6 @@ $(document).ready(function() {
         $('.middlecaption').hide();
         $('.noncarousel').hide();
         $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
 
         $('#stjohn2').show();        
@@ -70,32 +73,14 @@ $(document).ready(function() {
     $('#navaboutmission').click(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
-        $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
         $('#aboutmissioncarousel').show();        
-        $('#aboutmission1').show();
+        $('.aboutmissionsection:eq(0)').show();
         $('.aboutmissiontitle').show();
+
+        $('.pagebuttons').hide();
+        resetPageButtons('aboutmissionpagebuttons');
         $('#aboutmissionpagebuttons').show();
-        
-        $('.pagebutton').removeClass('buttonon');
-        $('.pagebutton').addClass('buttonoff');
-        $('#aboutmissionbutton1').show();
-        $('#aboutmissionbutton1').addClass('buttonon');
-        $('#aboutmissionbutton2').show();
-        $('#aboutmissionbutton2').addClass('buttonoff');
-    });
-    $('#aboutmissionbutton1').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#aboutmission2').hide();
-           $('#aboutmission1').show();
-        }
-    });
-    $('#aboutmissionbutton2').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#aboutmission1').hide();
-           $('#aboutmission2').show();
-        }
     });
 
     // ABOUT HISTORY
@@ -103,42 +88,13 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
-        $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('#abouthistorycarousel').show();        
+        $('.abouthistorysection:eq(0)').show();
         $('.abouthistorytitle').show();        
-        $('#abouthistory1').show();
-        $('#abouthistorypagebuttons').show();
 
-        $('.pagebutton').removeClass('buttonon');
-        $('.pagebutton').addClass('buttonoff');
-        $('#abouthistorybutton1').show();
-        $('#abouthistorybutton1').addClass('buttonon');
-        $('#abouthistorybutton2').show();
-        $('#abouthistorybutton2').addClass('buttonoff');
-        $('#abouthistorybutton3').show();
-        $('#abouthistorybutton3').addClass('buttonoff');
-    });
-    $('#abouthistorybutton1').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#abouthistory2').hide();
-           $('#abouthistory3').hide();
-           $('#abouthistory1').show();
-        }
-    });
-    $('#abouthistorybutton2').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#abouthistory1').hide();
-           $('#abouthistory3').hide();
-           $('#abouthistory2').show();
-        }
-    });
-    $('#abouthistorybutton3').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#abouthistory1').hide();
-           $('#abouthistory2').hide();
-           $('#abouthistory3').show();
-        }
+        $('.pagebuttons').hide();
+        resetPageButtons('abouthistorypagebuttons');
+        $('#abouthistorypagebuttons').show();
     });
 
     // ABOUT CLERGY
@@ -157,7 +113,6 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
         $('#aboutlaycarousel').show();        
         $('#aboutlay').show();
@@ -172,7 +127,6 @@ $(document).ready(function() {
         $('.middlecaption').hide();
         $('.noncarousel').hide();
         $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
 
         $('#stjohn3').show();        
@@ -185,86 +139,28 @@ $(document).ready(function() {
     $('#navworshipworship').click(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
-        $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
         $('#worshipworshipcarousel').show();        
-        $('#worshipworship1').show();
+        $('.worshipworshipsection:eq(0)').show();
         $('.worshipworshiptitle').show();
+
+        $('.pagebuttons').hide();
+        resetPageButtons('worshipworshippagebuttons');
         $('#worshipworshippagebuttons').show();
-        
-        $('.pagebutton').removeClass('buttonon');
-        $('.pagebutton').addClass('buttonoff');
-        $('#worshipworshipbutton1').show();
-        $('#worshipworshipbutton1').addClass('buttonon');
-        $('#worshipworshipbutton2').show();
-        $('#worshipworshipbutton2').addClass('buttonoff');
-        $('#worshipworshipbutton3').show();
-        $('#worshipworshipbutton3').addClass('buttonoff');
-    });
-    $('#worshipworshipbutton1').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#worshipworship2').hide();
-           $('#worshipworship3').hide();
-           $('#worshipworship1').show();
-        }
-    });
-    $('#worshipworshipbutton2').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#worshipworship1').hide();
-           $('#worshipworship3').hide();
-           $('#worshipworship2').show();
-        }
-    });
-    $('#worshipworshipbutton3').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#worshipworship1').hide();
-           $('#worshipworship2').hide();
-           $('#worshipworship3').show();
-        }
     });
 
     // WORSHIP MUSIC
     $('#navworshipmusic').click(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
-        $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
         $('#worshipmusiccarousel').show();        
-        $('#worshipmusic1').show();
+        $('.worshipmusicsection:eq(0)').show();
         $('.worshipmusictitle').show();
+
+        $('.pagebuttons').hide();
+        resetPageButtons('worshipmusicpagebuttons');
         $('#worshipmusicpagebuttons').show();
-        
-        $('.pagebutton').removeClass('buttonon');
-        $('.pagebutton').addClass('buttonoff');
-        $('#worshipmusicbutton1').show();
-        $('#worshipmusicbutton1').addClass('buttonon');
-        $('#worshipmusicbutton2').show();
-        $('#worshipmusicbutton2').addClass('buttonoff');
-        $('#worshipmusicbutton3').show();
-        $('#worshipmusicbutton3').addClass('buttonoff');
-    });
-    $('#worshipmusicbutton1').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#worshipmusic2').hide();
-           $('#worshipmusic3').hide();
-           $('#worshipmusic1').show();
-        }
-    });
-    $('#worshipmusicbutton2').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#worshipmusic1').hide();
-           $('#worshipmusic3').hide();
-           $('#worshipmusic2').show();
-        }
-    });
-    $('#worshipmusicbutton3').click(function() {
-        if ($(this).hasClass('buttonon')) {
-           $('#worshipmusic1').hide();
-           $('#worshipmusic2').hide();
-           $('#worshipmusic3').show();
-        }
     });
 
     // MINISTRIES
@@ -275,7 +171,6 @@ $(document).ready(function() {
         $('.middlecaption').hide();
         $('.noncarousel').hide();
         $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
 
         $('#stjohn3').show();        
@@ -293,7 +188,6 @@ $(document).ready(function() {
         $('.middlecaption').hide();
         $('.noncarousel').hide();
         $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
 
         $('#stjohn1').show();        
@@ -308,7 +202,6 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
         $('#visitdirectionscarousel').show();        
         $('#visitdirections').show();
@@ -319,7 +212,6 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.pagebuttons').hide();
-        $('.pagebutton').hide();
         $('.subsectiontitle').hide();
         $('#visitrentalscarousel').show();        
         $('#visitrentals').show();
@@ -327,6 +219,14 @@ $(document).ready(function() {
     });
 
 });
+
+function resetPageButtons(section) {
+    var $section = $('#' + section);
+    $section.find('.pagebutton').removeClass('buttonon');
+    $section.find('.pagebutton').removeClass('buttonoff');
+    $section.find('.pagebutton').addClass('buttonoff');
+    $section.find('.pagebutton:eq(0)').addClass('buttonon');
+}
 
 function hideHome() {
     $('.stjohnimage').hide();
@@ -474,7 +374,7 @@ Located around the corner from the busy Mission-16th Street-Valencia corridors i
 </div> <!-- END ABOUT HOME -->
 
      <!-- ABOUT MISSION -->
-<div class="middlerightcontentcaption light noshow middlerightabout" id="aboutmission1">
+<div class="middlerightcontentcaption light noshow middlerightabout aboutmissionsection" id="aboutmission1">
 <div class="noshow subsectiontitle aboutmissiontitle">OUR MISSION</div>
 <b>Our mission is to live, love, and serve in the hope and joy of the risen Christ.</b>
 <br/>
@@ -494,7 +394,7 @@ We have a special vocation to respect and advocate for the dignity of gay, lesbi
 We value diversity and welcome anyone who wishes to explore Christian faith and practice.
 </div>
 
-<div class="middlerightcontentcaption light noshow middlerightabout" id="aboutmission2">
+<div class="middlerightcontentcaption light noshow middlerightabout aboutmissionsection" id="aboutmission2">
 <div class="noshow subsectiontitle aboutmissiontitle">OUR MISSION</div>
 We value connection, and strive to promote a sense of belonging among the members of the parish that readily includes newcomers. This is often talked about in terms of communication or pastoral care or hospitality, but it is fundamentally about feeling connected to God and to one another.
 <br/>
@@ -503,7 +403,7 @@ We value the North Mission neighborhood. Our location in this particular place s
 </div>
 
      <!-- ABOUT HISTORY -->
-<div class="middlerightcontentcaption light noshow middlerightabout" id="abouthistory1">
+<div class="middlerightcontentcaption light noshow middlerightabout abouthistorysection" id="abouthistory1">
      <div class="noshow subsectiontitle abouthistorytitle">ST JOHN'S HISTORY</div>
      <div id="historyimages">
          <div class="historyimage" id="historyimage1">
@@ -530,7 +430,7 @@ By 1861, St. John's was able to hire its first rector, the Rev. Thomas Brotherto
     </div>
 </div>
 
-<div class="middlerightcontentcaption light noshow middlerightabout" id="abouthistory2">
+<div class="middlerightcontentcaption light noshow middlerightabout abouthistorysection" id="abouthistory2">
      <div class="noshow subsectiontitle abouthistorytitle">ST JOHN'S HISTORY</div>
 During this early golden age, St. John's played a key role, led by Rev. Brotherton, in founding St. Luke's Hospital (1871) and provided financial and spiritual support to many institutions within the parish bounds, including the City and County Hospital, the Poor House, and the Protestant Episcopal Old Ladies Home. 
 Another early rector, the Rev. Dr. E.B. Spalding, brought the Trinity School, a distinguished boys' school, to St. John's parish in 1881 and ran it for 20 years. In 1882, the Irving Institute, a fashionable girls' school, was established under St. John's auspices at Valencia and Hill Streets.
@@ -542,7 +442,7 @@ As the city boomed and the Mission became a highly desirable residential neighbo
 But then the Great San Francisco Earthquake of 1906 struck, and the second St. John's building was destroyed in its aftermath. 
 </div>
 
-<div class="middlerightcontentcaption light noshow middlerightabout" id="abouthistory3">
+<div class="middlerightcontentcaption light noshow middlerightabout abouthistorysection" id="abouthistory3">
      <div class="noshow subsectiontitle abouthistorytitle">ST JOHN'S HISTORY</div>
 The edifice had been dynamited to serve as a firebreak to stem the post-quake fires raging from the north and northeast, which tore a wide swath through the Mission, stopping eventually at 20th and Dolores Streets. 
 <br/>
@@ -664,16 +564,15 @@ Keeping the red doors on Julian Street open during the Depression and war years 
         <div class="verticalsep"></div>
         <div id="navaboutlayleadership">LAY  LEADERSHIP</div>
 
-        <div id="aboutmissionpagebuttons" class="noshow pagebuttons">
-           <div id="aboutmissionbutton1" class="noshow pagebutton"></div>
-           <div id="aboutmissionbutton2" class="noshow pagebutton"></div>
-           <div id="aboutmissionbutton3" class="noshow pagebutton"></div>
+        <div id="aboutmissionpagebuttons" class="pagebuttons" section="aboutmission">
+           <div class="pagebutton buttonon"  bnum="1"></div>
+           <div class="pagebutton buttonoff" bnum="2"></div>
         </div>
 
-        <div id="abouthistorypagebuttons" class="noshow pagebuttons">
-           <div id="abouthistorybutton1" class="noshow pagebutton"></div>
-           <div id="abouthistorybutton2" class="noshow pagebutton"></div>
-           <div id="abouthistorybutton3" class="noshow pagebutton"></div>
+        <div id="abouthistorypagebuttons" class="pagebuttons" section="abouthistory">
+           <div class="pagebutton buttonon"  bnum="1"></div>
+           <div class="pagebutton buttonoff" bnum="2"></div>
+           <div class="pagebutton buttonoff" bnum="3"></div>
         </div>
      </div>
 
@@ -732,33 +631,33 @@ When we gather here to worship God, people really show up, bringing their entire
 </div> <!-- END WORSHIP HOME -->
 
      <!-- WORSHIP WORSHIP 1 -->
-<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipworship1">
+<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection">
 <div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
     PAGE 1
 </div> <!-- END WORSHIP WORSHIP 1 -->
      <!-- WORSHIP WORSHIP 2 -->
-<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipworship2">
+<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection">
 <div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
     PAGE 2
 </div> <!-- END WORSHIP WORSHIP 2 -->
      <!-- WORSHIP WORSHIP 3 -->
-<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipworship3">
+<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection">
 <div class="subsectiontitle noshow worshipworshiptitle">WORSHIP</div>     
     PAGE 3
 </div> <!-- END WORSHIP WORSHIP 3 -->
 
      <!-- WORSHIP MUSIC 1 -->
-<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipmusic1">
+<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection">
 <div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>
     PAGE 1
 </div> <!-- END WORSHIP MUSIC 1 -->
      <!-- WORSHIP MUSIC 2 -->
-<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipmusic2">
+<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection">
 <div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>     
     PAGE 2
 </div> <!-- END WORSHIP MUSIC 2 -->
      <!-- WORSHIP MUSIC 3 -->
-<div class="middlerightcontentcaption noshow light middlerightworship" id="worshipmusic3">
+<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection">
 <div class="subsectiontitle noshow worshipmusictitle">MUSIC</div>     
     PAGE 3
 </div> <!-- END WORSHIP MUSIC 3 -->
@@ -768,16 +667,16 @@ When we gather here to worship God, people really show up, bringing their entire
         <div class="verticalsep"></div>
         <div id="navworshipmusic">MUSIC</div>
 
-        <div id="worshipworshippagebuttons" class="noshow pagebuttons">
-           <div id="worshipworshipbutton1" class="noshow pagebutton"></div>
-           <div id="worshipworshipbutton2" class="noshow pagebutton"></div>
-           <div id="worshipworshipbutton3" class="noshow pagebutton"></div>
+        <div id="worshipworshippagebuttons" class="pagebuttons"  section="worshipworship">
+           <div class="pagebutton buttonon"  bnum="1"></div>
+           <div class="pagebutton buttonoff" bnum="2"></div>
+           <div class="pagebutton buttonoff" bnum="3"></div>
         </div>
 
-        <div id="worshipmusicpagebuttons" class="noshow pagebuttons">
-           <div id="worshipmusicbutton1" class="noshow pagebutton"></div>
-           <div id="worshipmusicbutton2" class="noshow pagebutton"></div>
-           <div id="worshipmusicbutton3" class="noshow pagebutton"></div>
+        <div id="worshipmusicpagebuttons" class="pagebuttons" section="worshipmusic">
+           <div class="pagebutton buttonon"  bnum="1"></div>
+           <div class="pagebutton buttonoff" bnum="2"></div>
+           <div class="pagebutton buttonoff" bnum="3"></div>
         </div>
      </div>
 
@@ -799,7 +698,7 @@ When we gather here to worship God, people really show up, bringing their entire
   <div class="bottomleftcontent">
      <div class="tinyfont rota">ROTA <img src="images/rota_symbol.png"/></div>
      <div class="tinyfont rota">SERMONS <img src="images/rota_symbol.png"/></div>
-     <div class="tinyfont rota">PARISH NEWSLETTER <img src="images/rota_symbol.png"/></div>
+     <div class="tinyfont rota">NEWSLETTER <img src="images/rota_symbol.png"/></div>
   </div>
   <div class="bottomrightcontent">
      <div class="tinyfont bottomrightcontentcaption1">

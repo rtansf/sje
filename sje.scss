@@ -272,7 +272,7 @@ body {
    font-weight: 500;
    font-size: 13px;
 }
-#navabout div:hover {
+.subsectionnav div:hover {
    color: $abouthoverpink;
 }
 .middlerightabout {
@@ -286,6 +286,7 @@ body {
 .pagebutton {
    width: 20px;
    height: 20px;
+   float: left;
 }
 .buttonoff {
    background-image: url('images/about_page_button_off.png');
@@ -295,9 +296,6 @@ body {
 .buttonon {
    background-image: url('images/about_page_button_on.png');
    background-repeat: no-repeat;
-}
-.pagebutton {
-   float: left;
 }
 #historyimages {
    position: relative;
@@ -373,7 +371,7 @@ body {
 .worshiptitle {
    margin-bottom: 36px;
 }
-#worshipworship1, #worshipworship2, #worshipworship3 {
+.worshipworshipsection {
    position: relative;
    top: -80px;
 }
@@ -382,7 +380,7 @@ body {
    top: 46px;
    margin-bottom: 232px;
 }
-#worshipmusic1, #worshipmusic2, #worshipmusic3 {
+.worshipmusicsection {
    position: relative;
    top: -80px;
 }
