@@ -9,6 +9,58 @@
 
 <script>
 $(document).ready(function() {
+    $('#rota').click(function() {
+       alert ('Coming soon!');
+    });
+
+    $('#sermons').click(function() {
+        window.open('http://sermonsatsaintjohn.blogspot.com');
+    });
+
+    $('#newsletter').click(function() {
+        window.open('http://us6.campaign-archive2.com/home/?u=1cffc40a58193b3d538400764&id=78aada1b24');
+    });
+
+    $('.donateto').click(function() {
+        window.open('https://donatenow.networkforgood.org/saintjohnsanfrancisco');
+    });
+
+    // MINISTRIES EDIT
+    var $admin = gup('admin');
+    if ($admin) {
+        $('#ministrieseditbutton').show();
+    } else {
+        $('#ministrieseditbutton').hide();
+    }
+    $('#ministrieseditbutton').click(function() {
+        var $selected = $('#navministries').find('.selected');
+        var id = $selected.attr('id');
+        if (!id) { 
+            return;
+        }
+
+        $(this).hide();
+        $('#ministriessavebutton').show();
+        $('#ministriescancelbutton').show();
+
+        if (id == 'navministriesjulianpantry') {
+           var content = $('.ministriesjulianpantrysectionmain').find('.subsectioncontent').text();
+           $('.ministriesjulianpantrysectionmain').find('.subsectioncontent').hide();
+           $('.ministriesjulianpantrysectionmain').find('.subsectioncontentedit').show();
+           $('.ministriesjulianpantrysectionmain').find('.subsectioncontentedit').find('textarea').text(content);
+        }
+    });
+    $('#ministriessavebutton').click(function() {
+        $('#ministriessavebutton').hide();
+        $('#ministriescancelbutton').hide();
+        $('#ministrieseditbutton').show();
+    });
+    $('#ministriescancelbutton').click(function() {
+        $('#ministriessavebutton').hide();
+        $('#ministriescancelbutton').hide();
+        $('#ministrieseditbutton').show();
+    });
+
     var ua = new String(navigator.userAgent);
 
     var idx = ua.indexOf('iPad');
@@ -66,6 +118,7 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
+        $('.subsectionnav').find('.clickable').removeClass('selected');
 
         $('#stjohn2').show();        
         $('#aboutcarousel').show();        
@@ -133,6 +186,7 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
+        $('.subsectionnav').find('.clickable').removeClass('selected');
 
         $('#stjohn3').show();        
         $('#worshipcarousel').show();        
@@ -177,6 +231,7 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
+        $('.subsectionnav').find('.clickable').removeClass('selected');
 
         $('#stjohn3').show();        
         $('#ministriescarousel').show();        
@@ -244,6 +299,7 @@ $(document).ready(function() {
         $('.noncarousel').hide();
         $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
+        $('.subsectionnav').find('.clickable').removeClass('selected');
 
         $('#stjohn1').show();        
         $('#visitcarousel').show();        
@@ -313,6 +369,17 @@ function onBefore(curr, next, opts) {
    } else {
        $('#dummy').show();
    } 
+}
+
+function gup (name) {
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return results[1];
 }
 </script>
 </head>
@@ -426,7 +493,7 @@ function onBefore(curr, next, opts) {
       <img src="images/visit_img_0.jpg"/>
   </div>
   <div id="visitdirectionscarousel" class="noncarousel noshow">
-      <img src="images/about_img_bkdrop.jpg"/>
+      <img src="images/visit_img_bkdrop.jpg"/>
   </div>
   <div id="visitrentalscarousel" class="noncarousel noshow">
       <img src="images/visit_img_2.jpg"/>
@@ -447,8 +514,8 @@ function onBefore(curr, next, opts) {
      <div class="tinyfont light">10:15 a.m. Choral Eucharist</div>
      <div class="tinyfont parishofficehours">PARISH OFFICE HOURS</div>
      <div class="tinyfont light">Monday-Thursday 1 - 4 p.m.</div>
+     <div class="tinyfont getinvolved">&nbsp;</div>
      <div class="tinyfont donateto">DONATE TO ST. JOHN'S</div>
-     <div class="tinyfont getinvolved">GET INVOLVED</div>
   </div>
 
   <!-- HOME -->
@@ -594,31 +661,31 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">BISHOP'S COMMITTEE</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername">Timm Dobbins, Senior Warden</div>
+                <div>Timm Dobbins, Senior Warden</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Robert Craig, Junior Warden</div>
+                <div>Robert Craig, Junior Warden</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Jay Christian</div>
+                <div>Jay Christian</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Bryce Fisher-Fleig</div>
+                <div>Bryce Fisher-Fleig</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Stoner Lichty</div>
+                <div>Stoner Lichty</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Delores Mays</div>
+                <div>Delores Mays</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Bonita Ann Palmer</div>
+                <div>Bonita Ann Palmer</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Forrest Sedgwick</div>
+                <div>Forrest Sedgwick</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Claudia Viek</div>
+                <div>Claudia Viek</div>
             </div>
          </div>
      </div>
@@ -626,10 +693,10 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">CLERKS</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername">Diana McDonnell</div>
+                <div>Diana McDonnell</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Birgit Eschmann</div>
+                <div>Birgit Eschmann</div>
             </div>
          </div>
          <br/>
@@ -637,16 +704,16 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">DEANARY DELEGATES</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername">Michael Clark</div>
+                <div>Michael Clark</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Birgit Eschmann</div>
+                <div>Birgit Eschmann</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Liz Specht (Alternate)</div>
+                <div>Liz Specht (Alternate)</div>
             </div>
             <div class="clergymember">
-                <div class="membername">Bill Sullivan (Alternate)</div>
+                <div>Bill Sullivan (Alternate)</div>
             </div>
          </div>
      </div>
@@ -826,27 +893,60 @@ St. John's piano is an historic Hamburg Steinway, Model O, built in Germany in 1
      <!-- MINISTRIES HOME -->
 <div class="middlerightcontentcaption light middlerightministries" id="ministrieshome">
 <div class="subsectiontitle ministriestitle">MINISTRIES</div>     
+Our community has a long tradition of working for a more just world, not only in our neighborhood, but throughout our larger world--whether it's providing food to needy seniors and families or bringing clean water to rural Nicaraguan villages, whether it's working for a just immigration reform or helping neighborhood kids get a good education or working to end unjust wars.
+<br/>
+<br/>
+You, too, can make a difference. We have many volunteer opportunities. Join us!
 </div> <!-- END MINISTRIES HOME -->
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministriesjulianpantrysection ministriesjulianpantrysectionmain">
 <div class="subsectiontitle noshow ministriesjulianpantrytitle ministriesjulianpantrytitlemain">JULIAN PANTRY</div>
+<div class="subsectioncontent">
 Every Saturday morning, Jean Baker gets up way before the crack of dawn to get to St. John's by 5am to open the church and start setting up for the Julian Pantry. Eventually volunteers arrive from around the neighborhood and other parts of the City. They unload the truck delivering the food, stock the tables, and share a breakfast, a time for check-in, and a brief reflection. Then they open the doors to welcome between 250 and 350 people to receive the free fresh veggies, fruits, breads. And for all the challenges of making something like this work smoothly, and there are many, Jean and her crew keep at it week after week. An unlikely cast of characters, working with Jesus, to bring food in these tough economic times to people in our neighborhood and the City.
+</div>
+<div class="subsectioncontentedit">
+<textarea>  
+</textarea>
+</div>
 </div> 
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministriespeacesection ministriespeacesectionmain">
 <div class="subsectiontitle noshow ministriespeacetitle ministriespeacetitlemain">PEACE</div>
+Join our vigils for peace every non-holiday Thursday until our nation's foreign wars are over.
+<br/>
+<br/>
+When:  Thursdays, noon - 1 pm
+<br/>
+Where: Burton Federal Building, Golden Gate and Larkin, San Francisco
 </div> 
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministriesjusticesection ministriesjusticesectionmain">
 <div class="subsectiontitle noshow ministriesjusticetitle ministriesjusticetitlemain">SOCIAL JUSTICE</div>
+With the <a href="">San Francisco Organizing Project</a>, we work to create a more just City for All.
+<br/>
+<b>Immigration reform:</b> To stop our nation from tearing apart immigrant families, and to stop unjust deportations of undocumented immigrants in California.
+<br/>
+<b>Pursuing justice for elders:</b> To strengthen healthcare and provide greater security and dignity for elders, including those who are LGBT in San Francisco.
+<br/>
+<b>Nightwalks:</b> To reduce the violence in our neighborhood, we join up with other faith communities in nightwalks through some of the most violent corners of our neighborhood, stopping to light candles and praying for those who died from gun violence on our streets.
 </div> 
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministrieselporvenirsection ministrieselporvenirsectionmain">
 <div class="subsectiontitle noshow ministrieselporvenirtitle ministrieselporvenirtitlemain">EL PORVENIR</div>
+"El Porvenir" means "the future", and clean water means a healthier future for rural Nicaraguans. El Porvenir helps the people of Nicaragua build that future by helping them provide clean drinking water for their families and communities. In addition to sustainable water and sanitation projects, El Porvenir provides health and hygiene education and reforestation.
+<br/>
+<br/>
+In 2013, members of St. John's raised almost $3000 for this critical organization. Over the years several members of our community have traveled to Nicaragua to see and offer first-hand support to people in local villages building new wells. To find out more, visit their <a href="">website</a>.
 </div> 
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministriesmissiongradssection ministriesmissiongradssectionmain">
 <div class="subsectiontitle noshow ministriesmissiongradstitle ministriesmissiongradstitlemain">MISSION GRADUATES</div>
+Mission Graduates seeks to increase the number of K-12 students in San Francisco's Mission District who are prepared for a college education through the following programs:
+<br/>
+<b>College Connect</b>, a multi-year program providing structured, personalized college admissions support to students and their parents.
+<b>The Parent Partners Program</b> designed to increase the capacity of parents in San Francisco to support their children's current academic success and future life goals.
+<b>Extended Day Programs</b> that provide award-winning after-school academic enrichment programs serving 120 children K-5 year-round.
+Today, St. John's continues its long-established relationship with this vital organization in our neighborhood. Visit their <a href="">website</a>.
 </div> 
 
      <div class="subsectionnav" id="navministries">
@@ -859,6 +959,9 @@ Every Saturday morning, Jean Baker gets up way before the crack of dawn to get t
         <div id="navministrieselporvenir" class="clickable">EL PORVENIR</div>
         <div class="verticalsep"></div>
         <div id="navministriesmissiongrads" class="clickable">MISSION GRADUATES</div>
+        <div class="noshow" id="ministrieseditbutton"><button>Edit</button></div>
+        <div class="noshow" id="ministriessavebutton"><button>Save</button></div>
+        <div class="noshow" id="ministriescancelbutton"><button>Cancel</button></div>
      </div>
   </div> <!-- END MINISTRIES -->
 
@@ -866,9 +969,9 @@ Every Saturday morning, Jean Baker gets up way before the crack of dawn to get t
 
 <div class="bottom">
   <div class="bottomleftcontent">
-     <div class="tinyfont rota">ROTA <img src="images/rota_symbol.png"/></div>
-     <div class="tinyfont rota">SERMONS <img src="images/rota_symbol.png"/></div>
-     <div class="tinyfont rota">NEWSLETTER <img src="images/rota_symbol.png"/></div>
+     <div class="tinyfont rota" id="rota">ROTA <img src="images/rota_symbol.png"/></div>
+     <div class="tinyfont rota" id="sermons">SERMONS <img src="images/rota_symbol.png"/></div>
+     <div class="tinyfont rota" id="newsletter">NEWSLETTER <img src="images/rota_symbol.png"/></div>
   </div>
   <div class="bottomrightcontent">
      <div class="tinyfont bottomrightcontentcaption1">

@@ -10,6 +10,10 @@ body {
   margin-top: -10px;
   height: 130px; }
 
+.selected {
+  color: #ae1f25;
+  opacity: 1; }
+
 .logo {
   padding-top: 37px;
   padding-left: 50px;
@@ -22,16 +26,18 @@ body {
 
 #navlist li {
   font-family: "futura-pt-n4","futura-pt",sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   display: inline;
   list-style-type: none;
   padding-right: 50px;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 1px;
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 0.7; }
 
 #navlist li:hover {
-  color: #ae1f25; }
+  color: #ae1f25;
+  opacity: 1; }
 
 .bigCap {
   font-size: 16px; }
@@ -103,18 +109,18 @@ body {
 .parishofficehours {
   margin-top: 10px; }
 
-.donateto {
+.getinvolved {
   margin-top: 22px;
   cursor: pointer; }
 
-.donateto:hover {
+.getinvolved:hover {
   color: #ae1f25; }
 
-.getinvolved {
+.donateto {
   margin-top: 6px;
   cursor: pointer; }
 
-.getinvolved:hover {
+.donateto:hover {
   color: #ae1f25; }
 
 .bottom {
@@ -133,7 +139,11 @@ body {
 .rota {
   color: #ae1f25;
   font-weight: 500;
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 0.6; }
+
+.rota:hover {
+  opacity: 1; }
 
 .bottomrightcontent {
   position: relative;
@@ -219,7 +229,8 @@ body {
   top: -1px; }
 
 .subsectionnav {
-  float: left; }
+  float: left;
+  color: #da9e89; }
 
 .subsectionnav div {
   float: left; }
@@ -253,15 +264,14 @@ body {
 #navabout {
   /* margin-top: 25px; */
   position: relative;
-  top: 40px;
-  color: #da9e89; }
+  top: 40px; }
 
 #navabout > div {
   margin-right: 20px;
   font-weight: 500;
   font-size: 13px; }
 
-#navabout div:hover {
+.subsectionnav div:hover {
   color: #ae1f25; }
 
 .middlerightabout {
@@ -274,7 +284,8 @@ body {
 
 .pagebutton {
   width: 20px;
-  height: 20px; }
+  height: 20px;
+  float: left; }
 
 .buttonoff {
   background-image: url("images/about_page_button_off.png");
@@ -284,9 +295,6 @@ body {
 .buttonon {
   background-image: url("images/about_page_button_on.png");
   background-repeat: no-repeat; }
-
-.pagebutton {
-  float: left; }
 
 #historyimages {
   position: relative;
@@ -315,7 +323,10 @@ body {
   top: 146px; }
 
 #clergylink {
-  margin-top: 20px;
+  margin-top: 30px;
+  color: #da9e89; }
+
+#clergylink:hover {
   color: #ae1f25; }
 
 .lay {
@@ -342,6 +353,14 @@ body {
   font-style: italic;
   opacity: 0.5; }
 
+.membername {
+  opacity: 0.8;
+  cursor: pointer; }
+
+.membername:hover {
+  color: #ae1f25;
+  opacity: 1; }
+
 #leftlay {
   width: 300px; }
 
@@ -361,23 +380,33 @@ body {
 .worshiptitle {
   margin-bottom: 36px; }
 
-#worshipworship1, #worshipworship2, #worshipworship3 {
+.worshipworshipsection {
   position: relative;
   top: -80px; }
 
-.worshipworshiptitle {
+.worshipworshiptitlemain {
   position: relative;
   top: 46px;
-  margin-bottom: 232px; }
+  margin-bottom: 250px; }
 
-#worshipmusic1, #worshipmusic2, #worshipmusic3 {
+.worshipworshiptitlesub {
+  position: relative;
+  top: 46px;
+  margin-bottom: 80px; }
+
+.worshipmusicsection {
   position: relative;
   top: -80px; }
 
-.worshipmusictitle {
+.worshipmusictitlemain {
   position: relative;
   top: 46px;
-  margin-bottom: 232px; }
+  margin-bottom: 250px; }
+
+.worshipmusictitlesub {
+  position: relative;
+  top: 46px;
+  margin-bottom: 80px; }
 
 .middlerightworship {
   height: 440px;
@@ -385,15 +414,44 @@ body {
 
 #navworship {
   position: relative;
-  top: -50px;
-  color: #da9e89; }
+  top: -50px; }
 
 #navworship > div {
   margin-right: 20px;
   font-weight: 500;
   font-size: 13px; }
 
+.baptism {
+  padding-top: 10px;
+  padding-left: 15px;
+  float: right; }
+
+.organ {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  float: left; }
+
+.piano {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  float: right; }
+
 /* MINISTRIES */
+#navministries {
+  position: relative;
+  top: -50px; }
+
+.middlerightministries {
+  height: 440px;
+  overflow: hidden; }
+
+#navministries > div {
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 13px; }
+
 #ministriescontent {
   margin-top: -260px;
   color: #000;
@@ -405,6 +463,51 @@ body {
 
 .ministriestitle {
   margin-bottom: 36px; }
+
+.ministriesjulianpantrysection {
+  position: relative;
+  top: -80px; }
+
+.ministriesjulianpantrytitlemain {
+  position: relative;
+  top: 46px;
+  margin-bottom: 250px; }
+
+.ministriespeacesection {
+  position: relative;
+  top: -80px; }
+
+.ministriespeacetitlemain {
+  position: relative;
+  top: 46px;
+  margin-bottom: 250px; }
+
+.ministriesjusticesection {
+  position: relative;
+  top: -80px; }
+
+.ministriesjusticetitlemain {
+  position: relative;
+  top: 46px;
+  margin-bottom: 250px; }
+
+.ministrieselporvenirsection {
+  position: relative;
+  top: -80px; }
+
+.ministrieselporvenirtitlemain {
+  position: relative;
+  top: 46px;
+  margin-bottom: 250px; }
+
+.ministriesmissiongradssection {
+  position: relative;
+  top: -80px; }
+
+.ministriesmissiongradstitlemain {
+  position: relative;
+  top: 46px;
+  margin-bottom: 250px; }
 
 /* VISIT */
 #visitcontent {
@@ -439,8 +542,7 @@ body {
 
 #navvisit {
   position: relative;
-  top: -50px;
-  color: #da9e89; }
+  top: -50px; }
 
 #navvisit > div {
   margin-right: 20px;
