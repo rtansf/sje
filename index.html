@@ -329,6 +329,36 @@ $(document).ready(function() {
         $('.visitrentalstitle').show();
     });
 
+   $('#aboutstjohns').click(function() {
+       $('#about').click();
+   });
+   $('#thewayweworship').click(function() {
+       $('#worship').click();
+   });
+   $('#elporvenir').click(function() {
+       $('#ministries').click();
+       setTimeout(function() {
+          $('#navministrieselporvenir').click();
+       }, 200);
+   });
+   $('#julianpantry').click(function() {
+       $('#ministries').click();
+       setTimeout(function() {
+          $('#navministriesjulianpantry').click();
+       }, 200);
+   });
+   $('#immigration').click(function() {
+       $('#ministries').click();
+       setTimeout(function() {
+          $('#navministriesjustice').click();
+       }, 200);
+   });
+   $('#missiongrads').click(function() {
+       $('#ministries').click();
+       setTimeout(function() {
+          $('#navministriesmissiongrads').click();
+       }, 200);
+   });
 });
 
 function resetPageButtons(section) {
@@ -369,6 +399,8 @@ function onBefore(curr, next, opts) {
    } else {
        $('#dummy').show();
    } 
+
+
 }
 
 function gup (name) {
@@ -922,13 +954,13 @@ Where: Burton Federal Building, Golden Gate and Larkin, San Francisco
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministriesjusticesection ministriesjusticesectionmain">
 <div class="subsectiontitle noshow ministriesjusticetitle ministriesjusticetitlemain">SOCIAL JUSTICE</div>
-With the <a href="">San Francisco Organizing Project</a>, we work to create a more just City for All.
+With the <a href="http://www.sfop.org">San Francisco Organizing Project</a>, we work to create a more just City for All.
 <br/>
 <b>Immigration reform:</b> To stop our nation from tearing apart immigrant families, and to stop unjust deportations of undocumented immigrants in California.
 <br/>
 <b>Pursuing justice for elders:</b> To strengthen healthcare and provide greater security and dignity for elders, including those who are LGBT in San Francisco.
 <br/>
-<b>Nightwalks:</b> To reduce the violence in our neighborhood, we join up with other faith communities in nightwalks through some of the most violent corners of our neighborhood, stopping to light candles and praying for those who died from gun violence on our streets.
+<b>Nightwalks:</b> To reduce the violence in our neighborhood, we join up with other faith communities in nightwalks through some of the most violent corners of the Mission, stopping to light candles and praying for those who died from gun violence on our streets.
 </div> 
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministrieselporvenirsection ministrieselporvenirsectionmain">
@@ -936,7 +968,7 @@ With the <a href="">San Francisco Organizing Project</a>, we work to create a mo
 "El Porvenir" means "the future", and clean water means a healthier future for rural Nicaraguans. El Porvenir helps the people of Nicaragua build that future by helping them provide clean drinking water for their families and communities. In addition to sustainable water and sanitation projects, El Porvenir provides health and hygiene education and reforestation.
 <br/>
 <br/>
-In 2013, members of St. John's raised almost $3000 for this critical organization. Over the years several members of our community have traveled to Nicaragua to see and offer first-hand support to people in local villages building new wells. To find out more, visit their <a href="">website</a>.
+In 2013, members of St. John's raised almost $3000 for this critical organization. Over the years several members of our community have traveled to Nicaragua to see and offer first-hand support to people in local villages building new wells. To find out more, visit their <a href="http://www.elporvenir.org">website</a>.
 </div> 
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministriesmissiongradssection ministriesmissiongradssectionmain">
@@ -946,7 +978,7 @@ Mission Graduates seeks to increase the number of K-12 students in San Francisco
 <b>College Connect</b>, a multi-year program providing structured, personalized college admissions support to students and their parents.
 <b>The Parent Partners Program</b> designed to increase the capacity of parents in San Francisco to support their children's current academic success and future life goals.
 <b>Extended Day Programs</b> that provide award-winning after-school academic enrichment programs serving 120 children K-5 year-round.
-Today, St. John's continues its long-established relationship with this vital organization in our neighborhood. Visit their <a href="">website</a>.
+Today, St. John's continues its long-established relationship with this vital organization in our neighborhood. Visit their <a href="http://www.missiongraduates.org">website</a>.
 </div> 
 
      <div class="subsectionnav" id="navministries">
