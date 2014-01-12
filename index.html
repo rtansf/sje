@@ -1,6 +1,8 @@
 <html>
 <head>
 <link href="sje.css" rel="stylesheet" type="text/css">
+<link href="jquery-ui-1.8.12.custom.css" rel="stylesheet" type="text/css">
+
 <script src="jquery-1.7.1.min.js"></script>
 <script src="jquery-ui.min.js"></script>
 <script src="jquery.cycle.all.js"></script>
@@ -9,6 +11,8 @@
 
 <script>
 $(document).ready(function() {
+
+    // LEFT LINKS
     $('#rota').click(function() {
        alert ('Coming soon!');
     });
@@ -25,42 +29,7 @@ $(document).ready(function() {
         window.open('https://donatenow.networkforgood.org/saintjohnsanfrancisco');
     });
 
-    // MINISTRIES EDIT
-    var $admin = gup('admin');
-    if ($admin) {
-        $('#ministrieseditbutton').show();
-    } else {
-        $('#ministrieseditbutton').hide();
-    }
-    $('#ministrieseditbutton').click(function() {
-        var $selected = $('#navministries').find('.selected');
-        var id = $selected.attr('id');
-        if (!id) { 
-            return;
-        }
-
-        $(this).hide();
-        $('#ministriessavebutton').show();
-        $('#ministriescancelbutton').show();
-
-        if (id == 'navministriesjulianpantry') {
-           var content = $('.ministriesjulianpantrysectionmain').find('.subsectioncontent').text();
-           $('.ministriesjulianpantrysectionmain').find('.subsectioncontent').hide();
-           $('.ministriesjulianpantrysectionmain').find('.subsectioncontentedit').show();
-           $('.ministriesjulianpantrysectionmain').find('.subsectioncontentedit').find('textarea').text(content);
-        }
-    });
-    $('#ministriessavebutton').click(function() {
-        $('#ministriessavebutton').hide();
-        $('#ministriescancelbutton').hide();
-        $('#ministrieseditbutton').show();
-    });
-    $('#ministriescancelbutton').click(function() {
-        $('#ministriessavebutton').hide();
-        $('#ministriescancelbutton').hide();
-        $('#ministrieseditbutton').show();
-    });
-
+    // GENERAL
     var ua = new String(navigator.userAgent);
 
     var idx = ua.indexOf('iPad');
@@ -290,6 +259,42 @@ $(document).ready(function() {
         $('.pagebuttons').hide();
     });
 
+    // MINISTRIES EDIT
+    var $admin = gup('admin');
+    if ($admin) {
+        $('#ministrieseditbutton').show();
+    } else {
+        $('#ministrieseditbutton').hide();
+    }
+    $('#ministrieseditbutton').click(function() {
+        var $selected = $('#navministries').find('.selected');
+        var id = $selected.attr('id');
+        if (!id) { 
+            return;
+        }
+
+        $(this).hide();
+        $('#ministriessavebutton').show();
+        $('#ministriescancelbutton').show();
+
+        if (id == 'navministriesjulianpantry') {
+           var content = $('.ministriesjulianpantrysectionmain').find('.subsectioncontent').text();
+           $('.ministriesjulianpantrysectionmain').find('.subsectioncontent').hide();
+           $('.ministriesjulianpantrysectionmain').find('.subsectioncontentedit').show();
+           $('.ministriesjulianpantrysectionmain').find('.subsectioncontentedit').find('textarea').text(content);
+        }
+    });
+    $('#ministriessavebutton').click(function() {
+        $('#ministriessavebutton').hide();
+        $('#ministriescancelbutton').hide();
+        $('#ministrieseditbutton').show();
+    });
+    $('#ministriescancelbutton').click(function() {
+        $('#ministriessavebutton').hide();
+        $('#ministriescancelbutton').hide();
+        $('#ministrieseditbutton').show();
+    });
+
     // VISIT 
     $('#visitus').click(function() {
         hideHome();
@@ -329,6 +334,7 @@ $(document).ready(function() {
         $('.visitrentalstitle').show();
     });
 
+   // CAROUSEL LINKS
    $('#aboutstjohns').click(function() {
        $('#about').click();
    });
@@ -359,6 +365,44 @@ $(document).ready(function() {
           $('#navministriesmissiongrads').click();
        }, 200);
    });
+
+   // BIOS
+   $('.membername').click(function(e) {
+       var id = $(this).attr('id');
+       if (id == 'richard') {
+           $('#richardsmith').dialog({
+               width: 580,
+               resizable: false,
+               modal: true,
+               title: 'Richard L. Smith'
+           });
+       } else if (id == 'jackie') {
+           $('#jackiecherry').dialog({
+               width: 580,
+               resizable: false,
+               modal: true,
+               title: 'Jackie Cherry'
+           });
+       } else if (id == 'jack') {
+           $('#jackeastwood').dialog({
+               width: 580,
+               resizable: false,
+               modal: true,
+               title: 'Jack Eastwood'
+           });
+       } else if (id == 'robert') {
+           $('#robertcromey').dialog({
+               width: 580,
+               resizable: false,
+               modal: true,
+               title: 'Robert Cromey'
+           });
+       } else {
+           alert ('Coming soon');
+       }
+
+   });
+
 });
 
 function resetPageButtons(section) {
@@ -426,7 +470,7 @@ function gup (name) {
         <li id="about" class="clickable"><span class="bigcap">A</span>BOUT</li>
         <li id="worship" class="clickable"><span class="bigcap">W</span>ORSHIP</li>
         <li id="ministries" class="clickable"><span class="bigcap">M</span>INISTRIES</li>
-        <li id="visitus" class="clickable"><span class="bigcap">V</span>ISIT <span class="bigcap">U</span>S</li>
+        <li id="visitus" class="clickable"><span class="bigcap">V</span>ISIT</li>
      </ul>
   </div>
 </div> <!-- top -->
@@ -533,11 +577,11 @@ function gup (name) {
 
   <div style="clear:both;"></div>
   <div id="aboutstjohns" class="imagelink imagetext noshow"><span class="imagetextmain">About St. John's</span><span class="learnmore">learn more</span></div>
-  <div id="thewayweworship" class="imagelink imagetext noshow"><span class="imagetextmain">The way we worship</span><span class="learnmore">learn more</span></div>
-  <div id="elporvenir" class="imagelink imagetext noshow"><span class="imagetextmain">El Porvenir</span><span class="learnmore">learn more</span></div>
-  <div id="julianpantry" class="imagelink imagetext noshow"><span class="imagetextmain">Julian Pantry</span><span class="learnmore">learn more</span></div>
-  <div id="immigration" class="imagelink imagetext noshow"><span class="imagetextmain">Towards a more just city</span><span class="learnmore">learn more</span></div>
-  <div id="missiongrads" class="imagelink imagetext noshow"><span class="imagetextmain">Mission Graduates</span><span class="learnmore">learn more</span></div>
+  <div id="thewayweworship" class="imagelink imagetext noshow"><span class="imagetextmain">The Way We Worship </span><span class="learnmore">learn more</span></div>
+  <div id="elporvenir" class="imagelink imagetext noshow"><span class="imagetextmain">Providing safe clean, water</span><span class="learnmore">learn more</span></div>
+  <div id="julianpantry" class="imagelink imagetext noshow"><span class="imagetextmain">Sharing food</span><span class="learnmore">learn more</span></div>
+  <div id="immigration" class="imagelink imagetext noshow"><span class="imagetextmain">Working for justice</span><span class="learnmore">learn more</span></div>
+  <div id="missiongrads" class="imagelink imagetext noshow"><span class="imagetextmain">Preparing students for college</span><span class="learnmore">learn more</span></div>
   <div id="dummy" class="imagetext">&nbsp;</div>
 
   <div class="middlecaption"><img src="images/color_band.jpg"/></div>
@@ -654,19 +698,19 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">CLERGY</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername">The Reverend Richard L. Smith, Ph.D., Vicar <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="richard">The Reverend Richard L. Smith, Ph.D., Vicar <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">rlsmith21050@gmail.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername">The Reverend Deacon Jackie Cherry <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="jackie">The Reverend Deacon Jackie Cherry <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">jaccherry@yahoo.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername">The Reverend Dr. Jack Eastwood, Rector Emeritus <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="jack">The Reverend Dr. Jack Eastwood, Rector Emeritus <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">jhbernal@gmail.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername">The Reverend Robert Cromey, Priest Associate <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="robert">The Reverend Robert Cromey, Priest Associate <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">twocromeys@earthlink.net</div>
             </div>
          </div>
@@ -675,11 +719,11 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">STAFF</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername">Aaron Nee, Music Director <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="aaron">Aaron Nee, Music Director <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">parishmusician@stjohnsf.org</div>
             </div>
             <div class="clergymember">
-                <div class="membername">David Stickley, Parish Administrator <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="david">David Stickley, Parish Administrator <img src="images/rota_symbol.png"/></div>
                 <div class="memberemail">parishadmin@stjohnsf.org</div>
             </div>
          </div>
@@ -793,7 +837,7 @@ St. John's beautiful building and grounds are ideal for hosting your next specia
 The church is located one short block west and one block north of the 16th Street/Mission BART station. Several Muni bus lines pass nearby: 14-Mission, 22-Fillmore, 26-Valencia, 33-Stanyan, and 49-Van Ness/Mission.
 <br/>
 <br/>
-Parking may be found for free on Julian, there is metered parking on other surrounding streets, and public garage on Hoff Street, one block south (parallel and between Valencia and Mission, and 16th and 17th). In addition, there is evening and weekend paid parking in the lots of the bank on the corner of Julian and 16th and on 14th Street between Valencia and Mission. The white zone on 15th Street may be used for brief periods for passenger unloading. 
+Parking may be found for free on Julian. There is metered parking on other surrounding streets, and public garage on Hoff Street. In addition, there is evening and weekend paid parking in the lots of Mission Bank on the corner of Julian and 16th at a special rate of $10 for 6 hours. There is also paid parking on 14th Street between Valencia and Mission. The white zone on 15th Street may be used for brief periods for passenger unloading. 
 <br/>
 <br/>
 Wheelchair access is available on Caledonia Street. Please call the parish ahead of time if you need wheelchair access so that we can ensure that the pedestrian gate is open when you arrive.</div> <!-- END VISIT DIRECTIONS -->
@@ -804,7 +848,7 @@ Wheelchair access is available on Caledonia Street. Please call the parish ahead
 Host your next performance or celebration at St. John's and become a part of the community that appreciates and cares for this Mission oasis. Our reasonable rates make St. John's the perfect location for your next concert, performance, private party, or other event!
 <br/>
 <br/>
-St. John's historic nave affords a capacity of 300, has excellent acoustics, and is drenched with natural light. Our chairs can be arranged in any configuration, and the raised alter area serves as an excellent stage. Our library is available for meetings and small gatherings, the garden affords peace and quite perfect for appreciating the Mission weather, and our full kitchen supports your provision of hot foods. Please contact the parish office for rates, schedule, and details.
+St. John's historic nave affords a capacity of 300, has excellent acoustics, and is drenched with natural light. Our chairs can be arranged in any configuration, and the raised altar area serves as an excellent stage. Our library is available for meetings and small gatherings, the garden affords peace and quiet, perfect for appreciating the Mission weather, and our full kitchen supports your provision of hot foods. Please contact the parish office for rates, schedule, and details.
 </div> <!-- END VISIT RENTALS -->
 
      <div class="subsectionnav" id="navvisit">
@@ -954,13 +998,13 @@ Where: Burton Federal Building, Golden Gate and Larkin, San Francisco
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministriesjusticesection ministriesjusticesectionmain">
 <div class="subsectiontitle noshow ministriesjusticetitle ministriesjusticetitlemain">SOCIAL JUSTICE</div>
-With the <a href="http://www.sfop.org">San Francisco Organizing Project</a>, we work to create a more just City for All.
+As a member congregation of the <a href="http://www.sfop.org">San Francisco Organizing Project</a>, we join other Bay Area faith communities in working for justice. 
 <br/>
-<b>Immigration reform:</b> To stop our nation from tearing apart immigrant families, and to stop unjust deportations of undocumented immigrants in California.
+&bull;To end the tearing apart of immigrant families, we work for immigration reform. 
 <br/>
-<b>Pursuing justice for elders:</b> To strengthen healthcare and provide greater security and dignity for elders, including those who are LGBT in San Francisco.
+&bull;To provide greater security and dignity for San Francisco elders, including those who are LGBT, we join a city-wide campaign to strengthen access to healthcare.
 <br/>
-<b>Nightwalks:</b> To reduce the violence in our neighborhood, we join up with other faith communities in nightwalks through some of the most violent corners of the Mission, stopping to light candles and praying for those who died from gun violence on our streets.
+&bull;To reduce violence in our neighborhood, we join other faith communities in nightwalks through some of the most violent corners in the Mission District, stopping to light candles and pray for those killed by gun violence.
 </div> 
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministrieselporvenirsection ministrieselporvenirsectionmain">
@@ -973,12 +1017,13 @@ In 2013, members of St. John's raised almost $3000 for this critical organizatio
 
 <div class="middlerightcontentcaption noshow light middlerightministries ministriesmissiongradssection ministriesmissiongradssectionmain">
 <div class="subsectiontitle noshow ministriesmissiongradstitle ministriesmissiongradstitlemain">MISSION GRADUATES</div>
-Mission Graduates seeks to increase the number of K-12 students in San Francisco's Mission District who are prepared for a college education through the following programs:
+<a href="http://www.missiongraduates.org">Mission Graduates</a> seeks to increase the number of K-12 students in San Francisco's Mission District who are prepared for a college education through the following programs:
 <br/>
-<b>College Connect</b>, a multi-year program providing structured, personalized college admissions support to students and their parents.
-<b>The Parent Partners Program</b> designed to increase the capacity of parents in San Francisco to support their children's current academic success and future life goals.
-<b>Extended Day Programs</b> that provide award-winning after-school academic enrichment programs serving 120 children K-5 year-round.
-Today, St. John's continues its long-established relationship with this vital organization in our neighborhood. Visit their <a href="http://www.missiongraduates.org">website</a>.
+<b>&bull;College Connect</b>, a multi-year program providing structured, personalized college admissions support to students and their parents.
+<br/>
+<b>&bull;The Parent Partners Program</b> designed to help parents support their children's current academic success and future life goals.
+<br/>
+<b>&bull;Extended Day Programs</b> that provide award-winning after-school academic enrichment programs for 120 children K-5 year-round.
 </div> 
 
      <div class="subsectionnav" id="navministries">
@@ -1017,6 +1062,42 @@ Today, St. John's continues its long-established relationship with this vital or
      </div>
   </div>
 </div> <!-- bottom -->
+
+<!-- BIOGRAPHIES -->
+<div class="bios">
+<div class="noshow bio" id="richardsmith">
+<div class="bioimage"><img src="images/richard.jpg"/></div>
+Richard was ordained a Roman Catholic priest in 1978 and worked for several years as a parish priest in Washington State. Later, after receiving a Ph.D. in Ethics and Social Theory from the Graduate Theological Union, he taught Religious Studies at various Bay Area Universities, then worked as a technical writer in Silicon Valley. 
+After his reception as an Episcopal priest in 2000, he served as a Priest Associate at St. John the Evangelist, working heavily for immigration reform in San Francisco's Mission District. In 2013, he became Vicar at St. John's. He lives in San Francisco with his partner Rob Tan and their son David.
+</div>
+<div class="noshow bio" id="jackiecherry">
+<div class="bioimage"><img src="images/jackie.jpg"/></div>
+Jackie traveled from her hometown of San Diego to (UC) Santa Cruz, and settled in San Francisco in 1984. She was an original member of San Francisco's Visiting Nurses and Hospice AIDS Home Care team. From 1989 - 1993 Jackie worked on 7NE, the AIDS unit at Kaiser Hospital, San Francisco. At home, she helped care for many friends, including several members of St. John's, who died during the AIDS epidemic. 
+<br/> 
+Currently, Deacon Jackie harvests and sells honey produced by her backyard bees. Jackie lives on Potrero Hill with her partner Beth, and their 8 year-old daughter, Firefly.  She is a Registered Nurse, photographer, gardener, beekeeper, and lover of nature, good food, and clean water. You can count on her to speak out against injustice and irritate authorities by telling the truth. She was ordained at Grace Cathedral in 2009. Jackie reports, "In 1989, Jack Eastwood was the first Episcopal priest I ever met, and St. John's was the first Episcopal church I ever entered; now, I am honored to be the Deacon of this amazing community, and to work alongside Richard, Jack and Robert all inspirational priests and cherished mentors".
+</div>
+<div class="noshow bio" id="jackeastwood">
+<div class="bioimage"><img src="images/jack.jpg"/></div>
+I grew up in a Philadelphia suburb, went to school in Washington D. C.,  Indiana and New York City and served two years in the  U. S. Naval reserve. 
+After marriage and graduation from seminary in NYC, Judy and I moved to Indianapolis where I began a ministry in urban churches, and where we began to raise a family.
+<br/>
+After 13 years in Indianapolis, I accepted the call to serve as rector of St. John's in 1985 and with two small children we moved to San Francisco.
+After serving St John's from 1985 to 1993, I accepted a call to serve as rector at St. Paul's, Oakland where I served until I retired
+in 2007.
+<br/>
+I have served at the diocesan and provincial levels of the church on various committees, been a supervisor of
+seminarians, and taught for a few semesters at CDSP, our seminary in Berkeley.  
+<br/>
+In retirement Judy and I worship and serve at St. John's, enjoy time with our daughter who lives here in San Francisco, and with our son and his family (his wife and two sons) in Massachusetts; we take vacations on Cape Cod mostly and visit our families in MA and PA. Since 2008, I enjoy serving as a volunteer clergy at St John's, singing in the choir, and playing the piano on occasion for services. </div>
+<div class="noshow bio" id="robertcromey">
+<div class="bioimage"><img src="images/cromey.jpg"/></div>
+The Rev. Robert Warren Cromey came to St. John's in 2003 after serving twenty years as rector of Trinity Church, San Francisco 1981-2001. He performed many same-sex weddings and has long been a same-sex marriage advocate. During the 80s, Trinity held funerals for at least 75 men who had died of AIDs.
+<br/>
+Robert was a founder of San Francisco's Council on Religion and the Homosexual in 1964, and a LGBT rights advocate ever since. Also in the 1960s he was active in the Civil Rights Movement in San Francisco and marched in Selma, AL in 1964. He was vicar of St. Aidan's, San Francisco 1965-70. He performed a same-sex wedding for two women there in 1969. From 1970 to 1981, Robert had a private practice as a Marriage Family Therapist in San Francisco. Born in Brooklyn, NY, he was educated, ordained and served two parishes in New York before moving to San Francisco in 1962. He has three grown daughters from his first marriage. He has been married to Ann since 1983. She too is active at St. John's.
+</div>
+<div class="noshow bio" id="aaronnee">
+</div>
+</div>
 
 </div> <!-- wrapper ->
 </body>
