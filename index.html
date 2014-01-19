@@ -6,6 +6,7 @@
 <script src="jquery-1.7.1.min.js"></script>
 <script src="jquery-ui.min.js"></script>
 <script src="jquery.cycle.all.js"></script>
+<script src="jquery.slimscroll.min.js"></script>
 <script type="text/javascript" src="http://use.typekit.com/pdx5vmz.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
@@ -104,10 +105,17 @@ $(document).ready(function() {
         $('#aboutmissioncarousel1').show();        
         $('.aboutmissionsection:eq(0)').show();
         $('.aboutmissiontitle').show();
-
-        $('.pagebuttons').hide();
-        resetPageButtons('aboutmissionpagebuttons');
-        $('#aboutmissionpagebuttons').show();
+    });
+    $('#missionText').slimscroll({
+       railVisible: true,
+       alwaysVisible: true,
+       railOpacity: 0.3,
+       railBorderRadius: 0,
+       railColor: 'gray',
+       size: '4px',
+       color: 'black',
+       height: '330px',
+       width: '610px'
     });
 
     // ABOUT HISTORY
@@ -118,10 +126,17 @@ $(document).ready(function() {
         $('#abouthistorycarousel1').show();        
         $('.abouthistorysection:eq(0)').show();
         $('.abouthistorytitle').show();        
-
-        $('.pagebuttons').hide();
-        resetPageButtons('abouthistorypagebuttons');
-        $('#abouthistorypagebuttons').show();
+    });
+    $('#historyText').slimscroll({
+       railVisible: true,
+       alwaysVisible: true,
+       railOpacity: 0.3,
+       railBorderRadius: 0,
+       railColor: 'gray',
+       size: '4px',
+       color: 'black',
+       height: '230px',
+       width: '610px'
     });
 
     // ABOUT CLERGY
@@ -171,10 +186,17 @@ $(document).ready(function() {
         $('#worshipworshipcarousel1').show();        
         $('.worshipworshipsection:eq(0)').show();
         $('.worshipworshiptitle').show();
-
-        $('.pagebuttons').hide();
-        resetPageButtons('worshipworshippagebuttons');
-        $('#worshipworshippagebuttons').show();
+    });
+    $('#worshipText').slimscroll({
+       railVisible: true,
+       alwaysVisible: true,
+       railOpacity: 0.3,
+       railBorderRadius: 0,
+       railColor: 'gray',
+       size: '4px',
+       color: 'black',
+       height: '180px',
+       width: '610px'
     });
 
     // WORSHIP MUSIC
@@ -185,10 +207,17 @@ $(document).ready(function() {
         $('#worshipmusiccarousel1').show();        
         $('.worshipmusicsection:eq(0)').show();
         $('.worshipmusictitle').show();
-
-        $('.pagebuttons').hide();
-        resetPageButtons('worshipmusicpagebuttons');
-        $('#worshipmusicpagebuttons').show();
+    });
+    $('#musicText').slimscroll({
+       railVisible: true,
+       alwaysVisible: true,
+       railOpacity: 0.3,
+       railBorderRadius: 0,
+       railColor: 'gray',
+       size: '4px',
+       color: 'black',
+       height: '184px',
+       width: '610px'
     });
 
     // MINISTRIES
@@ -405,14 +434,6 @@ $(document).ready(function() {
 
 });
 
-function resetPageButtons(section) {
-    var $section = $('#' + section);
-    $section.find('.pagebutton').removeClass('buttonon');
-    $section.find('.pagebutton').removeClass('buttonoff');
-    $section.find('.pagebutton').addClass('buttonoff');
-    $section.find('.pagebutton:eq(0)').addClass('buttonon');
-}
-
 function hideHome() {
     $('.stjohnimage').hide();
     $('#maincarousel').remove();
@@ -598,7 +619,7 @@ function gup (name) {
   <div class="middlerightcontent mediumfont" id="homecontent">
      <div class="stjohnbold">WELCOME TO ST. JOHN'S!</div>
      <div class="middlerightcontentcaption light">
-St. John's is a place where people's lives are transformed by encountering <br/> the love of God in community. Christian faith isn't an idea; it's an experience. <br/> We invite you to explore that experience with us through worship, fellowship and service.
+St. John's is a place where people's lives are transformed by encountering the love of God in community. Christian faith isn't an idea; it's an experience. We invite you to explore that experience with us through worship, fellowship and service.
      </div>
   </div> <!-- END HOME SECTION -->
 
@@ -612,8 +633,10 @@ Located around the corner from the busy Mission-16th Street-Valencia corridors i
 </div> <!-- END ABOUT HOME -->
 
      <!-- ABOUT MISSION -->
-<div class="middlerightcontentcaption light noshow middlerightabout aboutmissionsection" id="aboutmission1">
+<div class="middlerightcontentcaption light noshow middlerightabout aboutmissionsection">
 <div class="noshow subsectiontitle aboutmissiontitle">OUR MISSION</div>
+<div id="missionText">
+<div class="scrollText">
 <b>Our mission is to live, love, and serve in the hope and joy of the risen Christ.</b>
 <br/>
 <br/>
@@ -630,18 +653,19 @@ We have a special vocation to respect and advocate for the dignity of gay, lesbi
 <br/>
 <br/>
 We value diversity and welcome anyone who wishes to explore Christian faith and practice.
-</div>
-
-<div class="middlerightcontentcaption light noshow middlerightabout aboutmissionsection" id="aboutmission2">
-<div class="noshow subsectiontitle aboutmissiontitle">OUR MISSION</div>
+<br/>
+<br/>
 We value connection, and strive to promote a sense of belonging among the members of the parish that readily includes newcomers. This is often talked about in terms of communication or pastoral care or hospitality, but it is fundamentally about feeling connected to God and to one another.
 <br/>
 <br/>
 We value the North Mission neighborhood. Our location in this particular place spiritually anchors us and gives substance to our mission and ministry. This neighborhood keeps us grounded in reality.     
 </div>
+</div> <!- missionText -->
+
+</div>
 
      <!-- ABOUT HISTORY -->
-<div class="middlerightcontentcaption light noshow middlerightabout abouthistorysection" id="abouthistory1">
+<div class="middlerightcontentcaption light noshow middlerightabout abouthistorysection">
      <div class="noshow subsectiontitle abouthistorytitle">ST JOHN'S HISTORY</div>
      <div id="historyimages">
          <div class="historyimage" id="historyimage1">
@@ -660,16 +684,14 @@ We value the North Mission neighborhood. Our location in this particular place s
             <img src="images/about_img_2e.jpg"/>
          </div>
      </div>
-     <div id="historyText1">
+     <div id="historyText">
+<div class="scrollText">
 The third parish established in the new Episcopal Diocese of California, St. John's began in 1857 as a pioneer outpost in rented space at the edge of swamps and sand dunes. It quickly grew into a thriving 'society parish' of sorts, helping to found schools, hospitals, and chapels in the rapidly growing Mission District.
 <br/>
 <br/>
 By 1861, St. John's was able to hire its first rector, the Rev. Thomas Brotherton, and in 1862, a new church building, which could accommodate 250, opened, with fundraising spearheaded by the newly created Ladies Parish Aid Society. The first St. John's was a redwood church in Pointed Gothic style at the northeast corner of Valencia and 15th Streets. Within just 30 years of its founding, St. John's had become a large and prosperous parish. 
-    </div>
-</div>
-
-<div class="middlerightcontentcaption light noshow middlerightabout abouthistorysection" id="abouthistory2">
-     <div class="noshow subsectiontitle abouthistorytitle">ST JOHN'S HISTORY</div>
+<br/>
+<br/>
 During this early golden age, St. John's played a key role, led by Rev. Brotherton, in founding St. Luke's Hospital (1871) and provided financial and spiritual support to many institutions within the parish bounds, including the City and County Hospital, the Poor House, and the Protestant Episcopal Old Ladies Home. 
 Another early rector, the Rev. Dr. E.B. Spalding, brought the Trinity School, a distinguished boys' school, to St. John's parish in 1881 and ran it for 20 years. In 1882, the Irving Institute, a fashionable girls' school, was established under St. John's auspices at Valencia and Hill Streets.
 <br/>
@@ -678,10 +700,6 @@ As the city boomed and the Mission became a highly desirable residential neighbo
 <br/>
 <br/>
 But then the Great San Francisco Earthquake of 1906 struck, and the second St. John's building was destroyed in its aftermath. 
-</div>
-
-<div class="middlerightcontentcaption light noshow middlerightabout abouthistorysection" id="abouthistory3">
-     <div class="noshow subsectiontitle abouthistorytitle">ST JOHN'S HISTORY</div>
 The edifice had been dynamited to serve as a firebreak to stem the post-quake fires raging from the north and northeast, which tore a wide swath through the Mission, stopping eventually at 20th and Dolores Streets. 
 <br/>
 <br/>
@@ -689,6 +707,8 @@ There was enough money (from insurance and donations from Episcopal churches acr
 <br/>
 <br/>
 Keeping the red doors on Julian Street open during the Depression and war years was no mean feat. Events continued to change the neighborhood, but the church was never closed. In 1974 an arsonist destroyed the parish hall and rectory, but the charred remains were turned into a garden. The then rector, the Rev. James Brown, continued to reach out to the gay community, and built a reputation of St. John's as a place of refuge and prayer for LGBT people and their friends and families.
+</div>
+</div>
 </div> <!-- END ABOUT HISTORY -->
 
      <!-- ABOUT CLERGY -->
@@ -803,17 +823,6 @@ Keeping the red doors on Julian Street open during the Depression and war years 
         <div id="navaboutclergy" class="clickable">CLERGY &amp; STAFF</div>
         <div class="verticalsep"></div>
         <div id="navaboutlayleadership" class="clickable">LAY  LEADERSHIP</div>
-
-        <div id="aboutmissionpagebuttons" class="pagebuttons" section="aboutmission">
-           <div class="pagebutton buttonon"  bnum="1"></div>
-           <div class="pagebutton buttonoff" bnum="2"></div>
-        </div>
-
-        <div id="abouthistorypagebuttons" class="pagebuttons" section="abouthistory">
-           <div class="pagebutton buttonon"  bnum="1"></div>
-           <div class="pagebutton buttonoff" bnum="2"></div>
-           <div class="pagebutton buttonoff" bnum="3"></div>
-        </div>
      </div>
 
   </div><!-- END ABOUT SECTION -->
@@ -866,20 +875,20 @@ St. John's historic nave affords a capacity of 300, has excellent acoustics, and
 <div class="middlerightcontentcaption light middlerightworship" id="worshiphome">
 <div class="subsectiontitle worshiptitle">WORSHIP & MUSIC</div>     
 If you ask people what keeps them coming to St. John's, nine times out of ten the response is: "The worship, the music, the sincerity of the worship". "It's real. It's authentic. The people really pray and sing together!".
-When we gather here to worship God, people really show up, bringing their entire selves, souls and bodies, to be enveloped by God’s presence. We invite you to join us in receiving the love that God is sharing with us and through us.
+When we gather here to worship God, people really show up, bringing their entire selves, souls and bodies, to be enveloped by God's presence. We invite you to join us in receiving the love that God is sharing with us and through us.
 </div> <!-- END WORSHIP HOME -->
 
-     <!-- WORSHIP WORSHIP 1 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection worshipworshipmain">
-<div class="subsectiontitle noshow worshipworshiptitle worshipworshiptitlemain">WORSHIP</div>     
+     <!-- WORSHIP WORSHIP -->
+<div class="middlerightcontentcaption light noshow middlerightworship worshipworshipsection">
+<div class="noshow subsectiontitle worshipworshiptitle">WORSHIP</div>     
+<div id="worshipText">
+<div class="scrollText">
 <b>The Choral Eucharist, Sundays at 10:15 am</b>
 <br/>
 <br/>
 This is the main event of St. John's congregation, the gathering of the community on the first day of the week to celebrate the resurrection of Christ and the new life he brings. Sunday morning at St. John's is a hard-to-define mix of formal and informal elements: incense and bells, choral anthems and the chanting of prayers; but also intensely active participation of everyone in prayer and song, people in jeans and t-shirts, the sharing of stories from Scripture and from our own lives. The worship is transcendent and intimate, grand and deeply personal, all at the same time.
-</div> <!-- END WORSHIP WORSHIP 1 -->
-     <!-- WORSHIP WORSHIP 2 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection worshipworshipsub">
-<div class="subsectiontitle noshow worshipworshiptitle worshipworshiptitlesub">WORSHIP</div>     
+<br/>
+<br/>
 Eucharistic worship is in two-parts. In the first part, the Liturgy of the Word, we gather to hear Scriptures read and applied to our daily lives, to affirm our faith, and pray for the needs of the world. In the second part, the Liturgy of the Table, we share a sacred meal of bread and wine, the Body and Blood of Christ, remembering our unity in Christ and receiving the grace to continue Christ's presence and ministry in the world.
 <br/>
 <br/>
@@ -889,12 +898,7 @@ Our liturgy has a certain twist that is uniquely St. John's: reflecting our welc
 <b>Special Liturgies</b>
 <br/>
 <br/>
-Throughout the year, we mark feast days, liturgical seasons, and Holy Week with special services, including Advent Lessons and Carols, Christmas Eve and Morning; Ash Wednesday, Palm Sunday, Holy Week, and the Great Vigil of Easter and Easter Morning services; the Feasts of St. Francis 
-</div> <!-- END WORSHIP WORSHIP 2 -->
-     <!-- WORSHIP WORSHIP 3 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection worshipworshipsub">
-<div class="subsectiontitle noshow worshipworshiptitle worshipworshiptitlesub">WORSHIP</div>     
-and All Souls. We also often hold a special service in memory of Matthew Shepard and all victims of hatred and violence, and a service to mark the anniversary of the assassination of Archbishop Oscar Romero of El Salvador. 
+Throughout the year, we mark feast days, liturgical seasons, and Holy Week with special services, including Advent Lessons and Carols, Christmas Eve and Morning; Ash Wednesday, Palm Sunday, Holy Week, and the Great Vigil of Easter and Easter Morning services; the Feasts of St. Francis and All Souls. We also often hold a special service in memory of Matthew Shepard and all victims of hatred and violence, and a service to mark the anniversary of the assassination of Archbishop Oscar Romero of El Salvador. 
 <br/>
 <br/>
 <b>Baptism: Christian Initiation</b>
@@ -906,11 +910,8 @@ In baptism we receive forgiveness of sins and are made sharers in God's own life
 <br/>
 <br/>
 Four dates are usually set apart especially for baptism: The Sunday after All Saints, The Feast of the Baptism of Jesus, The Great Vigil of Easter, The Feast of Pentecost.
-</div> <!-- END WORSHIP WORSHIP 3 -->
-
-     <!-- WORSHIP WORSHIP 4 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipworshipsection worshipworshipsub">
-<div class="subsectiontitle noshow worshipworshiptitle worshipworshiptitlesub">WORSHIP</div>     
+<br/>
+<br/>
 <b>Marriage</b>
 <br/>
 <br/>
@@ -922,18 +923,18 @@ In the Episcopal Church marriage is a sacramental rite, and the commitment that 
 <br/>
 Respect and care for the dead and those who grieve is a sacred obligation. The sacramental rite of Christian burial is provided for all baptized people, regardless of their denominational affiliation or participation at St. John's. Memorial services are celebrated for all people of any or no religious background. There is no requirement other than the need for the support of a loving community during a time of grief and loss. Please contact the parish office for pastoral assistance during times of illness, dying, or death.
 </div>
+</div> <!-- worshipText -->
+</div>
 
-     <!-- WORSHIP MUSIC 1 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection worshipmusicmain">
-<div class="subsectiontitle noshow worshipmusictitle worshipmusictitlemain">MUSIC</div>
+     <!-- WORSHIP MUSIC -->
+<div class="middlerightcontentcaption light noshow middlerightworship worshipmusicsection">
+<div class="noshow subsectiontitle worshipmusictitle">MUSIC</div>
+<div id="musicText">
+<div class="scrollText">
 Music is an integral and essential part of worship at St. John's. Our music program is known for its excellent quality and distinctive style. Our volunteer choir leads the congregation in a wide range of music, from traditional Anglican and Episcopal hymns to medieval chants and Renaissance motets to American folk music and spirituals, to music written by our previous music director, Charles Rus. St. John's is also home to a number of concerts throughout the year, for example by the San Francisco Early Music Society.
 <br/>
 <br/>
 St John's beautiful organ was originally built by the M. P. Möller Organ Company of Hagerstown, 
-</div> <!-- END WORSHIP MUSIC 1 -->
-     <!-- WORSHIP MUSIC 2 -->
-<div class="middlerightcontentcaption noshow light middlerightworship worshipmusicsection worshipmusicsub">
-<div class="subsectiontitle noshow worshipmusictitle worshipmusictitlesub">MUSIC</div>     
 Maryland, in 1902 for a church in Davenport, Iowa. (It is a little-known fact that Moller built more tracker organs than any other 20th-century American organ builder.)
 <div class="organ"><img src="images/organ.gif"/></div>
  In the early 1980s, St. John's purchased the organ, and it was moved to the Rosales shop in Los Angeles, where John DeCamp, a parishioner of St. John's, painstakingly renovated it. Much of the old pipework was used, and much was also added to expand the tonal scope of the organ. Many parishioners of the church helped in this project, which was completed in 1984. Though its most comfortable period is romantic, it is now a very eclectic organ which works well for many styles of organ music, from Buxtehude and Bach to Mendelssohn to Messiaen.
@@ -941,24 +942,13 @@ Maryland, in 1902 for a church in Davenport, Iowa. (It is a little-known fact th
 <br/>
 <div class="piano"><img src="images/piano.jpg"/></div>
 St. John's piano is an historic Hamburg Steinway, Model O, built in Germany in 1911. It produces beautiful, warm tones and is often used as accompaniment for our choir, vocal soloists and piano solo performances. 
-</div> <!-- END WORSHIP MUSIC 2 -->
-
+</div>
+</div>
+</div>
      <div class="subsectionnav" id="navworship">
         <div id="navworshipworship" class="clickable">WORSHIP</div>
         <div class="verticalsep"></div>
         <div id="navworshipmusic" class="clickable">MUSIC</div>
-
-        <div id="worshipworshippagebuttons" class="pagebuttons"  section="worshipworship">
-           <div class="pagebutton buttonon"  bnum="1"></div>
-           <div class="pagebutton buttonoff" bnum="2"></div>
-           <div class="pagebutton buttonoff" bnum="3"></div>
-           <div class="pagebutton buttonoff" bnum="4"></div>
-        </div>
-
-        <div id="worshipmusicpagebuttons" class="pagebuttons" section="worshipmusic">
-           <div class="pagebutton buttonon"  bnum="1"></div>
-           <div class="pagebutton buttonoff" bnum="2"></div>
-        </div>
      </div>
 
   </div> <!-- END WORSHIP -->

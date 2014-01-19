@@ -44,6 +44,9 @@ body {
     color: $crimson;
     opacity: 1;
 }
+.scrollText {
+    padding-right: 20px;
+}
 .bigCap {
     font-size: 16px;
 }
@@ -252,6 +255,11 @@ body {
 }
 
 /* ABOUT */
+#aboutcontent {
+   margin-top: -8px;
+   color: #000;
+   font-weight: 600;
+}
 #abouthome {
    position: relative;
    top: 188px;
@@ -263,10 +271,9 @@ body {
    position: relative;
    top: -46px;
 }
-#aboutcontent {
-   margin-top: -8px;
-   color: #000;
-   font-weight: 600;
+.middlerightabout {
+   margin-top: -240px;
+   height: 340px;
 }
 #navabout {
    /* margin-top: 25px; */
@@ -280,19 +287,6 @@ body {
 }
 .subsectionnav div:hover {
    color: $hoverpink;
-}
-.middlerightabout {
-   margin-top: -240px;
-   height: 340px;
-}
-.pagebuttons {
-   padding-top: 3px;
-   margin-left: 30px;
-}
-.pagebutton {
-   width: 20px;
-   height: 20px;
-   float: left;
 }
 .buttonoff {
    background-image: url('images/about_page_button_off.png');
@@ -377,53 +371,34 @@ body {
 
 /* WORSHIP */
 #worshipcontent {
-   margin-top: -260px;
+   margin-top: -8px;
    color: #000;
    font-weight: 600;
 }
 #worshiphome {
    position: relative;
-   top: 198px;
+   top: 188px;
 }
 .worshiptitle {
    margin-bottom: 36px;
 }
-.worshipworshipsection {
+.worshipworshiptitle {
    position: relative;
-   top: -80px;
+   top: -46px;
+   margin-bottom: 160px;
 }
-.worshipworshiptitlemain {
-   position: relative;
-   top: 46px;
-   margin-bottom: 250px;
-}
-.worshipworshiptitlesub {
-   position: relative;
-   top: 46px;
-   margin-bottom: 80px;
-}
-.worshipmusicsection {
-   position: relative;
-   top: -80px;
-}
-.worshipmusictitlemain {
-   position: relative;
-   top: 46px;
-   margin-bottom: 250px;
-}
-.worshipmusictitlesub {
-   position: relative;
-   top: 46px;
-   margin-bottom: 80px;
-}
-
 .middlerightworship {
-   height: 440px;
-   overflow: hidden;
+   margin-top: -240px;
+   height: 340px;
+}
+.worshipmusictitle {
+   position: relative;
+   top: -46px;
+   margin-bottom: 160px;
 }
 #navworship {
    position: relative;
-   top: -50px;
+   top: 40px;
 }
 #navworship>div {
    margin-right: 15px;

@@ -39,6 +39,9 @@ body {
   color: #ae1f25;
   opacity: 1; }
 
+.scrollText {
+  padding-right: 20px; }
+
 .bigCap {
   font-size: 16px; }
 
@@ -173,44 +176,39 @@ body {
   padding-top: 12px; }
 
 #aboutstjohns {
-  top: -38px;
-  left: 650px;
+  left: 718px;
   z-index: 100;
   width: 300px; }
 
 #thewayweworship, #dummy {
-  top: -38px;
-  left: 650px;
+  left: 666px;
   z-index: 100;
   width: 300px; }
 
 #elporvenir {
-  top: -38px;
-  left: 650px;
+  left: 646px;
   z-index: 100;
   width: 300px; }
 
 #julianpantry {
-  top: -38px;
-  left: 650px;
+  left: 736px;
   z-index: 100;
   width: 300px; }
 
 #immigration {
-  top: -38px;
-  left: 550px;
+  left: 696px;
   z-index: 100;
   width: 400px; }
 
 #missiongrads {
-  top: -38px;
-  left: 650px;
+  left: 624px;
   z-index: 100;
   width: 300px; }
 
 .imagetext {
   color: white;
   position: relative;
+  top: -36px;
   font-family: "futura-pt-n4","futura-pt",sans-serif;
   font-style: italic;
   opacity: 0.9;
@@ -224,7 +222,7 @@ body {
 
 .learnmore {
   font-size: 14px;
-  margin-left: 40px;
+  margin-left: 15px;
   position: relative;
   top: -1px; }
 
@@ -245,6 +243,11 @@ body {
   font-weight: 300; }
 
 /* ABOUT */
+#aboutcontent {
+  margin-top: -8px;
+  color: #000;
+  font-weight: 600; }
+
 #abouthome {
   position: relative;
   top: 188px; }
@@ -256,10 +259,9 @@ body {
   position: relative;
   top: -46px; }
 
-#aboutcontent {
-  margin-top: -8px;
-  color: #000;
-  font-weight: 600; }
+.middlerightabout {
+  margin-top: -240px;
+  height: 340px; }
 
 #navabout {
   /* margin-top: 25px; */
@@ -267,25 +269,12 @@ body {
   top: 40px; }
 
 #navabout > div {
-  margin-right: 20px;
+  margin-right: 15px;
   font-weight: 500;
   font-size: 13px; }
 
 .subsectionnav div:hover {
   color: #ae1f25; }
-
-.middlerightabout {
-  margin-top: -240px;
-  height: 340px; }
-
-.pagebuttons {
-  padding-top: 3px;
-  margin-left: 30px; }
-
-.pagebutton {
-  width: 20px;
-  height: 20px;
-  float: left; }
 
 .buttonoff {
   background-image: url("images/about_page_button_off.png");
@@ -369,55 +358,37 @@ body {
 
 /* WORSHIP */
 #worshipcontent {
-  margin-top: -260px;
+  margin-top: -8px;
   color: #000;
   font-weight: 600; }
 
 #worshiphome {
   position: relative;
-  top: 198px; }
+  top: 188px; }
 
 .worshiptitle {
   margin-bottom: 36px; }
 
-.worshipworshipsection {
+.worshipworshiptitle {
   position: relative;
-  top: -80px; }
-
-.worshipworshiptitlemain {
-  position: relative;
-  top: 46px;
-  margin-bottom: 250px; }
-
-.worshipworshiptitlesub {
-  position: relative;
-  top: 46px;
-  margin-bottom: 80px; }
-
-.worshipmusicsection {
-  position: relative;
-  top: -80px; }
-
-.worshipmusictitlemain {
-  position: relative;
-  top: 46px;
-  margin-bottom: 250px; }
-
-.worshipmusictitlesub {
-  position: relative;
-  top: 46px;
-  margin-bottom: 80px; }
+  top: -46px;
+  margin-bottom: 160px; }
 
 .middlerightworship {
-  height: 440px;
-  overflow: hidden; }
+  margin-top: -240px;
+  height: 340px; }
+
+.worshipmusictitle {
+  position: relative;
+  top: -46px;
+  margin-bottom: 160px; }
 
 #navworship {
   position: relative;
-  top: -50px; }
+  top: 40px; }
 
 #navworship > div {
-  margin-right: 20px;
+  margin-right: 15px;
   font-weight: 500;
   font-size: 13px; }
 
@@ -448,7 +419,7 @@ body {
   overflow: hidden; }
 
 #navministries > div {
-  margin-right: 20px;
+  margin-right: 15px;
   font-weight: 500;
   font-size: 13px; }
 
@@ -545,10 +516,42 @@ body {
   top: -50px; }
 
 #navvisit > div {
-  margin-right: 20px;
+  margin-right: 15px;
   font-weight: 500;
   font-size: 13px; }
 
 .mapimage {
   float: left;
   margin-right: 25px; }
+
+/* BIOS */
+.bio {
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  border: 1px solid gray;
+  font-family: "futura-pt-n4","futura-pt",sans-serif;
+  font-weight: 400;
+  font-size: 15px; }
+
+.bioimage {
+  float: left;
+  padding-right: 15px;
+  padding-bottom: 2px; }
+
+#richardsmith {
+  width: 580px;
+  padding-bottom: 20px; }
+
+#jackiecherry {
+  width: 580px;
+  padding-bottom: 20px; }
+
+#jackeastwood {
+  width: 580px;
+  padding-bottom: 20px; }
+
+#robertcromey {
+  width: 580px;
+  padding-bottom: 20px; }
