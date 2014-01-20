@@ -10,6 +10,13 @@
 <script type="text/javascript" src="http://use.typekit.com/pdx5vmz.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
+<style>
+.ui-dialog {
+   background-color: rgb(239, 236, 229);
+   font-family: "futura-pt-n4","futura-pt",sans-serif;
+}
+</style>
+
 <script>
 $(document).ready(function() {
 
@@ -57,23 +64,6 @@ $(document).ready(function() {
         location.href = '/sje';
     });
 
-    $('.pagebutton').click(function() {
-        $('.pagebutton').removeClass('buttonon');
-        $('.pagebutton').removeClass('buttonoff');
-        $('.pagebutton').addClass('buttonoff');
-        $(this).addClass('buttonon');
-        var bnum = $(this).attr('bnum');
-        var section = $(this).parent().attr('section');
-        var num = bnum - 1;
-        var sectionClassName = '.' + section + 'section'
-        $(sectionClassName).hide();
-
-        $('.noncarousel').hide();
-        $('#' + section + 'carousel' + bnum).show();         
-        var sel = '.' + section + 'section:eq(' + num + ')';
-        $(sel).show();
-    });
-
     // HOME 
     $('#home').click(function() {
         location.href = '/sje';
@@ -86,7 +76,6 @@ $(document).ready(function() {
         $('.middlerightcontentcaption').hide();
         $('.middlecaption').hide();
         $('.noncarousel').hide();
-        $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
         $('.subsectionnav').find('.clickable').removeClass('selected');
 
@@ -143,7 +132,6 @@ $(document).ready(function() {
     $('#navaboutclergy').click(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
-        $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
         $('#aboutclergycarousel').show();        
         $('#aboutclergy').show();
@@ -154,7 +142,6 @@ $(document).ready(function() {
     $('#navaboutlayleadership').click(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
-        $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
         $('#aboutlaycarousel').show();        
         $('#aboutlay').show();
@@ -168,7 +155,6 @@ $(document).ready(function() {
         $('.middlerightcontentcaption').hide();
         $('.middlecaption').hide();
         $('.noncarousel').hide();
-        $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
         $('.subsectionnav').find('.clickable').removeClass('selected');
 
@@ -227,7 +213,6 @@ $(document).ready(function() {
         $('.middlerightcontentcaption').hide();
         $('.middlecaption').hide();
         $('.noncarousel').hide();
-        $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
         $('.subsectionnav').find('.clickable').removeClass('selected');
 
@@ -245,7 +230,6 @@ $(document).ready(function() {
         $('#ministriesjulianpantrycarousel').show();        
         $('.ministriesjulianpantrysection:eq(0)').show();
         $('.ministriesjulianpantrytitle').show();
-        $('.pagebuttons').hide();
     });
     // MINISTRIES PEACE
     $('#navministriespeace').click(function() {
@@ -255,7 +239,6 @@ $(document).ready(function() {
         $('#ministriespeacecarousel').show();        
         $('.ministriespeacesection:eq(0)').show();
         $('.ministriespeacetitle').show();
-        $('.pagebuttons').hide();
     });
     // MINISTRIES SOCIAL JUSTICE
     $('#navministriesjustice').click(function() {
@@ -265,7 +248,6 @@ $(document).ready(function() {
         $('#ministriesjusticecarousel').show();        
         $('.ministriesjusticesection:eq(0)').show();
         $('.ministriesjusticetitle').show();
-        $('.pagebuttons').hide();
     });
     // MINISTRIES EL PORVENIR
     $('#navministrieselporvenir').click(function() {
@@ -275,7 +257,6 @@ $(document).ready(function() {
         $('#ministrieselporvenircarousel').show();        
         $('.ministrieselporvenirsection:eq(0)').show();
         $('.ministrieselporvenirtitle').show();
-        $('.pagebuttons').hide();
     });
     // MINISTRIES MISSION GRADS
     $('#navministriesmissiongrads').click(function() {
@@ -285,7 +266,6 @@ $(document).ready(function() {
         $('#ministriesmissiongradscarousel').show();        
         $('.ministriesmissiongradssection:eq(0)').show();
         $('.ministriesmissiongradstitle').show();
-        $('.pagebuttons').hide();
     });
 
     // MINISTRIES EDIT
@@ -331,7 +311,6 @@ $(document).ready(function() {
         $('.middlerightcontentcaption').hide();
         $('.middlecaption').hide();
         $('.noncarousel').hide();
-        $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
         $('.subsectionnav').find('.clickable').removeClass('selected');
 
@@ -346,7 +325,6 @@ $(document).ready(function() {
     $('#navvisitdirections').click(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
-        $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
         $('#visitdirectionscarousel').show();        
         $('#visitdirections').show();
@@ -356,11 +334,13 @@ $(document).ready(function() {
     $('#navvisitrentals').click(function() {
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
-        $('.pagebuttons').hide();
         $('.subsectiontitle').hide();
         $('#visitrentalscarousel').show();        
         $('#visitrentals').show();
         $('.visitrentalstitle').show();
+    });
+    $('.mapimage').click(function() {
+         window.open('https://maps.google.com/maps?q=1661+Fifthteenth+Street,+San+Francisco,+CA+94103');
     });
 
    // CAROUSEL LINKS
@@ -598,7 +578,7 @@ function gup (name) {
 
   <div style="clear:both;"></div>
   <div id="aboutstjohns" class="imagelink imagetext noshow"><span class="imagetextmain">About St. John's</span><span class="learnmore">learn more</span></div>
-  <div id="thewayweworship" class="imagelink imagetext noshow"><span class="imagetextmain">The Way We Worship </span><span class="learnmore">learn more</span></div>
+  <div id="thewayweworship" class="imagelink imagetext noshow"><span class="imagetextmain">Worshiping at St John's </span><span class="learnmore">learn more</span></div>
   <div id="elporvenir" class="imagelink imagetext noshow"><span class="imagetextmain">Providing safe clean, water</span><span class="learnmore">learn more</span></div>
   <div id="julianpantry" class="imagelink imagetext noshow"><span class="imagetextmain">Sharing food</span><span class="learnmore">learn more</span></div>
   <div id="immigration" class="imagelink imagetext noshow"><span class="imagetextmain">Working for justice</span><span class="learnmore">learn more</span></div>
@@ -618,7 +598,7 @@ function gup (name) {
   <!-- HOME -->
   <div class="middlerightcontent mediumfont" id="homecontent">
      <div class="stjohnbold">WELCOME TO ST. JOHN'S!</div>
-     <div class="middlerightcontentcaption light">
+     <div class="middlerightcontentcaption light homecaption">
 St. John's is a place where people's lives are transformed by encountering the love of God in community. Christian faith isn't an idea; it's an experience. We invite you to explore that experience with us through worship, fellowship and service.
      </div>
   </div> <!-- END HOME SECTION -->
@@ -628,7 +608,7 @@ St. John's is a place where people's lives are transformed by encountering the l
 
       <!-- ABOUT HOME -->
 <div class="middlerightcontentcaption light middlerightabout" id="abouthome">
-<div class="subsectiontitle abouttitle">ABOUT ST JOHN'S</div>     
+<div class="subsectiontitle abouttitle">ABOUT ST. JOHN'S</div>     
 Located around the corner from the busy Mission-16th Street-Valencia corridors in San Francisco's north Mission District, St. John's has been described by many as an oasis not only for the tranquility of our garden amidst the surrounding bustling streets, or the warm golden light that fills our soaring nave on a sunny day, but because so many have found St. John's to be a place of loving peace, healing, and renewal in an often all-too-broken world.     
 </div> <!-- END ABOUT HOME -->
 
@@ -647,17 +627,14 @@ Located around the corner from the busy Mission-16th Street-Valencia corridors i
 <br/>
 <br/>
 We are a Christ-centered community. For people of all ages, we value faith formation that engages the mind as well as the heart, and provides the foundation for vibrant lay ministry.
-<br/>
-<br/>
-We have a special vocation to respect and advocate for the dignity of gay, lesbian, bisexual, and transgender people. This by no means defines the full extent of our baptismal promise to respect the dignity of every human being, but it is a crucial element of that promise in our ministry context.
+<div class="lineseparator"></div>
+We have a special vocation to respect and advocate for the dignity of gay, lesbian, bisexual, and transgender people; this is a crucial element of our promise to respect the dignity of every person.
 <br/>
 <br/>
 We value diversity and welcome anyone who wishes to explore Christian faith and practice.
-<br/>
-<br/>
+<div class="lineseparator"></div>
 We value connection, and strive to promote a sense of belonging among the members of the parish that readily includes newcomers. This is often talked about in terms of communication or pastoral care or hospitality, but it is fundamentally about feeling connected to God and to one another.
-<br/>
-<br/>
+<div class="lineseparator"></div>
 We value the North Mission neighborhood. Our location in this particular place spiritually anchors us and gives substance to our mission and ministry. This neighborhood keeps us grounded in reality.     
 </div>
 </div> <!- missionText -->
@@ -667,6 +644,10 @@ We value the North Mission neighborhood. Our location in this particular place s
      <!-- ABOUT HISTORY -->
 <div class="middlerightcontentcaption light noshow middlerightabout abouthistorysection">
      <div class="noshow subsectiontitle abouthistorytitle">ST JOHN'S HISTORY</div>
+     <div id="historyimage">
+         <img src="images/about_history_img.jpg"/>
+     </div>
+<!--
      <div id="historyimages">
          <div class="historyimage" id="historyimage1">
             <img src="images/about_img_2a.jpg"/>
@@ -684,6 +665,7 @@ We value the North Mission neighborhood. Our location in this particular place s
             <img src="images/about_img_2e.jpg"/>
          </div>
      </div>
+-->
      <div id="historyText">
 <div class="scrollText">
 The third parish established in the new Episcopal Diocese of California, St. John's began in 1857 as a pioneer outpost in rented space at the edge of swamps and sand dunes. It quickly grew into a thriving 'society parish' of sorts, helping to found schools, hospitals, and chapels in the rapidly growing Mission District.
@@ -718,19 +700,19 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">CLERGY</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername" id="richard">The Reverend Richard L. Smith, Ph.D., Vicar <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="richard">The Reverend Richard L. Smith, Ph.D., Vicar <img class="reddot" src="images/red_symbol.png"/></div>
                 <div class="memberemail">rlsmith21050@gmail.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername" id="jackie">The Reverend Deacon Jackie Cherry <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="jackie">The Reverend Deacon Jackie Cherry  <img class="reddot" src="images/red_symbol.png"/></div>
                 <div class="memberemail">jaccherry@yahoo.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername" id="jack">The Reverend Dr. Jack Eastwood, Rector Emeritus <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="jack">The Reverend Dr. Jack Eastwood, Rector Emeritus  <img class="reddot" src="images/red_symbol.png"/></div>
                 <div class="memberemail">jhbernal@gmail.com</div>
             </div>
             <div class="clergymember">
-                <div class="membername" id="robert">The Reverend Robert Cromey, Priest Associate <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="robert">The Reverend Robert Cromey, Priest Associate <img class="reddot" src="images/red_symbol.png"/></div>
                 <div class="memberemail">twocromeys@earthlink.net</div>
             </div>
          </div>
@@ -739,11 +721,11 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">STAFF</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div class="membername" id="aaron">Aaron Nee, Music Director <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="aaron">Aaron Nee, Music Director <img class="reddot" src="images/red_symbol.png"/></div>
                 <div class="memberemail">parishmusician@stjohnsf.org</div>
             </div>
             <div class="clergymember">
-                <div class="membername" id="david">David Stickley, Parish Administrator <img src="images/rota_symbol.png"/></div>
+                <div class="membername" id="david">David Stickley, Parish Administrator <img class="reddot" src="images/red_symbol.png"/></div>
                 <div class="memberemail">parishadmin@stjohnsf.org</div>
             </div>
          </div>
@@ -855,9 +837,8 @@ Wheelchair access is available on Caledonia Street. Please call the parish ahead
 <div class="middlerightcontentcaption light noshow middlerightvisit" id="visitrentals">
    <div class="noshow subsectiontitle visitrentalstitle">RENTALS</div>
 Host your next performance or celebration at St. John's and become a part of the community that appreciates and cares for this Mission oasis. Our reasonable rates make St. John's the perfect location for your next concert, performance, private party, or other event!
-<br/>
-<br/>
-St. John's historic nave affords a capacity of 300, has excellent acoustics, and is drenched with natural light. Our chairs can be arranged in any configuration, and the raised altar area serves as an excellent stage. Our library is available for meetings and small gatherings, the garden affords peace and quiet, perfect for appreciating the Mission weather, and our full kitchen supports your provision of hot foods. Please contact the parish office for rates, schedule, and details.
+<div class="lineseparator"></div>
+St. John's historic nave affords a capacity of 300, has excellent acoustics, and is drenched with natural light. Our chairs can be arranged in any configuration, and the raised altar area serves as an excellent stage. Our library is available for meetings and small gatherings, the garden affords peace and quiet, perfect for appreciating the Mission weather, and our full kitchen supports your provision of hot foods. Please contact the parish office for rates and details.
 </div> <!-- END VISIT RENTALS -->
 
      <div class="subsectionnav" id="navvisit">
@@ -886,7 +867,7 @@ When we gather here to worship God, people really show up, bringing their entire
 <b>The Choral Eucharist, Sundays at 10:15 am</b>
 <br/>
 <br/>
-This is the main event of St. John's congregation, the gathering of the community on the first day of the week to celebrate the resurrection of Christ and the new life he brings. Sunday morning at St. John's is a hard-to-define mix of formal and informal elements: incense and bells, choral anthems and the chanting of prayers; but also intensely active participation of everyone in prayer and song, people in jeans and t-shirts, the sharing of stories from Scripture and from our own lives. The worship is transcendent and intimate, grand and deeply personal, all at the same time.
+This is the main event of St. John's congregation, the gathering of the community on the first day of the week to celebrate the resurrection of Christ and the new life he brings. Sunday morning at St. John's is a hard-to-define mix of formal and informal elements: incense and bells, choral anthems and the chanting of prayers; but also intensely active participation of everyone in prayer and song, the sharing of stories from Scripture and from our own lives. The worship is transcendent and intimate, grand and deeply personal, all at the same time.
 <br/>
 <br/>
 Eucharistic worship is in two-parts. In the first part, the Liturgy of the Word, we gather to hear Scriptures read and applied to our daily lives, to affirm our faith, and pray for the needs of the world. In the second part, the Liturgy of the Table, we share a sacred meal of bread and wine, the Body and Blood of Christ, remembering our unity in Christ and receiving the grace to continue Christ's presence and ministry in the world.
@@ -931,7 +912,9 @@ Respect and care for the dead and those who grieve is a sacred obligation. The s
 <div class="noshow subsectiontitle worshipmusictitle">MUSIC</div>
 <div id="musicText">
 <div class="scrollText">
-Music is an integral and essential part of worship at St. John's. Our music program is known for its excellent quality and distinctive style. Our volunteer choir leads the congregation in a wide range of music, from traditional Anglican and Episcopal hymns to medieval chants and Renaissance motets to American folk music and spirituals, to music written by our previous music director, Charles Rus. St. John's is also home to a number of concerts throughout the year, for example by the San Francisco Early Music Society.
+Music is an integral and essential part of worship at St. John's. Our music program is known for its excellent quality and distinctive style. Our volunteer choir leads the congregation in a wide range of music, from traditional Anglican and Episcopal hymns to medieval chants and Renaissance motets to American folk music and spirituals, to music written by our previous music director, Charles Rus. 
+<div class="lineseparator"></div>
+St. John's is also home to a number of concerts throughout the year, for example by the San Francisco Early Music Society.
 <br/>
 <br/>
 St John's beautiful organ was originally built by the M. P. Möller Organ Company of Hagerstown, 
@@ -960,8 +943,6 @@ St. John's piano is an historic Hamburg Steinway, Model O, built in Germany in 1
 <div class="middlerightcontentcaption light middlerightministries" id="ministrieshome">
 <div class="subsectiontitle ministriestitle">MINISTRIES</div>     
 Our community has a long tradition of working for a more just world, not only in our neighborhood, but throughout our larger world--whether it's providing food to needy seniors and families or bringing clean water to rural Nicaraguan villages, whether it's working for a just immigration reform or helping neighborhood kids get a good education or working to end unjust wars.
-<br/>
-<br/>
 You, too, can make a difference. We have many volunteer opportunities. Join us!
 </div> <!-- END MINISTRIES HOME -->
 
@@ -1025,7 +1006,7 @@ In 2013, members of St. John's raised almost $3000 for this critical organizatio
         <div class="verticalsep"></div>
         <div id="navministrieselporvenir" class="clickable">EL PORVENIR</div>
         <div class="verticalsep"></div>
-        <div id="navministriesmissiongrads" class="clickable">MISSION GRADUATES</div>
+        <div id="navministriesmissiongrads" class="clickable">MISSION GRADS</div>
         <div class="noshow" id="ministrieseditbutton"><button>Edit</button></div>
         <div class="noshow" id="ministriessavebutton"><button>Save</button></div>
         <div class="noshow" id="ministriescancelbutton"><button>Cancel</button></div>
@@ -1037,8 +1018,8 @@ In 2013, members of St. John's raised almost $3000 for this critical organizatio
 <div class="bottom">
   <div class="bottomleftcontent">
      <div class="tinyfont rota" id="rota">ROTA <img src="images/rota_symbol.png"/></div>
-     <div class="tinyfont rota" id="sermons">SERMONS <img src="images/rota_symbol.png"/></div>
-     <div class="tinyfont rota" id="newsletter">NEWSLETTER <img src="images/rota_symbol.png"/></div>
+     <div class="tinyfont rota" id="sermons">SERMONS</div>
+     <div class="tinyfont rota" id="newsletter">NEWSLETTER</div>
   </div>
   <div class="bottomrightcontent">
      <div class="tinyfont bottomrightcontentcaption1">
