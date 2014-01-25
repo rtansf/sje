@@ -289,8 +289,11 @@ $(document).ready(function() {
         $('.subsectiontitle').hide();
         $('.subsectionnav').find('.clickable').removeClass('selected');
 
-        $('#stjohn2').show();        
-        $('#newsframe').show();
+        $('#stjohn2').show();
+        $.get('newsletter.url', function(resp) {     
+            $('#newsframe iframe').attr('src', resp);
+            $('#newsframe').show();
+        });
     });
 
     // VISIT 
@@ -614,8 +617,9 @@ function gup (name) {
       <img src="images/visit_img_2.jpg"/>
   </div>
 
+  <!-- IFRAME PLACEHOLDER FOR NEWS -->
   <div id="newsframe" class="noncarousel noshow">
-      <iframe src="http://us6.campaign-archive2.com/?u=1cffc40a58193b3d538400764&id=3acf2b71fa"></iframe>
+      <iframe src=""></iframe> 
   </div>
 
   <div style="clear:both;"></div>
@@ -1006,8 +1010,7 @@ As a member congregation of the <a href="http://www.sfop.org">San Francisco Orga
 <div class="middlerightcontentcaption noshow light middlerightministries ministrieselporvenirsection ministrieselporvenirsectionmain">
 <div class="subsectiontitle noshow ministrieselporvenirtitle ministrieselporvenirtitlemain">EL PORVENIR</div>
 "El Porvenir" means "the future", and clean water means a healthier future for rural Nicaraguans. El Porvenir helps the people of Nicaragua build that future by helping them provide clean drinking water for their families and communities. In addition to sustainable water and sanitation projects, El Porvenir provides health and hygiene education and reforestation.
-<br/>
-<br/>
+<div class="lineseparator"></div>
 In 2013, members of St. John's raised almost $3000 for this critical organization. Over the years several members of our community have traveled to Nicaragua to see and offer first-hand support to people in local villages building new wells. To find out more, visit their <a href="http://www.elporvenir.org">website</a>.
 </div> 
 
