@@ -10,19 +10,15 @@
 <script type="text/javascript" src="http://use.typekit.com/pdx5vmz.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-<style>
-.ui-dialog {
-   background-color: rgb(239, 236, 229);
-   font-family: "futura-pt-n4","futura-pt",sans-serif;
-}
-</style>
-
 <script>
+var firstTime = true;
+var root = '/';
+
 $(document).ready(function() {
 
-    // LEFT LINKS
+    // LEFT LINKS TO EXTERNAL URLS
     $('#rota').click(function() {
-       alert ('Coming soon!');
+       window.open('https://docs.google.com/file/d/0B1oSEJ0GmS8sWUg4ZW40eV9ORlU/edit');
     });
 
     $('#sermons').click(function() {
@@ -61,16 +57,18 @@ $(document).ready(function() {
     $('.dummycarousel').cycle();
 
     $('.logo').click(function() {
-        location.href = '/sje';
+        location.href = root;
     });
 
     // HOME 
     $('#home').click(function() {
-        location.href = '/sje';
+        location.href = root;
+        location.hash = 'xhome';
     });
 
     // ABOUT 
     $('#about').click(function() {
+        location.hash = 'xabout';
         hideHome();
         $('.middlerightcontent').hide();
         $('.middlerightcontentcaption').hide();
@@ -88,6 +86,7 @@ $(document).ready(function() {
 
     // ABOUT MISSION
     $('#navaboutmission').click(function() {
+        location.hash = 'xabout-xnavaboutmission';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -109,6 +108,7 @@ $(document).ready(function() {
 
     // ABOUT HISTORY
     $('#navabouthistory').click(function() {
+        location.hash = 'xabout-xnavabouthistory';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -130,6 +130,7 @@ $(document).ready(function() {
 
     // ABOUT CLERGY
     $('#navaboutclergy').click(function() {
+        location.hash = 'xabout-xnavaboutclergy';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -140,6 +141,7 @@ $(document).ready(function() {
 
     // ABOUT LAY LEADERSHIP
     $('#navaboutlayleadership').click(function() {
+        location.hash = 'xabout-xnavaboutlayleadership';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -150,6 +152,7 @@ $(document).ready(function() {
 
     // WORSHIP 
     $('#worship').click(function() {
+        location.hash = 'xworship';
         hideHome();
         $('.middlerightcontent').hide();
         $('.middlerightcontentcaption').hide();
@@ -166,6 +169,7 @@ $(document).ready(function() {
     });
     // WORSHIP WORSHIP
     $('#navworshipworship').click(function() {
+        location.hash = 'xworship-xnavworshipworship';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -187,6 +191,7 @@ $(document).ready(function() {
 
     // WORSHIP MUSIC
     $('#navworshipmusic').click(function() {
+        location.hash = 'xworship-xnavworshipmusic';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -208,6 +213,7 @@ $(document).ready(function() {
 
     // MINISTRIES
     $('#ministries').click(function() {
+        location.hash = 'xministries';
         hideHome();
         $('.middlerightcontent').hide();
         $('.middlerightcontentcaption').hide();
@@ -224,6 +230,7 @@ $(document).ready(function() {
     });
     // MINISTRIES JULIAN PANTY
     $('#navministriesjulianpantry').click(function() {
+        location.hash = 'xministries-xnavministriesjulianpantry';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -233,6 +240,7 @@ $(document).ready(function() {
     });
     // MINISTRIES PEACE
     $('#navministriespeace').click(function() {
+        location.hash = 'xministries-xnavministriespeace';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -242,6 +250,7 @@ $(document).ready(function() {
     });
     // MINISTRIES SOCIAL JUSTICE
     $('#navministriesjustice').click(function() {
+        location.hash = 'xministries-xnavministriessocialjustice';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -251,6 +260,7 @@ $(document).ready(function() {
     });
     // MINISTRIES EL PORVENIR
     $('#navministrieselporvenir').click(function() {
+        location.hash = 'xministries-xnavministrieselporvenir';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -260,6 +270,7 @@ $(document).ready(function() {
     });
     // MINISTRIES MISSION GRADS
     $('#navministriesmissiongrads').click(function() {
+        location.hash = 'xministries-xnavministriesmissiongrads';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -268,44 +279,23 @@ $(document).ready(function() {
         $('.ministriesmissiongradstitle').show();
     });
 
-    // MINISTRIES EDIT
-    var $admin = gup('admin');
-    if ($admin) {
-        $('#ministrieseditbutton').show();
-    } else {
-        $('#ministrieseditbutton').hide();
-    }
-    $('#ministrieseditbutton').click(function() {
-        var $selected = $('#navministries').find('.selected');
-        var id = $selected.attr('id');
-        if (!id) { 
-            return;
-        }
+    $('#news').click(function() {
+        location.hash = 'xministries';
+        hideHome();
+        $('.middlerightcontent').hide();
+        $('.middlerightcontentcaption').hide();
+        $('.middlecaption').hide();
+        $('.noncarousel').hide();
+        $('.subsectiontitle').hide();
+        $('.subsectionnav').find('.clickable').removeClass('selected');
 
-        $(this).hide();
-        $('#ministriessavebutton').show();
-        $('#ministriescancelbutton').show();
-
-        if (id == 'navministriesjulianpantry') {
-           var content = $('.ministriesjulianpantrysectionmain').find('.subsectioncontent').text();
-           $('.ministriesjulianpantrysectionmain').find('.subsectioncontent').hide();
-           $('.ministriesjulianpantrysectionmain').find('.subsectioncontentedit').show();
-           $('.ministriesjulianpantrysectionmain').find('.subsectioncontentedit').find('textarea').text(content);
-        }
-    });
-    $('#ministriessavebutton').click(function() {
-        $('#ministriessavebutton').hide();
-        $('#ministriescancelbutton').hide();
-        $('#ministrieseditbutton').show();
-    });
-    $('#ministriescancelbutton').click(function() {
-        $('#ministriessavebutton').hide();
-        $('#ministriescancelbutton').hide();
-        $('#ministrieseditbutton').show();
+        $('#stjohn2').show();        
+        $('#newsframe').show();
     });
 
     // VISIT 
     $('#visitus').click(function() {
+        location.hash = 'xvisitus';
         hideHome();
         $('.middlerightcontent').hide();
         $('.middlerightcontentcaption').hide();
@@ -323,6 +313,7 @@ $(document).ready(function() {
 
     // VISIT DIRECTIONS
     $('#navvisitdirections').click(function() {
+        location.hash = 'xvisitus-xnavvisitdirections';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -332,6 +323,7 @@ $(document).ready(function() {
     });
     // VISIT RENTALS
     $('#navvisitrentals').click(function() {
+        location.hash = 'xvisitus-xnavvisitrentals';
         $('.noncarousel').hide();
         $('.middlerightcontentcaption').hide();
         $('.subsectiontitle').hide();
@@ -344,7 +336,7 @@ $(document).ready(function() {
     });
 
    // CAROUSEL LINKS
-   $('#aboutstjohns').click(function() {
+   $('#celebratingfeasts').click(function() {
        $('#about').click();
    });
    $('#thewayweworship').click(function() {
@@ -406,13 +398,54 @@ $(document).ready(function() {
                modal: true,
                title: 'Robert Cromey'
            });
+       } else if (id == 'aaron') {
+           $('#aaronnee').dialog({
+               width: 580,
+               resizable: false,
+               modal: true,
+               title: 'Aaron Nee'
+           });
        } else {
            alert ('Coming soon');
        }
-
    });
 
+
+   // HANDLE BOOKMARKS -- TO BE REFINED
+   if (window.history && window.history.pushState) {
+
+      $(window).on('popstate', function() {
+         var hashLocation = location.hash;
+         //alert (hashLocation);
+      });
+   }
+
+   $(window).bind('hashchange', function(e) {
+      return;
+   });
+
+   var hashtag = location.hash;
+   if (hashtag) {
+      hashtag = hashtag.substring(1); // Strip off #
+      gotoPage(hashtag);
+      $(window).unbind('hashchange');
+   }
+
 });
+
+function gotoPage(tag) {
+   var parts = tag.split('-');
+   var part0 = parts[0];
+   setTimeout(function() {
+      $('.' + part0).click();
+      if (parts.length == 2) {
+          var part1 = parts[1];
+          setTimeout(function() {
+              $('.' + part1).click();
+          }, 200);   
+      }   
+   }, 200);
+}
 
 function hideHome() {
     $('.stjohnimage').hide();
@@ -429,8 +462,12 @@ function onBefore(curr, next, opts) {
    //console.log("before showing slide: " + currSlide);
 
    $('.imagetext').hide();
-   if (currSlide == 1) {
-       $('#aboutstjohns').show();
+   if (currSlide == 0 && firstTime == false) {
+       $('#makingfriends').show();
+   } else if (currSlide == 1) {
+       $('#celebratingfeasts').show();
+   } else if (currSlide == 2) {
+       $('#welcoming').show();
    } else if (currSlide == 3) {
        $('#thewayweworship').show();
    } else if (currSlide == 4) {
@@ -445,7 +482,7 @@ function onBefore(curr, next, opts) {
        $('#dummy').show();
    } 
 
-
+   firstTime = false;
 }
 
 function gup (name) {
@@ -467,11 +504,12 @@ function gup (name) {
   <div class="logo"><img src="images/stjohn_logo.png"/></div>
   <div class="navcontainer">
      <ul id="navlist">
-        <li id="home" class="clickable selected"><span class="bigcap">H</span>OME</li>
-        <li id="about" class="clickable"><span class="bigcap">A</span>BOUT</li>
-        <li id="worship" class="clickable"><span class="bigcap">W</span>ORSHIP</li>
-        <li id="ministries" class="clickable"><span class="bigcap">M</span>INISTRIES</li>
-        <li id="visitus" class="clickable"><span class="bigcap">V</span>ISIT</li>
+        <li id="home" class="clickable selected xhome"><span class="bigcap">H</span>OME</li>
+        <li id="about" class="clickable xabout"><span class="bigcap">A</span>BOUT</li>
+        <li id="worship" class="clickable xworship"><span class="bigcap">W</span>ORSHIP</li>
+        <li id="ministries" class="clickable xministries"><span class="bigcap">M</span>INISTRIES</li>
+        <li id="news" class="clickable xnews"><span class="bigcap">N</span>EWS</li>
+        <li id="visitus" class="clickable xvisitus"><span class="bigcap">V</span>ISIT</li>
      </ul>
   </div>
 </div> <!-- top -->
@@ -576,9 +614,15 @@ function gup (name) {
       <img src="images/visit_img_2.jpg"/>
   </div>
 
+  <div id="newsframe" class="noncarousel noshow">
+      <iframe src="http://us6.campaign-archive2.com/?u=1cffc40a58193b3d538400764&id=3acf2b71fa"></iframe>
+  </div>
+
   <div style="clear:both;"></div>
-  <div id="aboutstjohns" class="imagelink imagetext noshow"><span class="imagetextmain">About St. John's</span><span class="learnmore">learn more</span></div>
-  <div id="thewayweworship" class="imagelink imagetext noshow"><span class="imagetextmain">Worshiping at St John's </span><span class="learnmore">learn more</span></div>
+  <div id="celebratingfeasts" class="imagelink imagetext noshow"><span class="imagetextmain">Celebrating our feasts</span><span class="learnmore">learn more</span></div>
+  <div id="makingfriends" class="imagelink imagetext noshow"><span class="imagetextmain">Making friends</span></div>
+  <div id="welcoming" class="imagelink imagetext noshow"><span class="imagetextmain">Welcoming</span></div>
+  <div id="thewayweworship" class="imagelink imagetext noshow"><span class="imagetextmain">Worshiping</span><span class="learnmore">learn more</span></div>
   <div id="elporvenir" class="imagelink imagetext noshow"><span class="imagetextmain">Providing safe clean, water</span><span class="learnmore">learn more</span></div>
   <div id="julianpantry" class="imagelink imagetext noshow"><span class="imagetextmain">Sharing food</span><span class="learnmore">learn more</span></div>
   <div id="immigration" class="imagelink imagetext noshow"><span class="imagetextmain">Working for justice</span><span class="learnmore">learn more</span></div>
@@ -647,25 +691,6 @@ We value the North Mission neighborhood. Our location in this particular place s
      <div id="historyimage">
          <img src="images/about_history_img.jpg"/>
      </div>
-<!--
-     <div id="historyimages">
-         <div class="historyimage" id="historyimage1">
-            <img src="images/about_img_2a.jpg"/>
-         </div>
-         <div class="historyimage" id="historyimage2">
-            <img src="images/about_img_2b.jpg"/>
-         </div>
-         <div class="historyimage" id="historyimage3">
-            <img src="images/about_img_2c.jpg"/>
-         </div>
-         <div class="historyimage" id="historyimage4">
-            <img src="images/about_img_2d.jpg"/>
-         </div>
-         <div class="historyimage" id="historyimage5">
-            <img src="images/about_img_2e.jpg"/>
-         </div>
-     </div>
--->
      <div id="historyText">
 <div class="scrollText">
 The third parish established in the new Episcopal Diocese of California, St. John's began in 1857 as a pioneer outpost in rented space at the edge of swamps and sand dunes. It quickly grew into a thriving 'society parish' of sorts, helping to found schools, hospitals, and chapels in the rapidly growing Mission District.
@@ -701,7 +726,7 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergymembers">
             <div class="clergymember">
                 <div class="membername" id="richard">The Reverend Richard L. Smith, Ph.D., Vicar <img class="reddot" src="images/red_symbol.png"/></div>
-                <div class="memberemail">rlsmith21050@gmail.com</div>
+                <div class="memberemail">richard@saintjohnsf.org</div>
             </div>
             <div class="clergymember">
                 <div class="membername" id="jackie">The Reverend Deacon Jackie Cherry  <img class="reddot" src="images/red_symbol.png"/></div>
@@ -722,11 +747,11 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergymembers">
             <div class="clergymember">
                 <div class="membername" id="aaron">Aaron Nee, Music Director <img class="reddot" src="images/red_symbol.png"/></div>
-                <div class="memberemail">parishmusician@stjohnsf.org</div>
+                <div class="memberemail">aaron@aaronnee.com</div>
             </div>
             <div class="clergymember">
                 <div class="membername" id="david">David Stickley, Parish Administrator <img class="reddot" src="images/red_symbol.png"/></div>
-                <div class="memberemail">parishadmin@stjohnsf.org</div>
+                <div class="memberemail">parishadmin@saintjohnsf.org</div>
             </div>
          </div>
      </div>
@@ -798,13 +823,13 @@ Keeping the red doors on Julian Street open during the Depression and war years 
 </div> <!-- END ABOUT CLERGY -->
 
      <div class="subsectionnav" id="navabout">
-        <div id="navaboutmission" class="clickable">MISSION</div>
+        <div id="navaboutmission" class="clickable xnavaboutmission">MISSION</div>
         <div class="verticalsep"></div>
-        <div id="navabouthistory" class="clickable">HISTORY</div>
+        <div id="navabouthistory" class="clickable xnavabouthistory">HISTORY</div>
         <div class="verticalsep"></div>
-        <div id="navaboutclergy" class="clickable">CLERGY &amp; STAFF</div>
+        <div id="navaboutclergy" class="clickable xnavaboutclergy">CLERGY &amp; STAFF</div>
         <div class="verticalsep"></div>
-        <div id="navaboutlayleadership" class="clickable">LAY  LEADERSHIP</div>
+        <div id="navaboutlayleadership" class="clickable xnavaboutlayleadership">LAY  LEADERSHIP</div>
      </div>
 
   </div><!-- END ABOUT SECTION -->
@@ -842,9 +867,9 @@ St. John's historic nave affords a capacity of 300, has excellent acoustics, and
 </div> <!-- END VISIT RENTALS -->
 
      <div class="subsectionnav" id="navvisit">
-        <div id="navvisitdirections" class="clickable">DIRECTIONS</div>
+        <div id="navvisitdirections" class="clickable xnavvisitdirections">DIRECTIONS</div>
         <div class="verticalsep"></div>
-        <div id="navvisitrentals" class="clickable">RENTALS</div>
+        <div id="navvisitrentals" class="clickable xnavvisitrentals">RENTALS</div>
      </div>
 
    </div> <!-- END VISIT -->
@@ -929,9 +954,9 @@ St. John's piano is an historic Hamburg Steinway, Model O, built in Germany in 1
 </div>
 </div>
      <div class="subsectionnav" id="navworship">
-        <div id="navworshipworship" class="clickable">WORSHIP</div>
+        <div id="navworshipworship" class="clickable xnavworshipworship">WORSHIP</div>
         <div class="verticalsep"></div>
-        <div id="navworshipmusic" class="clickable">MUSIC</div>
+        <div id="navworshipmusic" class="clickable xnavworshipmusic">MUSIC</div>
      </div>
 
   </div> <!-- END WORSHIP -->
@@ -998,18 +1023,15 @@ In 2013, members of St. John's raised almost $3000 for this critical organizatio
 </div> 
 
      <div class="subsectionnav" id="navministries">
-        <div id="navministriesjulianpantry" class="clickable">JULIAN PANTRY</div>
+        <div id="navministriesjulianpantry" class="clickable xnavministriesjulianpantry">JULIAN PANTRY</div>
         <div class="verticalsep"></div>
-        <div id="navministriespeace" class="clickable">PEACE</div>
+        <div id="navministriespeace" class="clickable xnavministriespeace">PEACE</div>
         <div class="verticalsep"></div>
-        <div id="navministriesjustice" class="clickable">SOCIAL JUSTICE</div>
+        <div id="navministriesjustice" class="clickable xnavministriesjustice">SOCIAL JUSTICE</div>
         <div class="verticalsep"></div>
-        <div id="navministrieselporvenir" class="clickable">EL PORVENIR</div>
+        <div id="navministrieselporvenir" class="clickable xnavministrieselporvenir">EL PORVENIR</div>
         <div class="verticalsep"></div>
-        <div id="navministriesmissiongrads" class="clickable">MISSION GRADS</div>
-        <div class="noshow" id="ministrieseditbutton"><button>Edit</button></div>
-        <div class="noshow" id="ministriessavebutton"><button>Save</button></div>
-        <div class="noshow" id="ministriescancelbutton"><button>Cancel</button></div>
+        <div id="navministriesmissiongrads" class="clickable xnavministriesmissiongrads">MISSION GRADS</div>
      </div>
   </div> <!-- END MINISTRIES -->
 
@@ -1067,6 +1089,9 @@ The Rev. Robert Warren Cromey came to St. John's in 2003 after serving twenty ye
 Robert was a founder of San Francisco's Council on Religion and the Homosexual in 1964, and a LGBT rights advocate ever since. Also in the 1960s he was active in the Civil Rights Movement in San Francisco and marched in Selma, AL in 1964. He was vicar of St. Aidan's, San Francisco 1965-70. He performed a same-sex wedding for two women there in 1969. From 1970 to 1981, Robert had a private practice as a Marriage Family Therapist in San Francisco. Born in Brooklyn, NY, he was educated, ordained and served two parishes in New York before moving to San Francisco in 1962. He has three grown daughters from his first marriage. He has been married to Ann since 1983. She too is active at St. John's.
 </div>
 <div class="noshow bio" id="aaronnee">
+<div class="bioimage" style="padding-top:6px;"><img src="images/aaronnee.jpg"/></div>
+Aaron began piano lessons with his mother at age 6. He later received his Doctor of Musical Arts degree in Piano Performance from the University of Colorado at Boulder and has taught at universities in Colorado, Wisconsin, and Berlin, Germany. As part of his graduate studies, he studied in Freiburg and Paris for two years and has performed throughout Europe, Israel, and the U.S. As a church musician, Aaron has worked for a variety of churches, most notably as organist at the Cathedral Basilica of the Immaculate Conception in Denver, and as a chorister at the American Cathedral (Episcopal) in Paris. He lives in San Francisco with his husband John and their two cats.
+<div class="lineseparator"></div>
 </div>
 </div>
 

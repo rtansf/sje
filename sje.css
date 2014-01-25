@@ -30,6 +30,10 @@ body {
 .lineseparator {
   height: 12px; }
 
+.ui-dialog {
+  background-color: #efece5;
+  font-family: "futura-pt-n4","futura-pt",sans-serif; }
+
 .navcontainer {
   float: left;
   margin-top: 108px; }
@@ -188,13 +192,23 @@ body {
 .noncarousel img {
   padding-top: 12px; }
 
-#aboutstjohns {
-  left: 718px;
+#celebratingfeasts {
+  left: 670px;
+  z-index: 100;
+  width: 300px; }
+
+#makingfriends {
+  left: 788px;
+  z-index: 100;
+  width: 300px; }
+
+#welcoming {
+  left: 788px;
   z-index: 100;
   width: 300px; }
 
 #thewayweworship, #dummy {
-  left: 666px;
+  left: 728px;
   z-index: 100;
   width: 300px; }
 
@@ -574,3 +588,9 @@ body {
 #robertcromey {
   width: 580px;
   padding-bottom: 20px; }
+
+/* NEWS IFRAME */
+#newsframe iframe {
+  width: 724px;
+  height: 500px;
+  margin-top: 12px; }
