@@ -41,6 +41,15 @@ $(document).ready(function() {
         window.open('https://donatenow.networkforgood.org/saintjohnsanfrancisco');
     });
 
+    $('#specialServices').click(function() {
+         $('#specialServicesPopup').dialog({
+               width: 450,
+               resizable: false,
+               modal: true,
+               title: 'Holy Week Services'
+         });
+    });
+
     // GENERAL
     var ua = new String(navigator.userAgent);
 
@@ -639,11 +648,10 @@ function gup (name) {
   <div class="middleleftcontent">
      <div class="tinyfont">SUNDAY SERVICES</div>
      <div class="tinyfont light">10:15 a.m. Choral Worship</div>
-     <div class="tinyfont" style="margin-top:5px;">ASH WEDNESDAY, Mar 5</div>
-     <div class="tinyfont light">7:00 p.m. Service</div>
+     <div class="tinyfont" style="margin-top:5px;" id="specialServices">HOLY WEEK SERVICES&nbsp;<img style="padding-bottom: 2px;" src="images/right_arrow.png"/></div>
      <div class="tinyfont parishofficehours">PARISH OFFICE HOURS</div>
      <div class="tinyfont light">Monday-Thursday 1 - 4 p.m.</div>
-     <div class="tinyfont donateto" style="margin-top:10px;">DONATE TO ST. JOHN'S</div>
+     <div class="tinyfont donateto" style="margin-top:22px;">DONATE TO ST. JOHN'S</div>
   </div>
 
   <!-- HOME -->
@@ -1105,6 +1113,14 @@ Aaron began piano lessons with his mother at age 6. He later received his Doctor
 <!-- NEWSLETTER POPUP -->
 <div id="newsletterFrame" class="noshow">
    <iframe src=""></iframe> 
+</div>
+
+<!-- SPECIAL SERVICES POPUP -->
+<div id="specialServicesPopup" class="noshow">
+    <div>Palm Sunday, Liturgy of The Passion, April 13, 10:15 a.m.</div>
+    <div>Maundy Thursday, April 17, 7:00 p.m.</div>
+    <div>Good Friday, April 18, 7:00 p.m.</div>
+    <div>Holy Saturday, April 19, 8:00 p.m.</div>
 </div>
 
 </div> <!-- wrapper ->
