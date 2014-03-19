@@ -32,14 +32,14 @@ body {
 
 .ui-dialog {
   background-color: #efece5;
-  font-family: "futura-pt-n4","futura-pt",sans-serif; }
+  font-family: "futura-pt-n4", "futura-pt", sans-serif; }
 
 .navcontainer {
   float: left;
   margin-top: 108px; }
 
 #navlist li {
-  font-family: "futura-pt-n4","futura-pt",sans-serif;
+  font-family: "futura-pt-n4", "futura-pt", sans-serif;
   font-weight: 500;
   display: inline;
   list-style-type: none;
@@ -104,7 +104,7 @@ body {
   position: relative;
   left: 50px;
   top: -200px;
-  font-family: "futura-pt-n4","futura-pt",sans-serif;
+  font-family: "futura-pt-n4", "futura-pt", sans-serif;
   font-weight: 500; }
 
 .middlerightcontent {
@@ -112,7 +112,7 @@ body {
   position: relative;
   left: 300px;
   top: -346px;
-  font-family: "futura-pt-n4","futura-pt",sans-serif;
+  font-family: "futura-pt-n4", "futura-pt", sans-serif;
   color: white; }
 
 .middlerightcontentcaption {
@@ -150,7 +150,7 @@ body {
 .bottomleftcontent {
   padding-top: 23px;
   padding-left: 50px;
-  font-family: "futura-pt-n4","futura-pt",sans-serif;
+  font-family: "futura-pt-n4", "futura-pt", sans-serif;
   font-weight: 500; }
 
 .bottomleftcontent div {
@@ -169,7 +169,7 @@ body {
   position: relative;
   left: 300px;
   top: -64px;
-  font-family: "futura-pt-n4","futura-pt",sans-serif; }
+  font-family: "futura-pt-n4", "futura-pt", sans-serif; }
 
 .bottomrightcontentcaption1 {
   width: 160px;
@@ -236,7 +236,7 @@ body {
   color: white;
   position: relative;
   top: -36px;
-  font-family: "futura-pt-n4","futura-pt",sans-serif;
+  font-family: "futura-pt-n4", "futura-pt", sans-serif;
   font-style: italic;
   opacity: 0.9;
   height: 21px; }
@@ -252,6 +252,9 @@ body {
   margin-left: 15px;
   position: relative;
   top: -1px; }
+
+.subsectioncontent {
+  line-height: 20px; }
 
 .subsectionnav {
   float: left;
@@ -487,7 +490,8 @@ body {
 
 .ministriesjusticesection {
   position: relative;
-  top: -80px; }
+  top: -78px;
+  line-height: 21px; }
 
 .ministriesjusticetitlemain {
   position: relative;
@@ -564,7 +568,7 @@ body {
   padding-right: 10px;
   padding-bottom: 20px;
   border: 1px solid gray;
-  font-family: "futura-pt-n4","futura-pt",sans-serif;
+  font-family: "futura-pt-n4", "futura-pt", sans-serif;
   font-weight: 400;
   font-size: 15px; }
 
@@ -590,7 +594,6 @@ body {
   padding-bottom: 20px; }
 
 /* NEWS IFRAME */
-#newsframe iframe {
+#newsletterFrame iframe {
   width: 724px;
-  height: 500px;
-  margin-top: 12px; }
+  height: 650px; }

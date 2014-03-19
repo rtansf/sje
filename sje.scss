@@ -2,6 +2,7 @@ $crimson : rgb(174,31,37);
 $pink : rgb(218,158,137);
 $hoverpink : rgb(174,31,37);
 $leftOffset: 50px;
+$fontFamily: "futura-pt-n4","futura-pt",sans-serif;
 
 body {
     position: relative;
@@ -37,14 +38,14 @@ body {
 }
 .ui-dialog {
    background-color: rgb(239, 236, 229);
-   font-family: "futura-pt-n4","futura-pt",sans-serif;
+   font-family: $fontFamily; 
 }
 .navcontainer {
     float:left;
     margin-top: 108px;
 }
 #navlist li {
-    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-family: $fontFamily;
     font-weight: 500;
     display: inline;
     list-style-type: none;
@@ -110,7 +111,7 @@ body {
     position: relative;
     left: 50px;
     top: -200px;
-    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-family: $fontFamily;
     font-weight: 500;
 }
 .middlerightcontent {
@@ -118,7 +119,7 @@ body {
     position: relative;
     left: 300px;
     top: -346px;
-    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-family: $fontFamily;
     color: white;
 }
 .middlerightcontentcaption {
@@ -160,7 +161,7 @@ body {
 .bottomleftcontent {
     padding-top: 23px;
     padding-left: $leftOffset;
-    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-family: $fontFamily;
     font-weight: 500;
 }
 .bottomleftcontent div {
@@ -179,7 +180,7 @@ body {
     position: relative;
     left: 300px;
     top: -64px;
-    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-family: $fontFamily;
 }
 .bottomrightcontentcaption1 {
     width: 160px;
@@ -247,7 +248,7 @@ body {
    color: white;
    position: relative;
    top: -36px;
-   font-family: "futura-pt-n4","futura-pt",sans-serif;
+   font-family: $fontFamily;
    font-style: italic;
    opacity: 0.9;
    height: 21px;
@@ -264,7 +265,9 @@ body {
    position: relative;
    top: -1px;
 }
-
+.subsectioncontent {
+   line-height: 20px;
+}
 .subsectionnav {
    float: left;
    color: $pink;
@@ -503,7 +506,8 @@ body {
 
 .ministriesjusticesection {
    position: relative;
-   top: -80px;
+   top: -78px;
+   line-height: 21px;
 }
 .ministriesjusticetitlemain {
    position: relative;
@@ -584,7 +588,7 @@ body {
     padding-right: 10px;
     padding-bottom: 20px;
     border: 1px solid gray;
-    font-family: "futura-pt-n4","futura-pt",sans-serif;
+    font-family: $fontFamily;
     font-weight: 400;
     font-size: 15px;
 }
@@ -611,8 +615,7 @@ body {
 }
 
 /* NEWS IFRAME */
-#newsframe iframe {
+#newsletterFrame iframe {
    width:724px; 
-   height:500px;
-   margin-top:12px;
+   height:650px;
 }

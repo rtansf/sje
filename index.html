@@ -7,7 +7,15 @@
 <script src="jquery-ui.min.js"></script>
 <script src="jquery.cycle.all.js"></script>
 <script src="jquery.slimscroll.min.js"></script>
+
+<!-- LOCAL HOST -->
+<!--
 <script type="text/javascript" src="http://use.typekit.com/pdx5vmz.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+
+<!-- PRODUCTION -->
+<script type="text/javascript" src="//use.typekit.net/wqw3qju.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <script>
@@ -279,20 +287,19 @@ $(document).ready(function() {
         $('.ministriesmissiongradstitle').show();
     });
 
+    // NEWS
     $('#news').click(function() {
-        location.hash = 'xministries';
-        hideHome();
-        $('.middlerightcontent').hide();
-        $('.middlerightcontentcaption').hide();
-        $('.middlecaption').hide();
-        $('.noncarousel').hide();
-        $('.subsectiontitle').hide();
-        $('.subsectionnav').find('.clickable').removeClass('selected');
-
-        $('#stjohn2').show();
+        location.hash = 'xnews';
         $.get('newsletter.url', function(resp) {     
-            $('#newsframe iframe').attr('src', resp);
-            $('#newsframe').show();
+            if ($('#newsletterFrame iframe').attr('src') == '') {
+                $('#newsletterFrame iframe').attr('src', resp);
+            }
+            $('#newsletterFrame').dialog({
+               width: 766,
+               resizable: false,
+               modal: true,
+               title: 'News'
+            });
         });
     });
 
@@ -617,11 +624,6 @@ function gup (name) {
       <img src="images/visit_img_2.jpg"/>
   </div>
 
-  <!-- IFRAME PLACEHOLDER FOR NEWS -->
-  <div id="newsframe" class="noncarousel noshow">
-      <iframe src=""></iframe> 
-  </div>
-
   <div style="clear:both;"></div>
   <div id="celebratingfeasts" class="imagelink imagetext noshow"><span class="imagetextmain">Celebrating our feasts</span><span class="learnmore">learn more</span></div>
   <div id="makingfriends" class="imagelink imagetext noshow"><span class="imagetextmain">Making friends</span></div>
@@ -636,11 +638,12 @@ function gup (name) {
   <div class="middlecaption"><img src="images/color_band.jpg"/></div>
   <div class="middleleftcontent">
      <div class="tinyfont">SUNDAY SERVICES</div>
-     <div class="tinyfont light">10:15 a.m. Choral Eucharist</div>
+     <div class="tinyfont light">10:15 a.m. Choral Worship</div>
+     <div class="tinyfont" style="margin-top:5px;">ASH WEDNESDAY, Mar 5</div>
+     <div class="tinyfont light">7:00 p.m. Service</div>
      <div class="tinyfont parishofficehours">PARISH OFFICE HOURS</div>
      <div class="tinyfont light">Monday-Thursday 1 - 4 p.m.</div>
-     <div class="tinyfont getinvolved">&nbsp;</div>
-     <div class="tinyfont donateto">DONATE TO ST. JOHN'S</div>
+     <div class="tinyfont donateto" style="margin-top:10px;">DONATE TO ST. JOHN'S</div>
   </div>
 
   <!-- HOME -->
@@ -768,31 +771,31 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">BISHOP'S COMMITTEE</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div>Timm Dobbins, Senior Warden</div>
-            </div>
-            <div class="clergymember">
-                <div>Robert Craig, Junior Warden</div>
-            </div>
-            <div class="clergymember">
-                <div>Jay Christian</div>
-            </div>
-            <div class="clergymember">
-                <div>Bryce Fisher-Fleig</div>
-            </div>
-            <div class="clergymember">
-                <div>Stoner Lichty</div>
-            </div>
-            <div class="clergymember">
-                <div>Delores Mays</div>
+                <div>Timm Dobbins, Junior Warden</div>
             </div>
             <div class="clergymember">
                 <div>Bonita Ann Palmer</div>
             </div>
             <div class="clergymember">
+                <div>Bryce Fisher-Fleig</div>
+            </div>
+            <div class="clergymember">
                 <div>Forrest Sedgwick</div>
             </div>
             <div class="clergymember">
-                <div>Claudia Viek</div>
+                <div>Jay Christian</div>
+            </div>
+            <div class="clergymember">
+                <div>Kevin Lumsdon, Senior Warden</div>
+            </div>
+            <div class="clergymember">
+                <div>Leah Forbes</div>
+            </div>
+            <div class="clergymember">
+                <div>Stoner Lichty</div>
+            </div>
+            <div class="clergymember">
+                <div>Wesley Walton</div>
             </div>
          </div>
      </div>
@@ -800,10 +803,10 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">CLERKS</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div>Diana McDonnell</div>
+                <div>Birgit Eschmann</div>
             </div>
             <div class="clergymember">
-                <div>Birgit Eschmann</div>
+                <div>Diana McDonnell</div>
             </div>
          </div>
          <br/>
@@ -811,16 +814,16 @@ Keeping the red doors on Julian Street open during the Depression and war years 
          <div class="clergytitle">DEANARY DELEGATES</div>
          <div class="clergymembers">
             <div class="clergymember">
-                <div>Michael Clark</div>
-            </div>
-            <div class="clergymember">
                 <div>Birgit Eschmann</div>
             </div>
             <div class="clergymember">
-                <div>Liz Specht (Alternate)</div>
+                <div>Sarah Lawton</div>
             </div>
             <div class="clergymember">
-                <div>Bill Sullivan (Alternate)</div>
+                <div>Michael Clark (Alternate)</div>
+            </div>
+            <div class="clergymember">
+                <div>Robert Craig (Alternate)</div>
             </div>
          </div>
      </div>
@@ -1053,8 +1056,9 @@ In 2013, members of St. John's raised almost $3000 for this critical organizatio
      <div class="tinyfont light bottomrightcontentcaption2">
          1661 Fifteenth Street at Julian Avenue <br/>
          (main entrance on Julian) <br/>
-         San Francisco, CA 94103 <br/>
-         (415) 861-1436
+         San Francisco, CA 94103 
+         <a href="mailto:parishadmin@saintjohnsf.org">parishadmin@saintjohnsf.org</a><br/>
+         (415) 861-1436  
      </div>
   </div>
 </div> <!-- bottom -->
@@ -1096,6 +1100,11 @@ Robert was a founder of San Francisco's Council on Religion and the Homosexual i
 Aaron began piano lessons with his mother at age 6. He later received his Doctor of Musical Arts degree in Piano Performance from the University of Colorado at Boulder and has taught at universities in Colorado, Wisconsin, and Berlin, Germany. As part of his graduate studies, he studied in Freiburg and Paris for two years and has performed throughout Europe, Israel, and the U.S. As a church musician, Aaron has worked for a variety of churches, most notably as organist at the Cathedral Basilica of the Immaculate Conception in Denver, and as a chorister at the American Cathedral (Episcopal) in Paris. He lives in San Francisco with his husband John and their two cats.
 <div class="lineseparator"></div>
 </div>
+</div>
+
+<!-- NEWSLETTER POPUP -->
+<div id="newsletterFrame" class="noshow">
+   <iframe src=""></iframe> 
 </div>
 
 </div> <!-- wrapper ->
